@@ -57,7 +57,7 @@ to choose hyperparameters or checkpoint.
 
 Both models use the same pinned base revision and joint `finished` plus
 `receipt`/`blocker` schema. V2 uses the original rank-8 LoRA targets and
-learning rate, with dropout 0.1, batch size 4, and at most three epochs. The
+learning rate, with dropout 0.1, batch size 4, and at most six epochs. The
 trainer selects the lowest **development loss** checkpoint per seed. Train
 three seeds: `20260925`, `20260926`, `20260927`. The publishable adapter is
 selected by lowest development loss across those three runs, before comparing
@@ -68,15 +68,16 @@ Primary endpoint: paired test accuracy difference (tuned minus base) on the
 failures, true-complete recall on the 79 successes, macro-F1, per-domain
 accuracy, and changed examples. Report numerator and denominator, each seed,
 and a paired bootstrap confidence interval clustered by `base_template`.
-The published v1 adapter at tag `v0.1.1` will also be run on the same external
-test as a historical comparator. It is not used for v2 checkpoint or seed
-selection, and differences between v1 and v2 cannot isolate data volume from
-the other training changes.
 This interval describes variation over the 10 held-out template groups;
 it is not a guarantee on future agents or workflows. Also report the task-pair
 cluster interval for comparison. No accuracy claim will be made from span
 overlap on the external examples: there are no gold evidence spans in that
 source.
+
+The published v1 adapter at tag `v0.1.1` will also be run on the same external
+test as a historical comparator. It is not used for v2 checkpoint or seed
+selection, and differences between v1 and v2 cannot isolate data volume from
+the other training changes.
 
 A positive headline requires at least a five-point accuracy gain for the
 development-selected seed, with a template-cluster 95% interval entirely above
@@ -93,7 +94,7 @@ uv run --extra model exitreceipt check-data \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv
 uv run --extra model exitreceipt train \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv \
-  --run-dir runs/v2-20260925 --device mps --epochs 3 --batch-size 4 \
+  --run-dir runs/v2-20260925 --device mps --epochs 6 --batch-size 4 \
   --seed 20260925 --lora-dropout 0.1 --experiment-name exitreceipt-v2
 uv run --extra model exitreceipt evaluate \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv \
@@ -106,3 +107,15 @@ manifest are committed. The base checkpoint download and local LoRA run
 require substantial disk, RAM, and compute. Metal/MPS can be nondeterministic
 despite fixed seeds. Model weights remain out of Git and a tagged adapter is
 published separately on Hugging Face after evaluation.
+
+## Pre-test amendment: training ceiling
+
+The first committed contract used a three-epoch ceiling. Before running any
+v2 test inference, a three-epoch **development-only** probe for seed
+`20260925` had loss 5.5012, 4.6449, and 3.8880 at epochs 1–3. Seed
+`20260926` fell from 6.1451 to 4.7661 over its first two epochs. Unlike the
+72-case pilot, these curves had not turned upward. We therefore extended the
+ceiling to six epochs and will rerun all three fixed seeds from the pinned base
+checkpoint under the same six-epoch schedule. The probes are not candidates
+for publication, and the test split remains unopened. All other selection,
+split, and headline rules above remain fixed.
