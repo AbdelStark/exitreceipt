@@ -1,6 +1,7 @@
 const $ = (id) => document.getElementById(id);
 let report;
 let currentId;
+const FILTERS = new Set(["all", "changed", "base-error", "tuned-error", "false-complete"]);
 
 function formatPct(value) { return `${(value * 100).toFixed(1)}%`; }
 function verdict(value) { return value === "yes" ? "DONE" : "NOT DONE"; }
@@ -90,14 +91,23 @@ function renderList() {
     list.append(button);
   }
   renderDetail(rows.find((row) => row.id === currentId));
+  const url = new URL(window.location.href);
+  if (currentId) url.searchParams.set("case", currentId);
+  else url.searchParams.delete("case");
+  if ($("filter").value !== "all") url.searchParams.set("filter", $("filter").value);
+  else url.searchParams.delete("filter");
+  window.history.replaceState(null, "", url);
 }
 
 async function main() {
   try {
-    const response = await fetch("../results/pilot.json", { cache: "no-store" });
+    const response = await fetch("./results/pilot.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`Report unavailable (HTTP ${response.status}). Run the evaluation command first.`);
     report = await response.json();
     if (report.schema_version !== 1 || report.split !== "test" || !Array.isArray(report.rows) || !report.rows.length || !report.base || !report.tuned) throw new Error("Report schema is incomplete or is not the final test run.");
+    const params = new URLSearchParams(window.location.search);
+    if (FILTERS.has(params.get("filter"))) $("filter").value = params.get("filter");
+    currentId = params.get("case");
     $("sample-count").textContent = `${report.rows.length} HELD-OUT CASES / SYNTHETIC`;
     $("base-accuracy").textContent = formatPct(report.base.accuracy);
     $("tuned-accuracy").textContent = formatPct(report.tuned.accuracy);

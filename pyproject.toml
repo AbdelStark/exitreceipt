@@ -8,7 +8,27 @@ version = "0.1.0"
 description = "A reproducible open-weight experiment in agent task completion decisions"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+keywords = ["GLiNER2", "agent-evaluation", "fine-tuning", "information-extraction"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://abdelstark.github.io/exitreceipt/"
+Repository = "https://github.com/AbdelStark/exitreceipt"
+Documentation = "https://github.com/AbdelStark/exitreceipt#readme"
+Issues = "https://github.com/AbdelStark/exitreceipt/issues"
+Changelog = "https://github.com/AbdelStark/exitreceipt/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 model = ["gliner2[train]==2.0.0", "sentencepiece>=0.2,<1", "protobuf>=5,<7"]

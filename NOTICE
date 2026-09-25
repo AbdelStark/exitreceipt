@@ -1,0 +1,6 @@
+ExitReceipt
+Copyright 2026 AbdelStark
+
+The project code, authored synthetic data, and website are licensed under the
+Apache License, Version 2.0. The GLiNER2 library and GLiNER2.5-Decide model
+are separate upstream works; their weights are not included in this repository.

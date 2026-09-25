@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ExitReceipt">
+  <rect width="64" height="64" rx="12" fill="#0b100e"/>
+  <rect x="5" y="5" width="54" height="54" rx="9" fill="none" stroke="#a4ec77" stroke-width="2"/>
+  <text x="15" y="46" fill="#e5f7d6" font-family="Arial,sans-serif" font-size="42" font-weight="700">E</text>
+  <circle cx="50" cy="46" r="4" fill="#a4ec77"/>
+</svg>

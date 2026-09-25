@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+  <title id="title">ExitReceipt: one held-out synthetic case</title>
+  <desc id="desc">The goal was to merge a patch and deploy it. The PR was merged but deployment was blocked. The base model incorrectly said done; the fine-tuned model said not done and identified the failed rollout gate.</desc>
+  <style>
+    text { font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; }
+    .mono { font-family: SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 1.5px; }
+    .muted { fill: #9cad9c; }
+  </style>
+  <rect width="1200" height="440" rx="18" fill="#0b100e"/>
+  <rect x="1" y="1" width="1198" height="438" rx="17" fill="none" stroke="#405244"/>
+  <rect x="30" y="28" width="39" height="39" rx="7" fill="#14251a" stroke="#a4ec77"/>
+  <text x="39" y="56" fill="#e5f7d6" font-size="27" font-weight="750">E</text>
+  <circle cx="61" cy="57" r="3" fill="#a4ec77"/>
+  <text x="84" y="53" fill="#e5f7d6" font-size="16" font-weight="700" letter-spacing="3">EXITRECEIPT</text>
+  <text x="1168" y="53" text-anchor="end" class="mono" fill="#92ac8d" font-size="12">HELD-OUT SYNTHETIC CASE · TE025</text>
+  <line x1="30" y1="84" x2="1170" y2="84" stroke="#35483a"/>
+
+  <text x="42" y="119" class="mono muted" font-size="12">REQUESTED OUTCOME</text>
+  <text x="42" y="151" fill="#eaf2e8" font-size="25" font-weight="650">Merge the patch and deploy it to production.</text>
+  <rect x="30" y="172" width="1140" height="69" rx="7" fill="#142018" stroke="#344638"/>
+  <rect x="30" y="172" width="4" height="69" fill="#a4ec77"/>
+  <text x="48" y="195" class="mono muted" font-size="11">LAST OBSERVED STATE</text>
+  <text x="48" y="222" fill="#d5e2d2" font-size="16">The PR is merged. The production deployment was blocked by a failed rollout gate.</text>
+
+  <rect x="30" y="262" width="356" height="107" rx="7" fill="#17251b" stroke="#6d9664"/>
+  <text x="49" y="289" class="mono muted" font-size="11">GROUND TRUTH</text>
+  <text x="49" y="331" fill="#d8efce" font-size="28" font-weight="700">NOT DONE</text>
+
+  <rect x="400" y="262" width="356" height="107" rx="7" fill="#2c1e1a" stroke="#b8755b"/>
+  <text x="419" y="289" class="mono muted" font-size="11">BASE MODEL</text>
+  <text x="419" y="331" fill="#f1ad8d" font-size="28" font-weight="700">DONE</text>
+  <text x="734" y="332" text-anchor="end" class="mono" fill="#d79378" font-size="11">WRONG</text>
+
+  <rect x="770" y="262" width="400" height="107" rx="7" fill="#1b3020" stroke="#a4ec77"/>
+  <text x="789" y="289" class="mono muted" font-size="11">AFTER LOCAL LoRA FINE-TUNING</text>
+  <text x="789" y="331" fill="#c8f5ad" font-size="28" font-weight="700">NOT DONE</text>
+  <text x="1147" y="332" text-anchor="end" class="mono" fill="#a4ec77" font-size="11">RIGHT</text>
+
+  <text x="42" y="405" class="mono muted" font-size="12">TUNED CANDIDATE BLOCKER</text>
+  <text x="337" y="405" fill="#baf09b" font-size="15">“failed rollout gate”</text>
+  <text x="1160" y="405" text-anchor="end" fill="#829784" font-size="12">Candidate span, not independent verification</text>
+</svg>

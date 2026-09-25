@@ -2,6 +2,8 @@ name: CI
 on:
   push:
   pull_request:
+permissions:
+  contents: read
 jobs:
   offline:
     runs-on: ubuntu-latest
@@ -10,7 +12,15 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
+      - run: uv lock --check
       - run: uv sync --locked --extra dev
       - run: uv run --extra dev pytest -q
       - run: uv run --extra dev ruff check .
+      - run: uv run --extra dev ruff format --check src tests
       - run: uv run exitreceipt check-data
+      - run: node --check app.js
+      - run: uv build
+      - run: uv venv "$RUNNER_TEMP/exitreceipt-wheel-smoke"
+      - run: uv pip install --python "$RUNNER_TEMP/exitreceipt-wheel-smoke/bin/python" dist/exitreceipt-0.1.0-py3-none-any.whl
+      - run: |
+          "$RUNNER_TEMP/exitreceipt-wheel-smoke/bin/exitreceipt" check-data

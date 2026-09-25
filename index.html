@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b100e" />
+    <meta name="description" content="Inspect a real before-and-after GLiNER2.5-Decide fine-tuning experiment on agent task completion and evidence spans." />
+    <meta property="og:title" content="ExitReceipt — Did the agent actually finish?" />
+    <meta property="og:description" content="A reproducible open-weight decision experiment. Explore every held-out prediction, correction, and regression." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abdelstark.github.io/exitreceipt/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <title>ExitReceipt · Did the agent actually finish?</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./app.js?v=2" defer></script>
+    <script src="./app.js?v=3" defer></script>
   </head>
   <body>
     <div class="shell">
       <header class="topbar">
         <div class="brand"><span class="brand-mark">E<span class="brand-dot">.</span></span><span>EXITRECEIPT</span></div>
-        <div class="top-meta"><span class="status-dot"></span> LOCAL EXPERIMENT <span class="top-separator">/</span> GLiNER2.5-DECIDE</div>
+        <div class="top-meta"><span class="status-dot"></span> OPEN RESEARCH DEMO <span class="top-separator">/</span> GLiNER2.5-DECIDE</div>
       </header>
 
       <main>
@@ -21,6 +28,7 @@
             <h1>Did the agent<br /><em>actually finish?</em></h1>
             <p class="intro">A draft is not a send. A green PR is not a merge. Compare an open-weight decision model before and after fine-tuning on the small but consequential gap between <strong>said</strong> and <strong>done</strong>.</p>
             <div class="hero-chips"><span>BASE VS TUNED</span><span>HELD-OUT CASES</span><span>INSPECT EVERY ERROR</span></div>
+            <div class="hero-links"><a href="https://github.com/AbdelStark/exitreceipt">SOURCE &amp; REPRODUCTION ↗</a><a href="https://github.com/AbdelStark/exitreceipt/blob/main/docs/RESULTS.md">READ THE RESULT ↗</a></div>
           </div>
           <div class="hero-art" aria-hidden="true">
             <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
@@ -38,7 +46,7 @@
             <article class="score-card difference"><div class="score-label">MEASURED CHANGE <span>Δ</span></div><div class="score-value" id="delta">—</div><div class="score-caption">percentage points</div><div class="score-rule"></div><div class="score-foot" id="changed-count">— changed decisions</div></article>
           </div>
           <p class="evidence-score" id="evidence-score" hidden></p>
-          <p class="caveat">Authored synthetic English cases. A model verdict is a review signal; the underlying receipt remains the source of truth. This pilot does not establish real-world agent reliability.</p>
+          <p class="caveat">Authored synthetic English cases. The tuned model corrected two decisions and regressed on two others. A verdict is a review signal; the underlying receipt remains the source of truth. This pilot does not establish real-world agent reliability.</p>
         </section>
 
         <section class="case-section" aria-labelledby="cases-title">
@@ -55,7 +63,7 @@
         <section class="how-section"><div><span class="section-index">04 / REPRODUCE IT</span><h2>One model.<br /><em>Your definition of done.</em></h2></div><div class="how-copy"><p>The 340M-class GLiNER2.5-Decide checkpoint runs locally. A rank-8 LoRA adapter trains on versioned examples; the best checkpoint is selected on development loss and compared with the base on untouched test rows.</p><code>uv run --extra model exitreceipt train --run-dir runs/pilot --device mps</code><p class="small">Model, data hash, versions, settings, and per-case predictions are recorded in the report. See the repository experiment contract for exact limitations.</p></div></section>
       </main>
 
-      <footer><span>EXITRECEIPT / PRIVATE MVP</span><span>DECISIONS NEED RECEIPTS.</span></footer>
+      <footer><span>EXITRECEIPT / OPEN RESEARCH PILOT</span><a href="https://github.com/AbdelStark/exitreceipt">CODE, DATA &amp; METHODS ↗</a></footer>
     </div>
   </body>
 </html>
