@@ -21,9 +21,21 @@ def summarize(reports: list[dict], manifest: dict) -> dict:
         raise ValueError("report contains unknown or duplicate external case")
     if len(ids) != 158:
         raise ValueError(f"expected 158 test cases, got {len(ids)}")
-    for report in reports:
+    for expected_seed, report in zip(SEEDS, reports, strict=True):
         if report["split"] != "test" or [row["id"] for row in report["rows"]] != ids:
             raise ValueError("report splits or case order differ")
+        if report.get("study") != "workbench-v2-template-holdout":
+            raise ValueError("report is not from the external v2 study")
+        training = report["training"]
+        if (
+            training["seed"] != expected_seed
+            or training["epochs"] != 6
+            or training["batch_size"] != 4
+            or training["lora_dropout"] != 0.1
+        ):
+            raise ValueError("report does not match preregistered v2 training")
+        if report["training_code"].get("tracked_changes"):
+            raise ValueError("training run used a dirty tracked checkout")
         if report["data_sha256"] != reference["data_sha256"]:
             raise ValueError("data hashes differ")
         if report["revision"] != reference["revision"]:
