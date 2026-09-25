@@ -115,7 +115,7 @@ uv run --extra model exitreceipt predict \
 
 To try the published adapter without training, use
 `--adapter-repo abdelstark/exitreceipt-gliner2.5-decide-lora` with
-`--adapter-revision v0.1.0`.
+`--adapter-revision v0.1.1`.
 
 Use `--device cpu` where MPS is unavailable. `train` refuses a nonempty run
 directory. Downloaded base weights and adapter checkpoints stay out of Git;

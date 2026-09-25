@@ -8,6 +8,8 @@
   fresh rerun that reproduced every prior test prediction and span.
 - Published two further development-selected seed runs and their complete
   held-out reports as a post-hoc sensitivity check on the same synthetic split.
+- Normalized the Hub adapter config by omitting PEFT's optional null task type;
+  the adapter weights and inference output are unchanged.
 
 ## 0.1.0 — 2026-09-25
 

@@ -14,7 +14,7 @@ from huggingface_hub.utils import RepositoryNotFoundError
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO_ID = "abdelstark/exitreceipt-gliner2.5-decide-lora"
-TAG = "v0.1.0"
+TAG = "v0.1.1"
 RUN = ROOT / "runs/pilot"
 REPORT = ROOT / "results/pilot.json"
 MODEL_CARD = ROOT / "model/README.md"
@@ -30,7 +30,7 @@ def digest(path: Path) -> str:
 def release_files() -> dict[str, Path]:
     """Check that the adapter and report describe the same training run."""
     weights = RUN / "best/adapter_model.safetensors"
-    config = RUN / "best/adapter_config.json"
+    config = ROOT / "model/adapter_config.json"
     training = RUN / "exitreceipt-run.json"
     upstream_config = RUN / "training_config.json"
     files = {
@@ -52,6 +52,9 @@ def release_files() -> dict[str, Path]:
     report = json.loads(REPORT.read_text(encoding="utf-8"))
     run = json.loads(training.read_text(encoding="utf-8"))
     adapter = json.loads(config.read_text(encoding="utf-8"))
+    original_adapter = json.loads((RUN / "best/adapter_config.json").read_text(encoding="utf-8"))
+    if original_adapter.pop("task_type", "missing") is not None or adapter != original_adapter:
+        raise ValueError("Hub config must only omit upstream's optional null task_type")
     if report["adapter_sha256"] != digest(weights):
         raise ValueError("published report does not match selected adapter weights")
     for key in ("data_sha256", "evidence_sha256"):

@@ -54,7 +54,7 @@ uv run --extra model exitreceipt predict \
   --goal "Merge the approved pull request" \
   --trace "All checks are green, but the PR remains open" \
   --adapter-repo abdelstark/exitreceipt-gliner2.5-decide-lora \
-  --adapter-revision v0.1.0
+  --adapter-revision v0.1.1
 ```
 
 Or load the pinned base explicitly and attach the adapter:
@@ -70,7 +70,7 @@ base = AutoExtractor.from_pretrained(
 model = PeftModel.from_pretrained(
     base,
     "abdelstark/exitreceipt-gliner2.5-decide-lora",
-    revision="v0.1.0",
+    revision="v0.1.1",
 ).eval()
 schema = (
     model.create_schema()
@@ -88,7 +88,9 @@ Use that exact input rendering and **joint schema** to reproduce the reported
 comparison. This is a GLiNER2 custom extractor with a PEFT adapter; it is not
 a standalone Transformers text-classification checkpoint. Downloaded base
 weights are approximately 2 GB. The tagged adapter revision keeps this example
-stable if the model repository changes later.
+stable if the model repository changes later. The Hub adapter config omits an
+optional `task_type: null` key emitted by upstream PEFT for custom models;
+the adapter weights and inference behavior are unchanged.
 
 ## Training and evaluation
 
@@ -136,8 +138,8 @@ labels, schema, and scoring code. The included `evaluation/pilot.json` records
 every input, prediction, span, and aggregate. `training/exitreceipt-run.json`
 records the training config, loss history, source revision, and data hashes.
 The later seed reports and compact cross-run check are under `evaluation/` on
-the model repository's `main` branch; the `v0.1.0` tag preserves the original
-adapter release.
+the model repository's `main` branch. The `v0.1.1` tag preserves this card,
+normalized config, reports, and the same evaluated weights.
 The evaluation report is also versioned in the source repo. Reproduce the
 training and comparison with the
 [experiment contract](https://github.com/AbdelStark/exitreceipt/blob/main/docs/EXPERIMENT.md).
