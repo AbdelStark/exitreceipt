@@ -201,6 +201,7 @@ def main(argv: list[str] | None = None) -> int:
             },
             "training": metadata["config"],
             "training_best_dev_loss": metadata["training_summary"]["best_metric"],
+            "training_eval_history": metadata["training_summary"].get("eval_metrics_history", []),
             "training_code": metadata.get("code"),
             "evaluation_code": _code_provenance(),
             "base": score(selected, base),

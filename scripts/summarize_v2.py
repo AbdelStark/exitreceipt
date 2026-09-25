@@ -59,6 +59,10 @@ def summarize(reports: list[dict], manifest: dict) -> dict:
                 "seed": seed,
                 "adapter_sha256": report["adapter_sha256"],
                 "best_dev_loss": report["training_best_dev_loss"],
+                "dev_loss_by_epoch": [
+                    {"epoch": item["epoch"] + 1, "loss": item["eval_loss"]}
+                    for item in report["training_eval_history"]
+                ],
                 "base": report["base"],
                 "tuned": report["tuned"],
                 "accuracy_delta": report["tuned"]["accuracy"] - report["base"]["accuracy"],
