@@ -1,0 +1,25 @@
+id|kind|evidence
+tr049|blocker|stayed in drafts
+tr050|receipt|sent ids for all reviewers
+tr051|blocker|only one maintainer invitation succeeded
+tr052|receipt|lists both intended maintainers
+tr053|blocker|still the old version
+tr054|receipt|newly published patch version
+tr055|blocker|attachment operation failed
+tr056|receipt|readback includes its payment receipt
+tr057|blocker|Current state is disabled
+tr058|receipt|flag readback is enabled
+tr059|blocker|target path is empty now
+tr060|receipt|readback found the report
+tr061|blocker|revert commit removed the changes
+tr062|receipt|main currently contains the patch
+tr063|blocker|No current reservation exists
+tr064|receipt|hotel confirms the room
+tr065|blocker|no outbound call
+tr066|receipt|outbound batch as accepted
+tr067|blocker|returned 403 and lists no document
+tr068|receipt|readback includes the signed contract
+tr069|blocker|merge request rejected
+tr070|receipt|reports merged with a SHA
+tr071|blocker|no production rollout
+tr072|receipt|reports the new revision

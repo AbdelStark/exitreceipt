@@ -64,6 +64,8 @@ def _parser() -> argparse.ArgumentParser:
     train.add_argument("--batch-size", type=int, default=4)
     train.add_argument("--device", choices=["cpu", "mps"], default="cpu")
     train.add_argument("--seed", type=int, default=20260925)
+    train.add_argument("--lora-dropout", type=float, default=0.0)
+    train.add_argument("--experiment-name", default="exitreceipt-pilot")
 
     evaluate = sub.add_parser("evaluate", help="Compare base and tuned models on a split")
     evaluate.add_argument("--data", type=Path, default=DEFAULT_DATA)
@@ -121,6 +123,8 @@ def main(argv: list[str] | None = None) -> int:
             batch_size=args.batch_size,
             device=args.device,
             seed=args.seed,
+            lora_dropout=args.lora_dropout,
+            experiment_name=args.experiment_name,
         )
         metadata = {
             "model": MODEL_ID,

@@ -80,6 +80,8 @@ def train_adapter(
     batch_size: int,
     device: str,
     seed: int,
+    lora_dropout: float = 0.0,
+    experiment_name: str = "exitreceipt-pilot",
 ) -> dict:
     if device == "mps":
         os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
@@ -93,6 +95,8 @@ def train_adapter(
         raise RuntimeError("MPS is not available")
     if epochs < 1 or batch_size < 1:
         raise ValueError("epochs and batch size must be positive")
+    if not 0 <= lora_dropout < 1:
+        raise ValueError("lora_dropout must be in [0, 1)")
     if output_dir.exists() and any(output_dir.iterdir()):
         raise FileExistsError(f"refusing to overwrite nonempty run directory: {output_dir}")
 
@@ -114,7 +118,7 @@ def train_adapter(
     model = load_model()
     config = TrainingConfig(
         output_dir=str(output_dir),
-        experiment_name="exitreceipt-pilot",
+        experiment_name=experiment_name,
         num_epochs=epochs,
         batch_size=batch_size,
         eval_batch_size=batch_size,
@@ -128,6 +132,7 @@ def train_adapter(
         use_lora=True,
         lora_r=8,
         lora_alpha=16.0,
+        lora_dropout=lora_dropout,
         lora_target_modules=["encoder", "span_rep", "classifier"],
         save_adapter_only=True,
         fp16=False,
@@ -152,8 +157,10 @@ def train_adapter(
             "batch_size": batch_size,
             "device": device,
             "seed": seed,
+            "experiment_name": experiment_name,
             "lora_r": 8,
             "lora_alpha": 16.0,
+            "lora_dropout": lora_dropout,
             "lora_targets": ["encoder", "span_rep", "classifier"],
             "encoder_lr": 2e-5,
             "task_lr": 3e-4,
