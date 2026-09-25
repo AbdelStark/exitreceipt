@@ -204,7 +204,7 @@ nvtx = [
 ]
 
 [[package]]
-name = "doneproof"
+name = "exitreceipt"
 version = "0.1.0"
 source = { editable = "." }
 

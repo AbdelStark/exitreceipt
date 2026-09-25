@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Doneproof · Did the agent actually finish?</title>
+    <title>ExitReceipt · Did the agent actually finish?</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./app.js?v=2" defer></script>
   </head>
   <body>
     <div class="shell">
       <header class="topbar">
-        <div class="brand"><span class="brand-mark">D<span class="brand-dot">.</span></span><span>DONEPROOF</span></div>
+        <div class="brand"><span class="brand-mark">E<span class="brand-dot">.</span></span><span>EXITRECEIPT</span></div>
         <div class="top-meta"><span class="status-dot"></span> LOCAL EXPERIMENT <span class="top-separator">/</span> GLiNER2.5-DECIDE</div>
       </header>
 
@@ -52,10 +52,10 @@
           </div>
         </section>
 
-        <section class="how-section"><div><span class="section-index">04 / REPRODUCE IT</span><h2>One model.<br /><em>Your definition of done.</em></h2></div><div class="how-copy"><p>The 340M-class GLiNER2.5-Decide checkpoint runs locally. A rank-8 LoRA adapter trains on versioned examples; the best checkpoint is selected on development loss and compared with the base on untouched test rows.</p><code>uv run --extra model doneproof train --run-dir runs/pilot --device mps</code><p class="small">Model, data hash, versions, settings, and per-case predictions are recorded in the report. See the repository experiment contract for exact limitations.</p></div></section>
+        <section class="how-section"><div><span class="section-index">04 / REPRODUCE IT</span><h2>One model.<br /><em>Your definition of done.</em></h2></div><div class="how-copy"><p>The 340M-class GLiNER2.5-Decide checkpoint runs locally. A rank-8 LoRA adapter trains on versioned examples; the best checkpoint is selected on development loss and compared with the base on untouched test rows.</p><code>uv run --extra model exitreceipt train --run-dir runs/pilot --device mps</code><p class="small">Model, data hash, versions, settings, and per-case predictions are recorded in the report. See the repository experiment contract for exact limitations.</p></div></section>
       </main>
 
-      <footer><span>DONEPROOF / PRIVATE MVP</span><span>DECISIONS NEED RECEIPTS.</span></footer>
+      <footer><span>EXITRECEIPT / PRIVATE MVP</span><span>DECISIONS NEED RECEIPTS.</span></footer>
     </div>
   </body>
 </html>

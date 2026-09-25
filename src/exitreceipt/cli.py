@@ -50,7 +50,7 @@ def _write_json(path: Path, payload: dict) -> None:
 
 
 def _parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="doneproof")
+    parser = argparse.ArgumentParser(prog="exitreceipt")
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser("check-data", help="Validate the versioned split and print its hash")
     check.add_argument("--data", type=Path, default=DEFAULT_DATA)
@@ -125,12 +125,12 @@ def main(argv: list[str] | None = None) -> int:
             "training_summary": result["summary"],
             "code": _code_provenance(),
         }
-        _write_json(args.run_dir / "doneproof-run.json", metadata)
+        _write_json(args.run_dir / "exitreceipt-run.json", metadata)
         print(json.dumps({"run_dir": str(args.run_dir), "data_sha256": data_hash}, indent=2))
         return 0
 
     if args.command == "evaluate":
-        run_file = args.run_dir / "doneproof-run.json"
+        run_file = args.run_dir / "exitreceipt-run.json"
         metadata = json.loads(run_file.read_text(encoding="utf-8"))
         if (
             metadata["data_sha256"] != data_hash

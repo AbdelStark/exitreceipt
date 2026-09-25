@@ -13,4 +13,4 @@ jobs:
       - run: uv sync --locked --extra dev
       - run: uv run --extra dev pytest -q
       - run: uv run --extra dev ruff check .
-      - run: uv run doneproof check-data
+      - run: uv run exitreceipt check-data

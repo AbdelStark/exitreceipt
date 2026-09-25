@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pytest
 
-from doneproof.corpus import load_cases, load_evidence, split_counts
-from doneproof.evidence import score_evidence
-from doneproof.metrics import score
+from exitreceipt.corpus import load_cases, load_evidence, split_counts
+from exitreceipt.evidence import score_evidence
+from exitreceipt.metrics import score
 
 DATA = Path(__file__).resolve().parents[1] / "data" / "cases.psv"
 EVIDENCE = DATA.with_name("evidence.psv")

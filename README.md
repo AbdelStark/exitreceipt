@@ -1,8 +1,8 @@
-# Doneproof
+# ExitReceipt
 
 **Did the agent actually finish?**
 
-A draft is not a send. A green pull request is not a merge. Doneproof probes
+A draft is not a send. A green pull request is not a merge. ExitReceipt probes
 [`GLiNER2.5-Decide`](https://huggingface.co/fastino/GLiNER2.5-Decide) on
 goal-and-trace pairs, fine-tunes an open-weight LoRA adapter on both completion
 decisions and candidate evidence spans, and lets you inspect every base and tuned
@@ -13,9 +13,9 @@ of completion.
 
 ```bash
 uv sync --extra model --extra dev
-uv run --extra model doneproof check-data
-uv run --extra model doneproof train --run-dir runs/pilot --device mps
-uv run --extra model doneproof evaluate --run-dir runs/pilot --split test --output results/pilot.json
+uv run --extra model exitreceipt check-data
+uv run --extra model exitreceipt train --run-dir runs/pilot --device mps
+uv run --extra model exitreceipt evaluate --run-dir runs/pilot --split test --output results/pilot.json
 python3 -m http.server 8765
 ```
 
@@ -23,7 +23,7 @@ Then open `http://localhost:8765/site/`. Use `--device cpu` on non-Apple
 machines. To classify one local example:
 
 ```bash
-uv run --extra model doneproof predict \
+uv run --extra model exitreceipt predict \
   --goal "Merge the approved pull request" \
   --trace "All checks are green, but the PR remains open" \
   --adapter runs/pilot/best

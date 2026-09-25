@@ -1,4 +1,4 @@
-# Doneproof pilot result
+# ExitReceipt pilot result
 
 The result below is from one selected local LoRA adapter and one evaluation of the held-out test split. The machine-readable [report](../results/pilot.json) contains the model/data hashes, package versions, settings, split counts, and every prediction and candidate span.
 

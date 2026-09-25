@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "doneproof"
+name = "exitreceipt"
 version = "0.1.0"
 description = "A reproducible open-weight experiment in agent task completion decisions"
 readme = "README.md"
@@ -15,14 +15,14 @@ model = ["gliner2[train]==2.0.0", "sentencepiece>=0.2,<1", "protobuf>=5,<7"]
 dev = ["pytest>=8,<9", "ruff>=0.13,<1"]
 
 [project.scripts]
-doneproof = "doneproof.cli:main"
+exitreceipt = "exitreceipt.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/doneproof"]
+packages = ["src/exitreceipt"]
 
 [tool.hatch.build.targets.wheel.force-include]
-"data/cases.psv" = "doneproof/data/cases.psv"
-"data/evidence.psv" = "doneproof/data/evidence.psv"
+"data/cases.psv" = "exitreceipt/data/cases.psv"
+"data/evidence.psv" = "exitreceipt/data/evidence.psv"
 
 [tool.ruff]
 line-length = 100

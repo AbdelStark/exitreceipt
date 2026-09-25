@@ -33,9 +33,9 @@ The model card calls this a 340M-class model, while the installed trainer report
 
 ```bash
 uv sync --extra model --extra dev
-uv run --extra model doneproof check-data
-uv run --extra model doneproof train --run-dir runs/pilot --device mps --epochs 6 --batch-size 4
-uv run --extra model doneproof evaluate --run-dir runs/pilot --split test --output results/pilot.json
+uv run --extra model exitreceipt check-data
+uv run --extra model exitreceipt train --run-dir runs/pilot --device mps --epochs 6 --batch-size 4
+uv run --extra model exitreceipt evaluate --run-dir runs/pilot --split test --output results/pilot.json
 uv run --extra dev pytest -q
 uv run --extra dev ruff check .
 python3 -m http.server 8765

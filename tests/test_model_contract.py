@@ -1,7 +1,7 @@
 import pytest
 
-from doneproof.corpus import Case
-from doneproof.model import inspect_cases
+from exitreceipt.corpus import Case
+from exitreceipt.model import inspect_cases
 
 
 class FakeModel:

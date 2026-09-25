@@ -101,7 +101,7 @@ def train_adapter(
     model = load_model()
     config = TrainingConfig(
         output_dir=str(output_dir),
-        experiment_name="doneproof-pilot",
+        experiment_name="exitreceipt-pilot",
         num_epochs=epochs,
         batch_size=batch_size,
         eval_batch_size=batch_size,
