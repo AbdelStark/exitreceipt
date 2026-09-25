@@ -142,4 +142,5 @@ six-epoch run is a development-only training-length probe, excluded from
 adapter selection. **No v2 test inference occurred during either amendment.**
 All split, seed-selection, and headline rules remain fixed. This one-seed
 comparison does not establish that longer training would hurt for every seed
-or a different learning-rate schedule.
+or a different learning-rate schedule. Exact curves and checkpoint hashes are
+in [`results/v2-length-probe.json`](../results/v2-length-probe.json).
