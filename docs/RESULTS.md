@@ -45,3 +45,25 @@ The evaluated [LoRA adapter](https://huggingface.co/abdelstark/exitreceipt-gline
 is published separately from the base weights, with a model card and the same
 per-case report. It is a reusable research artifact, not a verified task
 completion service.
+
+## Seed sensitivity on the same authored split
+
+After the original pilot, two more seeds were trained with the same corpus,
+configuration, development-loss selection rule, and test rows. This is a
+**post-hoc robustness probe**, not a fresh holdout or a significance test.
+No checkpoint was selected by its test score. The public model remains the
+first seed's selected adapter.
+
+<!-- markdownlint-disable MD013 -->
+| Seed | Base accuracy | Tuned accuracy | False “done” | Typed ≥50% overlap | Exact typed spans |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 20260925 (published adapter) | 36/40 | 36/40 | 1/20 | 9/16 | 3/16 |
+| 20260926 | 36/40 | 36/40 | 0/20 | 10/16 | 3/16 |
+| 20260927 | 36/40 | 37/40 | 0/20 | 12/16 | 4/16 |
+<!-- markdownlint-enable MD013 -->
+
+The base had 2/20 false “done” calls and 0/16 typed overlap in every run.
+Across all three adapters, `te025` and `te035` were corrected, while `te039`
+regressed. Other regressions varied by seed. These results show sensitivity
+to initialization on a tiny authored test and no evidence of transfer to
+unseen workflows. The [method and per-case reports](SEEDS.md) are public.

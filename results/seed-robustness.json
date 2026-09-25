@@ -1,0 +1,92 @@
+{
+  "annotated_test_n": 16,
+  "base": {
+    "accuracy": 0.9,
+    "exact_typed_hits": 0,
+    "false_complete": 2,
+    "false_incomplete": 2,
+    "half_gold_typed_hits": 0
+  },
+  "data_sha256": "c1772ef3b6989b70faa31acdbef506cb3193d943210f344639a0d1075223f565",
+  "evidence_sha256": "f1bc2d98dbd7ad97010b2fa5cc66c4ff73f28c13ae3159f7bc09b768f6ebe32d",
+  "model": "fastino/GLiNER2.5-Decide",
+  "revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
+  "runs": [
+    {
+      "accuracy": 0.9,
+      "adapter_sha256": "f602971510dd8501ed66f979b8194a53918cfb0c426302048a821ac9d2537752",
+      "best_dev_loss": 5.516915483772754,
+      "exact_typed_hits": 3,
+      "false_complete": 1,
+      "false_incomplete": 3,
+      "fixed_case_ids": [
+        "te025",
+        "te035"
+      ],
+      "half_gold_typed_hits": 9,
+      "regressed_case_ids": [
+        "te039",
+        "te040"
+      ],
+      "report": "results/pilot.json",
+      "report_sha256": "3807d22c9de250a20a7128190372c11007795eb74b86b3943d378371d1862201",
+      "seed": 20260925,
+      "training_code": {
+        "git_head": "04a8ec7e1174aa70d6243d1d157ffc525e316fb0",
+        "tracked_changes": false,
+        "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+      }
+    },
+    {
+      "accuracy": 0.9,
+      "adapter_sha256": "39b0d0ce420df66aaaa8e097a6d93afef6320f47c876a870cb955fa7616c13a7",
+      "best_dev_loss": 6.322278380347416,
+      "exact_typed_hits": 3,
+      "false_complete": 0,
+      "false_incomplete": 4,
+      "fixed_case_ids": [
+        "te025",
+        "te035"
+      ],
+      "half_gold_typed_hits": 10,
+      "regressed_case_ids": [
+        "te016",
+        "te039"
+      ],
+      "report": "results/seed-20260926.json",
+      "report_sha256": "18d0e78118f7cd8f205665028504df9ab0d3fcd66efe93898ce0284bc4becdea",
+      "seed": 20260926,
+      "training_code": {
+        "git_head": "f258ddbf576498a3b075b5348cd2462b3902b13a",
+        "tracked_changes": false,
+        "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+      }
+    },
+    {
+      "accuracy": 0.925,
+      "adapter_sha256": "1c85b7f0fcedfc4f4ec58e4d37a8691a986dd2474d2ae53d46b2d0857b95d86a",
+      "best_dev_loss": 5.754380295984447,
+      "exact_typed_hits": 4,
+      "false_complete": 0,
+      "false_incomplete": 3,
+      "fixed_case_ids": [
+        "te025",
+        "te035"
+      ],
+      "half_gold_typed_hits": 12,
+      "regressed_case_ids": [
+        "te039"
+      ],
+      "report": "results/seed-20260927.json",
+      "report_sha256": "50a4336dca53a69cb8c47935b488f74b037ffc0c297d407eae94c60fe861e40b",
+      "seed": 20260927,
+      "training_code": {
+        "git_head": "f258ddbf576498a3b075b5348cd2462b3902b13a",
+        "tracked_changes": false,
+        "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+      }
+    }
+  ],
+  "scope": "post-hoc seed-sensitivity check on one authored synthetic split; no transfer claim",
+  "test_n": 40
+}

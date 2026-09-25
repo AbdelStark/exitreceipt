@@ -125,10 +125,19 @@ deployment-footprint claim.
 | Typed span with ≥50% gold overlap | 0/16 | 9/16 |
 | Exact typed span | 0/16 | 3/16 |
 
+Two later seeds on the **same** authored test scored 36/40 and 37/40 for
+completion and 10/16 and 12/16 for typed half-span overlap. They were run
+after the original result was inspected, so this is a
+[post-hoc sensitivity check](https://github.com/AbdelStark/exitreceipt/blob/main/docs/SEEDS.md),
+not a fresh benchmark or a reason to replace the published adapter.
+
 The base and adapter were evaluated on the same test inputs and the same
 labels, schema, and scoring code. The included `evaluation/pilot.json` records
 every input, prediction, span, and aggregate. `training/exitreceipt-run.json`
 records the training config, loss history, source revision, and data hashes.
+The later seed reports and compact cross-run check are under `evaluation/` on
+the model repository's `main` branch; the `v0.1.0` tag preserves the original
+adapter release.
 The evaluation report is also versioned in the source repo. Reproduce the
 training and comparison with the
 [experiment contract](https://github.com/AbdelStark/exitreceipt/blob/main/docs/EXPERIMENT.md).

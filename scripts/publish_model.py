@@ -10,6 +10,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from huggingface_hub import HfApi, hf_hub_download
+from huggingface_hub.utils import RepositoryNotFoundError
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO_ID = "abdelstark/exitreceipt-gliner2.5-decide-lora"
@@ -37,6 +38,9 @@ def release_files() -> dict[str, Path]:
         "adapter_model.safetensors": weights,
         "adapter_config.json": config,
         "evaluation/pilot.json": REPORT,
+        "evaluation/seed-20260926.json": ROOT / "results/seed-20260926.json",
+        "evaluation/seed-20260927.json": ROOT / "results/seed-20260927.json",
+        "evaluation/seed-robustness.json": ROOT / "results/seed-robustness.json",
         "training/exitreceipt-run.json": training,
         "training/training_config.json": upstream_config,
         "LICENSE": ROOT / "LICENSE",
@@ -70,12 +74,23 @@ def release_files() -> dict[str, Path]:
         raise ValueError("model card does not identify the exact adapter and base")
     if "[More Information Needed]" in card:
         raise ValueError("model card still contains template placeholders")
+    summary = json.loads(files["evaluation/seed-robustness.json"].read_text(encoding="utf-8"))
+    if [run["seed"] for run in summary["runs"]] != [20260925, 20260926, 20260927]:
+        raise ValueError("seed summary has an unexpected run set")
+    if summary["runs"][0]["adapter_sha256"] != digest(weights):
+        raise ValueError("seed summary does not identify the published adapter")
     return files
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--publish", action="store_true", help="Create and upload the public model")
+    action = parser.add_mutually_exclusive_group()
+    action.add_argument("--publish", action="store_true", help="Create and tag a new public model")
+    action.add_argument(
+        "--sync-supplement",
+        action="store_true",
+        help="Update only the card and three-seed reports on the existing model's main branch",
+    )
     args = parser.parse_args()
     files = release_files()
     print(
@@ -88,7 +103,7 @@ def main() -> int:
             indent=2,
         )
     )
-    if not args.publish:
+    if not args.publish and not args.sync_supplement:
         return 0
 
     api = HfApi()
@@ -97,41 +112,60 @@ def main() -> int:
         raise RuntimeError("authenticated Hugging Face user is not the model owner")
     try:
         refs = api.list_repo_refs(REPO_ID, repo_type="model")
-    except Exception as exc:
-        from huggingface_hub.utils import RepositoryNotFoundError
-
-        if not isinstance(exc, RepositoryNotFoundError):
-            raise
+    except RepositoryNotFoundError:
         refs = None
-    if refs and any(ref.name == TAG for ref in refs.tags):
+    tag_exists = bool(refs and any(ref.name == TAG for ref in refs.tags))
+    if args.publish and tag_exists:
         raise FileExistsError(f"release tag already exists: {TAG}")
+    if args.sync_supplement:
+        if not tag_exists or api.model_info(REPO_ID).private:
+            raise RuntimeError("expected existing public tagged model")
+        tagged_weights = Path(hf_hub_download(REPO_ID, "adapter_model.safetensors", revision=TAG))
+        if digest(tagged_weights) != digest(files["adapter_model.safetensors"]):
+            raise ValueError("tagged Hub weights differ from the published adapter")
 
     with TemporaryDirectory(prefix="exitreceipt-hf-") as directory:
         stage = Path(directory)
-        for name, source in files.items():
+        selected = (
+            {
+                name: source
+                for name, source in files.items()
+                if name == "README.md" or name.startswith("evaluation/seed-")
+            }
+            if args.sync_supplement
+            else files
+        )
+        for name, source in selected.items():
             target = stage / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, target)
-        api.create_repo(REPO_ID, repo_type="model", private=False, exist_ok=True)
+        if args.publish:
+            api.create_repo(REPO_ID, repo_type="model", private=False, exist_ok=True)
         commit = api.upload_folder(
             repo_id=REPO_ID,
             repo_type="model",
             folder_path=stage,
-            commit_message="Publish ExitReceipt GLiNER2.5-Decide LoRA pilot",
+            commit_message=(
+                "Document three-seed ExitReceipt sensitivity check"
+                if args.sync_supplement
+                else "Publish ExitReceipt GLiNER2.5-Decide LoRA pilot"
+            ),
         )
-        api.create_tag(REPO_ID, tag=TAG, revision=commit.oid, repo_type="model")
-        for name in (
-            "README.md",
-            "adapter_config.json",
-            "adapter_model.safetensors",
-            "evaluation/pilot.json",
-        ):
-            remote = Path(hf_hub_download(REPO_ID, name, revision=TAG))
+        if args.publish:
+            api.create_tag(REPO_ID, tag=TAG, revision=commit.oid, repo_type="model")
+        for name in selected:
+            revision = "main" if args.sync_supplement else TAG
+            remote = Path(hf_hub_download(REPO_ID, name, revision=revision))
             if digest(remote) != digest(files[name]):
                 raise ValueError(f"remote release digest mismatch: {name}")
     print(
         json.dumps(
-            {"published": f"https://huggingface.co/{REPO_ID}", "commit": commit.oid, "tag": TAG},
+            {
+                "published": f"https://huggingface.co/{REPO_ID}",
+                "commit": commit.oid,
+                "tag": TAG,
+                "mode": "supplement" if args.sync_supplement else "release",
+            },
             indent=2,
         )
     )

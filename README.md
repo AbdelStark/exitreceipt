@@ -36,7 +36,10 @@ Fine-tuning corrected two decisions and regressed on two; **total completion
 accuracy did not improve**. Evidence-span recall improved on these annotated
 cases, while exact boundaries remained weak. The overlap measure is permissive,
 and the tuned model also returned three spans with the wrong type or no gold
-overlap. [Results and error analysis](docs/RESULTS.md) · [Experiment contract](docs/EXPERIMENT.md)
+overlap. Two additional seeds on the same split scored 36/40 and 37/40; their
+typed half-span hits were 10/16 and 12/16. This exploratory seed check does
+not create an independent benchmark. [Results and error analysis](docs/RESULTS.md)
+· [All three seed reports](docs/SEEDS.md) · [Experiment contract](docs/EXPERIMENT.md)
 
 These cases are written by the project author and share domains across splits.
 The result does **not** establish reliability on real agent traces, unseen

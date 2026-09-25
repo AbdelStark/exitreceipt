@@ -6,6 +6,8 @@
   training metadata, tagged weights, and per-case evaluation report.
 - Added pinned Hub adapter inference and refreshed the pilot report from a
   fresh rerun that reproduced every prior test prediction and span.
+- Published two further development-selected seed runs and their complete
+  held-out reports as a post-hoc sensitivity check on the same synthetic split.
 
 ## 0.1.0 — 2026-09-25
 

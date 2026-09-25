@@ -1,0 +1,1635 @@
+{
+  "adapter_selection": "lowest development loss; test split excluded",
+  "adapter_sha256": "39b0d0ce420df66aaaa8e097a6d93afef6320f47c876a870cb955fa7616c13a7",
+  "base": {
+    "accuracy": 0.9,
+    "confusion": {
+      "no": {
+        "no": 18,
+        "yes": 2
+      },
+      "yes": {
+        "no": 2,
+        "yes": 18
+      }
+    },
+    "false_complete": 2,
+    "false_complete_rate": 0.1,
+    "false_incomplete": 2,
+    "macro_f1": 0.9,
+    "n": 40,
+    "per_label": {
+      "no": {
+        "f1": 0.9,
+        "precision": 0.9,
+        "recall": 0.9,
+        "support": 20
+      },
+      "yes": {
+        "f1": 0.9,
+        "precision": 0.9,
+        "recall": 0.9,
+        "support": 20
+      }
+    }
+  },
+  "by_domain": {
+    "authority": {
+      "base": {
+        "accuracy": 0.75,
+        "confusion": {
+          "no": {
+            "no": 1,
+            "yes": 1
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 1,
+        "false_complete_rate": 0.5,
+        "false_incomplete": 0,
+        "macro_f1": 0.7333333333333334,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "boundary": {
+      "base": {
+        "accuracy": 0.75,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 1,
+            "yes": 1
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 1,
+        "macro_f1": 0.7333333333333334,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.75,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 1,
+            "yes": 1
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 1,
+        "macro_f1": 0.7333333333333334,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        }
+      }
+    },
+    "commerce": {
+      "base": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.75,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 1,
+            "yes": 1
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 1,
+        "macro_f1": 0.7333333333333334,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        }
+      }
+    },
+    "compound": {
+      "base": {
+        "accuracy": 0.75,
+        "confusion": {
+          "no": {
+            "no": 1,
+            "yes": 1
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 1,
+        "false_complete_rate": 0.5,
+        "false_incomplete": 0,
+        "macro_f1": 0.7333333333333334,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "deploy": {
+      "base": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "files": {
+      "base": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "git": {
+      "base": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "mail": {
+      "base": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "reversal": {
+      "base": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 2
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          }
+        }
+      }
+    },
+    "scope": {
+      "base": {
+        "accuracy": 0.75,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 1,
+            "yes": 1
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 1,
+        "macro_f1": 0.7333333333333334,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.5,
+        "confusion": {
+          "no": {
+            "no": 2,
+            "yes": 0
+          },
+          "yes": {
+            "no": 2,
+            "yes": 0
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 2,
+        "macro_f1": 0.3333333333333333,
+        "n": 4,
+        "per_label": {
+          "no": {
+            "f1": 0.6666666666666666,
+            "precision": 0.5,
+            "recall": 1.0,
+            "support": 2
+          },
+          "yes": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          }
+        }
+      }
+    }
+  },
+  "claim_scope": "authored synthetic cases; no real-world agent validation",
+  "counts": {
+    "dev": {
+      "no": 10,
+      "yes": 10
+    },
+    "test": {
+      "no": 20,
+      "yes": 20
+    },
+    "train": {
+      "no": 36,
+      "yes": 36
+    }
+  },
+  "data_sha256": "c1772ef3b6989b70faa31acdbef506cb3193d943210f344639a0d1075223f565",
+  "evaluation_code": {
+    "git_head": "f258ddbf576498a3b075b5348cd2462b3902b13a",
+    "tracked_changes": false,
+    "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+  },
+  "evidence": {
+    "base": {
+      "annotated_n": 16,
+      "candidate_spans": 0,
+      "exact_span_and_type_hits": 0,
+      "half_gold_span_and_type_hits": 0,
+      "wrong_type_or_disjoint_spans": 0
+    },
+    "tuned": {
+      "annotated_n": 16,
+      "candidate_spans": 18,
+      "exact_span_and_type_hits": 3,
+      "half_gold_span_and_type_hits": 10,
+      "wrong_type_or_disjoint_spans": 4
+    }
+  },
+  "evidence_sha256": "f1bc2d98dbd7ad97010b2fa5cc66c4ff73f28c13ae3159f7bc09b768f6ebe32d",
+  "generated_at_utc": "2026-09-25T08:04:34.988012+00:00",
+  "model": "fastino/GLiNER2.5-Decide",
+  "revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
+  "rows": [
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "mail",
+      "goal": "Send the expense summary to finance.",
+      "gold_evidence": null,
+      "id": "te001",
+      "trace": "The mail client says ready to send; its network request has not run.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 131,
+          "kind": "blocker",
+          "start": 104,
+          "text": "network request has not run"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "mail",
+      "goal": "Send the expense summary to finance.",
+      "gold_evidence": null,
+      "id": "te002",
+      "trace": "The provider accepted the outbound message, and a Sent record has the finance address.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 149,
+          "kind": "receipt",
+          "start": 114,
+          "text": "Sent record has the finance address"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "mail",
+      "goal": "Notify every attendee of the room change.",
+      "gold_evidence": null,
+      "id": "te003",
+      "trace": "Two of three invitations were sent. The third address bounced before dispatch.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 146,
+          "kind": "blocker",
+          "start": 109,
+          "text": "third address bounced before dispatch"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "mail",
+      "goal": "Notify every attendee of the room change.",
+      "gold_evidence": null,
+      "id": "te004",
+      "trace": "All attendees have accepted delivery receipts for the room-change message.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 114,
+          "kind": "receipt",
+          "start": 97,
+          "text": "delivery receipts"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "git",
+      "goal": "Publish the patch as a pull request.",
+      "gold_evidence": null,
+      "id": "te005",
+      "trace": "The branch is on origin. The agent wrote PR text in chat but did not create a PR.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 144,
+          "kind": "blocker",
+          "start": 125,
+          "text": "did not create a PR"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "git",
+      "goal": "Publish the patch as a pull request.",
+      "gold_evidence": null,
+      "id": "te006",
+      "trace": "The host returned PR 92 with the requested base and head branches.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": []
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "git",
+      "goal": "Merge the pull request into main.",
+      "gold_evidence": null,
+      "id": "te007",
+      "trace": "A green review badge appeared. The main branch SHA has not advanced.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 90,
+          "kind": "receipt",
+          "start": 63,
+          "text": "green review badge appeared"
+        },
+        {
+          "end": 128,
+          "kind": "blocker",
+          "start": 108,
+          "text": "SHA has not advanced"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "git",
+      "goal": "Merge the pull request into main.",
+      "gold_evidence": null,
+      "id": "te008",
+      "trace": "The PR is closed as merged and main contains its merge commit.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 122,
+          "kind": "receipt",
+          "start": 92,
+          "text": "main contains its merge commit"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "deploy",
+      "goal": "Launch the revised API in production.",
+      "gold_evidence": null,
+      "id": "te009",
+      "trace": "The release pipeline reached the approval gate and is waiting for an operator.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 142,
+          "kind": "blocker",
+          "start": 119,
+          "text": "waiting for an operator"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "deploy",
+      "goal": "Launch the revised API in production.",
+      "gold_evidence": null,
+      "id": "te010",
+      "trace": "The live endpoint reports the new build and the rollout controller is complete.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 143,
+          "kind": "receipt",
+          "start": 113,
+          "text": "rollout controller is complete"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "deploy",
+      "goal": "Fix the customer-facing outage.",
+      "gold_evidence": null,
+      "id": "te011",
+      "trace": "The patch passed unit tests, but the public endpoint still returns errors.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 132,
+          "kind": "blocker",
+          "start": 96,
+          "text": "public endpoint still returns errors"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "deploy",
+      "goal": "Fix the customer-facing outage.",
+      "gold_evidence": null,
+      "id": "te012",
+      "trace": "The public endpoint is serving successful responses after the rollback completed.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 110,
+          "kind": "receipt",
+          "start": 82,
+          "text": "serving successful responses"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "commerce",
+      "goal": "Reserve and pay for the conference hotel.",
+      "gold_evidence": null,
+      "id": "te013",
+      "trace": "The room is reserved for ten minutes; card payment was never submitted.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 139,
+          "kind": "blocker",
+          "start": 107,
+          "text": "card payment was never submitted"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "commerce",
+      "goal": "Reserve and pay for the conference hotel.",
+      "gold_evidence": null,
+      "id": "te014",
+      "trace": "The hotel issued a paid confirmation and emailed the booking receipt.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 137,
+          "kind": "receipt",
+          "start": 110,
+          "text": "emailed the booking receipt"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "commerce",
+      "goal": "Cancel the subscription before renewal.",
+      "gold_evidence": null,
+      "id": "te015",
+      "trace": "The cancellation request is drafted, but the subscription remains active.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 139,
+          "kind": "blocker",
+          "start": 112,
+          "text": "subscription remains active"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "commerce",
+      "goal": "Cancel the subscription before renewal.",
+      "gold_evidence": null,
+      "id": "te016",
+      "trace": "The account service now reports canceled and no next renewal date.",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 132,
+          "kind": "receipt",
+          "start": 112,
+          "text": "no next renewal date"
+        },
+        {
+          "end": 132,
+          "kind": "blocker",
+          "start": 112,
+          "text": "no next renewal date"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "files",
+      "goal": "Put the revised deck on the shared drive.",
+      "gold_evidence": null,
+      "id": "te017",
+      "trace": "The new deck is in a local downloads folder only.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 117,
+          "kind": "blocker",
+          "start": 90,
+          "text": "local downloads folder only"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "files",
+      "goal": "Put the revised deck on the shared drive.",
+      "gold_evidence": null,
+      "id": "te018",
+      "trace": "A drive readback at the target path shows the revised deck hash.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 132,
+          "kind": "receipt",
+          "start": 105,
+          "text": "shows the revised deck hash"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "files",
+      "goal": "Attach the compliance report to the case.",
+      "gold_evidence": null,
+      "id": "te019",
+      "trace": "The report was exported, but the case still has zero attachments.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 133,
+          "kind": "blocker",
+          "start": 117,
+          "text": "zero attachments"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "files",
+      "goal": "Attach the compliance report to the case.",
+      "gold_evidence": null,
+      "id": "te020",
+      "trace": "The case attachment list includes the report with the expected file id.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 139,
+          "kind": "receipt",
+          "start": 94,
+          "text": "includes the report with the expected file id"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "boundary",
+      "goal": "Only prepare the invoice email for approval.",
+      "gold_evidence": null,
+      "id": "te021",
+      "trace": "The message is a draft awaiting approval; no send was requested.",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 135,
+          "kind": "blocker",
+          "start": 114,
+          "text": "no send was requested"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "boundary",
+      "goal": "Email the approved invoice now.",
+      "gold_evidence": null,
+      "id": "te022",
+      "trace": "The same approved message remains a draft, though the agent says sent.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 100,
+          "kind": "blocker",
+          "start": 95,
+          "text": "draft"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "boundary",
+      "goal": "Create a local release tag without pushing it.",
+      "gold_evidence": null,
+      "id": "te023",
+      "trace": "The tag exists in the local repository and is absent on origin, as requested.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": []
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "boundary",
+      "goal": "Publish the release tag to origin.",
+      "gold_evidence": null,
+      "id": "te024",
+      "trace": "The tag exists only locally and the remote ref lookup returns nothing.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 131,
+          "kind": "blocker",
+          "start": 98,
+          "text": "remote ref lookup returns nothing"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "compound",
+      "goal": "Merge the patch and deploy it to production.",
+      "gold_evidence": {
+        "evidence": "blocked by a failed rollout gate",
+        "id": "te025",
+        "kind": "blocker"
+      },
+      "id": "te025",
+      "trace": "The PR is merged. The production deployment was blocked by a failed rollout gate.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 88,
+          "kind": "receipt",
+          "start": 76,
+          "text": "PR is merged"
+        },
+        {
+          "end": 152,
+          "kind": "blocker",
+          "start": 133,
+          "text": "failed rollout gate"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "compound",
+      "goal": "Merge the patch and deploy it to production.",
+      "gold_evidence": {
+        "evidence": "new patch revision",
+        "id": "te026",
+        "kind": "receipt"
+      },
+      "id": "te026",
+      "trace": "The host shows a merge commit and the production probe identifies the new patch revision.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 160,
+          "kind": "receipt",
+          "start": 127,
+          "text": "identifies the new patch revision"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "compound",
+      "goal": "Buy the domain and add it to the account.",
+      "gold_evidence": {
+        "evidence": "still pending",
+        "id": "te027",
+        "kind": "blocker"
+      },
+      "id": "te027",
+      "trace": "The payment settled, but account ownership transfer is still pending.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 137,
+          "kind": "blocker",
+          "start": 94,
+          "text": "account ownership transfer is still pending"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "compound",
+      "goal": "Buy the domain and add it to the account.",
+      "gold_evidence": {
+        "evidence": "domain appears in the requested account",
+        "id": "te028",
+        "kind": "receipt"
+      },
+      "id": "te028",
+      "trace": "The purchase receipt is paid and the domain appears in the requested account.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": []
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "reversal",
+      "goal": "Keep the incident resolved.",
+      "gold_evidence": {
+        "evidence": "returned to errors before handoff",
+        "id": "te029",
+        "kind": "blocker"
+      },
+      "id": "te029",
+      "trace": "A green health probe appeared briefly, then the service returned to errors before handoff.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 129,
+          "kind": "blocker",
+          "start": 103,
+          "text": "service returned to errors"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "reversal",
+      "goal": "Keep the incident resolved.",
+      "gold_evidence": {
+        "evidence": "final live probe is healthy",
+        "id": "te030",
+        "kind": "receipt"
+      },
+      "id": "te030",
+      "trace": "The first patch regressed; the second rollout passed and the final live probe is healthy.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 143,
+          "kind": "receipt",
+          "start": 136,
+          "text": "healthy"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "reversal",
+      "goal": "Leave a released package available in the registry.",
+      "gold_evidence": {
+        "evidence": "no longer installable from the registry",
+        "id": "te031",
+        "kind": "blocker"
+      },
+      "id": "te031",
+      "trace": "Version 2.4 was published, then yanked. It is no longer installable from the registry.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 146,
+          "kind": "blocker",
+          "start": 125,
+          "text": "no longer installable"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "reversal",
+      "goal": "Leave a released package available in the registry.",
+      "gold_evidence": {
+        "evidence": "now listed and installable",
+        "id": "te032",
+        "kind": "receipt"
+      },
+      "id": "te032",
+      "trace": "The first upload was rejected; the corrected artifact is now listed and installable.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 162,
+          "kind": "receipt",
+          "start": 140,
+          "text": "listed and installable"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "authority",
+      "goal": "Send the final report to the board.",
+      "gold_evidence": {
+        "evidence": "rejected address and no sent message",
+        "id": "te033",
+        "kind": "blocker"
+      },
+      "id": "te033",
+      "trace": "The assistant wrote 'delivered' in chat, but mail logs show a rejected address and no sent message.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 141,
+          "kind": "blocker",
+          "start": 125,
+          "text": "rejected address"
+        },
+        {
+          "end": 161,
+          "kind": "blocker",
+          "start": 146,
+          "text": "no sent message"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "authority",
+      "goal": "Send the final report to the board.",
+      "gold_evidence": {
+        "evidence": "accepted message ids for every board member",
+        "id": "te034",
+        "kind": "receipt"
+      },
+      "id": "te034",
+      "trace": "The assistant did not announce completion, yet the provider returned accepted message ids for every board member.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 175,
+          "kind": "receipt",
+          "start": 132,
+          "text": "accepted message ids for every board member"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "authority",
+      "goal": "Make the fix available on main.",
+      "gold_evidence": {
+        "evidence": "prior SHA after push failed",
+        "id": "te035",
+        "kind": "blocker"
+      },
+      "id": "te035",
+      "trace": "The assistant marked it done; remote main remains at the prior SHA after push failed.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 143,
+          "kind": "blocker",
+          "start": 132,
+          "text": "push failed"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "authority",
+      "goal": "Make the fix available on main.",
+      "gold_evidence": {
+        "evidence": "new fix commit on main",
+        "id": "te036",
+        "kind": "receipt"
+      },
+      "id": "te036",
+      "trace": "The agent says 'probably pending', but a remote fetch finds the new fix commit on main.",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 145,
+          "kind": "receipt",
+          "start": 123,
+          "text": "new fix commit on main"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "scope",
+      "goal": "Create the invoice draft for approval only.",
+      "gold_evidence": {
+        "evidence": "draft contains the right customer and amount",
+        "id": "te037",
+        "kind": "receipt"
+      },
+      "id": "te037",
+      "trace": "The draft contains the right customer and amount; it was left unsent on purpose.",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 150,
+          "kind": "blocker",
+          "start": 128,
+          "text": "left unsent on purpose"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "scope",
+      "goal": "Send the approved invoice to the customer.",
+      "gold_evidence": {
+        "evidence": "no outbound event",
+        "id": "te038",
+        "kind": "blocker"
+      },
+      "id": "te038",
+      "trace": "The exact same draft exists, but the mail provider has no outbound event.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 142,
+          "kind": "blocker",
+          "start": 125,
+          "text": "no outbound event"
+        }
+      ]
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "scope",
+      "goal": "Prepare a deployment plan without changing production.",
+      "gold_evidence": {
+        "evidence": "plan is saved for review",
+        "id": "te039",
+        "kind": "receipt"
+      },
+      "id": "te039",
+      "trace": "The plan is saved for review and the production revision has not moved.",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 152,
+          "kind": "receipt",
+          "start": 139,
+          "text": "has not moved"
+        }
+      ]
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "scope",
+      "goal": "Execute the production deployment.",
+      "gold_evidence": {
+        "evidence": "still serves the old revision",
+        "id": "te040",
+        "kind": "blocker"
+      },
+      "id": "te040",
+      "trace": "The plan is saved for review and production still serves the old revision.",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 135,
+          "kind": "receipt",
+          "start": 106,
+          "text": "still serves the old revision"
+        },
+        {
+          "end": 135,
+          "kind": "blocker",
+          "start": 95,
+          "text": "production still serves the old revision"
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "software": {
+    "gliner2": "2.0.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.12",
+    "torch": "2.14.0"
+  },
+  "split": "test",
+  "training": {
+    "batch_size": 4,
+    "device": "mps",
+    "encoder_lr": 2e-05,
+    "epochs": 6,
+    "lora_alpha": 16.0,
+    "lora_r": 8,
+    "lora_targets": [
+      "encoder",
+      "span_rep",
+      "classifier"
+    ],
+    "seed": 20260926,
+    "task_lr": 0.0003
+  },
+  "training_best_dev_loss": 6.322278380347416,
+  "training_code": {
+    "git_head": "f258ddbf576498a3b075b5348cd2462b3902b13a",
+    "tracked_changes": false,
+    "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+  },
+  "tuned": {
+    "accuracy": 0.9,
+    "confusion": {
+      "no": {
+        "no": 20,
+        "yes": 0
+      },
+      "yes": {
+        "no": 4,
+        "yes": 16
+      }
+    },
+    "false_complete": 0,
+    "false_complete_rate": 0.0,
+    "false_incomplete": 4,
+    "macro_f1": 0.898989898989899,
+    "n": 40,
+    "per_label": {
+      "no": {
+        "f1": 0.9090909090909091,
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "support": 20
+      },
+      "yes": {
+        "f1": 0.888888888888889,
+        "precision": 1.0,
+        "recall": 0.8,
+        "support": 20
+      }
+    }
+  }
+}
