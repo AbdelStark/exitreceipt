@@ -55,6 +55,19 @@ def summarize(reports: list[dict], manifest: dict, selection: dict) -> dict:
     runs = []
     for seed, report in zip(SEEDS, reports, strict=True):
         rows = report["rows"]
+        failure_strata = {}
+        for side_effects in (False, True):
+            subset = [
+                row
+                for row in rows
+                if row["truth"] == "no"
+                and source[row["id"]]["unwanted_side_effects"] == side_effects
+            ]
+            failure_strata["with_side_effects" if side_effects else "without_side_effects"] = {
+                "n": len(subset),
+                "base_false_complete": sum(row["base"] == "yes" for row in subset),
+                "tuned_false_complete": sum(row["tuned"] == "yes" for row in subset),
+            }
         changed = [
             {
                 "id": row["id"],
@@ -84,6 +97,7 @@ def summarize(reports: list[dict], manifest: dict, selection: dict) -> dict:
                 "accuracy_delta_task_ci95": paired_accuracy_interval(
                     rows, task_groups, seed=seed + 2
                 ),
+                "failure_strata": failure_strata,
                 "changed": changed,
             }
         )

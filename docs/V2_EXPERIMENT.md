@@ -75,6 +75,9 @@ it is not a guarantee on future agents or workflows. Also report the task-pair
 cluster interval for comparison. No accuracy claim will be made from span
 overlap on the external examples: there are no gold evidence spans in that
 source.
+As an exploratory error slice, report false-complete counts separately for
+failed runs with and without WorkBench's `unwanted_side_effects` flag. That
+flag is upstream metadata, not part of the model input.
 
 The published v1 adapter at tag `v0.1.1` will also be run on the same external
 test as a historical comparator. It is not used for v2 checkpoint or seed
