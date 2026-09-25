@@ -81,9 +81,7 @@ def build(payload: bytes) -> tuple[list[dict], dict]:
             raise ValueError(f"task text/template changed across runs: {task_id}")
         selected.extend((yes, no))
 
-    by_domain_template: dict[str, dict[str, list[dict]]] = defaultdict(
-        lambda: defaultdict(list)
-    )
+    by_domain_template: dict[str, dict[str, list[dict]]] = defaultdict(lambda: defaultdict(list))
     for row in selected:
         by_domain_template[row["domain"]][row["base_template"]].append(row)
 
@@ -143,15 +141,20 @@ def build(payload: bytes) -> tuple[list[dict], dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--verify", action="store_true", help="check committed outputs byte-for-byte")
+    parser.add_argument(
+        "--verify", action="store_true", help="check committed outputs byte-for-byte"
+    )
     args = parser.parse_args()
     payload = urllib.request.urlopen(SOURCE_URL, timeout=30).read()
     rows, manifest = build(payload)
     with (ROOT / "data" / "cases.psv").open(newline="", encoding="utf-8") as handle:
-        authored_train = [row for row in csv.DictReader(handle, delimiter="|") if row["split"] == "train"]
+        authored_train = [
+            row for row in csv.DictReader(handle, delimiter="|") if row["split"] == "train"
+        ]
     with (ROOT / "data" / "evidence.psv").open(newline="", encoding="utf-8") as handle:
         authored_evidence = [
-            row for row in csv.DictReader(handle, delimiter="|")
+            row
+            for row in csv.DictReader(handle, delimiter="|")
             if row["id"] in {case["id"] for case in authored_train}
         ]
     manifest["auxiliary_train"] = {
@@ -162,7 +165,9 @@ def main() -> None:
 
     def psv(fieldnames: tuple[str, ...], data: list[dict]) -> str:
         stream = io.StringIO(newline="")
-        csv_writer = csv.DictWriter(stream, fieldnames=fieldnames, delimiter="|", lineterminator="\n")
+        csv_writer = csv.DictWriter(
+            stream, fieldnames=fieldnames, delimiter="|", lineterminator="\n"
+        )
         csv_writer.writeheader()
         csv_writer.writerows(data)
         return stream.getvalue()
@@ -170,12 +175,9 @@ def main() -> None:
     outputs = {
         ROOT / "data" / "workbench-v2.psv": psv(FIELDS, rows),
         ROOT / "data" / "v2-cases.psv": psv(FIELDS, rows + authored_train),
-        ROOT / "data" / "v2-evidence.psv": psv(
-            ("id", "kind", "evidence"), authored_evidence
-        ),
-        ROOT / "data" / "workbench-v2-manifest.json": json.dumps(
-            manifest, indent=2, sort_keys=True
-        ) + "\n",
+        ROOT / "data" / "v2-evidence.psv": psv(("id", "kind", "evidence"), authored_evidence),
+        ROOT / "data" / "workbench-v2-manifest.json": json.dumps(manifest, indent=2, sort_keys=True)
+        + "\n",
     }
     if args.verify:
         for path, expected in outputs.items():

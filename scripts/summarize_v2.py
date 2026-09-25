@@ -1,0 +1,130 @@
+"""Summarize the preregistered v2 runs with paired cluster intervals."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import random
+from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SEEDS = (20260925, 20260926, 20260927)
+RESAMPLES = 10_000
+
+
+def _interval(rows: list[dict], groups: dict[str, list[str]], *, seed: int) -> list[float]:
+    by_id = {row["id"]: row for row in rows}
+    group_keys = sorted(groups)
+    rng = random.Random(seed)
+    values = []
+    for _ in range(RESAMPLES):
+        ids = [case_id for _ in group_keys for case_id in groups[rng.choice(group_keys)]]
+        base = sum(by_id[case_id]["base"] == by_id[case_id]["truth"] for case_id in ids)
+        tuned = sum(by_id[case_id]["tuned"] == by_id[case_id]["truth"] for case_id in ids)
+        values.append((tuned - base) / len(ids))
+    values.sort()
+    return [values[int(0.025 * RESAMPLES)], values[int(0.975 * RESAMPLES) - 1]]
+
+
+def summarize(reports: list[dict], manifest: dict) -> dict:
+    source = {row["id"]: row for row in manifest["source_rows"]}
+    reference = reports[0]
+    ids = [row["id"] for row in reference["rows"]]
+    if len(ids) != len(set(ids)) or any(case_id not in source for case_id in ids):
+        raise ValueError("report contains unknown or duplicate external case")
+    if len(ids) != 158:
+        raise ValueError(f"expected 158 test cases, got {len(ids)}")
+    for report in reports:
+        if report["split"] != "test" or [row["id"] for row in report["rows"]] != ids:
+            raise ValueError("report splits or case order differ")
+        if report["data_sha256"] != reference["data_sha256"]:
+            raise ValueError("data hashes differ")
+        if report["revision"] != reference["revision"]:
+            raise ValueError("base model revisions differ")
+        if any(
+            row["truth"] != original["truth"] or row["base"] != original["base"]
+            for row, original in zip(report["rows"], reference["rows"], strict=True)
+        ):
+            raise ValueError("gold labels or base predictions differ between seeds")
+
+    template_groups: dict[str, list[str]] = defaultdict(list)
+    task_groups: dict[str, list[str]] = defaultdict(list)
+    for case_id in ids:
+        template_groups[source[case_id]["base_template"]].append(case_id)
+        task_groups[source[case_id]["task_id"]].append(case_id)
+
+    runs = []
+    for seed, report in zip(SEEDS, reports, strict=True):
+        rows = report["rows"]
+        changed = [
+            {
+                "id": row["id"],
+                "truth": row["truth"],
+                "base": row["base"],
+                "tuned": row["tuned"],
+                "template": source[row["id"]]["base_template"],
+            }
+            for row in rows
+            if row["base"] != row["tuned"]
+        ]
+        runs.append(
+            {
+                "seed": seed,
+                "adapter_sha256": report["adapter_sha256"],
+                "best_dev_loss": report["training_best_dev_loss"],
+                "base": report["base"],
+                "tuned": report["tuned"],
+                "accuracy_delta": report["tuned"]["accuracy"] - report["base"]["accuracy"],
+                "accuracy_delta_template_ci95": _interval(rows, template_groups, seed=seed + 1),
+                "accuracy_delta_task_ci95": _interval(rows, task_groups, seed=seed + 2),
+                "changed": changed,
+            }
+        )
+    winner = min(runs, key=lambda run: (run["best_dev_loss"], run["seed"]))
+    delta = winner["accuracy_delta"]
+    false_done_delta = (
+        winner["tuned"]["false_complete_rate"] - winner["base"]["false_complete_rate"]
+    )
+    headline_positive = (
+        delta >= 0.05 and winner["accuracy_delta_template_ci95"][0] > 0 and false_done_delta <= 0.02
+    )
+    return {
+        "schema_version": 1,
+        "study": "workbench-v2-template-holdout",
+        "source_revision": manifest["source_revision"],
+        "source_sha256": manifest["source_sha256"],
+        "data_sha256": reference["data_sha256"],
+        "base_revision": reference["revision"],
+        "test_examples": len(ids),
+        "test_tasks": len(task_groups),
+        "test_templates": len(template_groups),
+        "selection_rule": "lowest development loss among fixed seeds",
+        "selected_seed": winner["seed"],
+        "headline_positive": headline_positive,
+        "headline_rule": "accuracy gain >=5pp, template-cluster CI lower >0, false-complete rate rise <=2pp",
+        "resamples": RESAMPLES,
+        "runs": runs,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, default=ROOT / "results" / "v2-robustness.json")
+    args = parser.parse_args()
+    reports = [
+        json.loads((ROOT / "results" / f"v2-{seed}.json").read_text(encoding="utf-8"))
+        for seed in SEEDS
+    ]
+    manifest = json.loads(
+        (ROOT / "data" / "workbench-v2-manifest.json").read_text(encoding="utf-8")
+    )
+    result = summarize(reports, manifest)
+    args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(
+        json.dumps({key: result[key] for key in ("selected_seed", "headline_positive")}, indent=2)
+    )
+
+
+if __name__ == "__main__":
+    main()

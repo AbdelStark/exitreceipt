@@ -175,10 +175,16 @@ def main(argv: list[str] | None = None) -> int:
         import gliner2
         import torch
 
+        v2 = metadata["config"].get("experiment_name") == "exitreceipt-v2"
         report = {
             "schema_version": 1,
             "generated_at_utc": datetime.now(UTC).isoformat(),
-            "claim_scope": "authored synthetic cases; no real-world agent validation",
+            "claim_scope": (
+                "WorkBench sandbox-scored action logs; tool results and final state are absent"
+                if v2
+                else "authored synthetic cases; no real-world agent validation"
+            ),
+            "study": "workbench-v2-template-holdout" if v2 else "authored-pilot",
             "model": MODEL_ID,
             "revision": MODEL_REVISION,
             "adapter_selection": "lowest development loss; test split excluded",
