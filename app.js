@@ -174,7 +174,7 @@ async function loadStudy(caseId, filter) {
       $("evidence-score").hidden = false;
     }
     $("caveat").textContent = study === "v2"
-      ? "Sandbox-scored WorkBench action logs, held out by task template. The verdict includes task correctness and can penalize side effects. Tool results and final state are absent from this view. This is prediction from partial evidence, not verification of a live agent."
+      ? "Selected-seed accuracy gain: paired 95% template-cluster interval −6.6 to +15.8 percentage points across 10 held-out templates; the preregistered positive-headline rule was not met. WorkBench's sandbox verdict can penalize side effects. Tool results and final state are absent from these logs, so this is prediction from partial evidence, not verification of a live agent."
       : "Authored synthetic English cases. The tuned model corrected two decisions and regressed on two others. A verdict is a review signal; the underlying receipt remains the source of truth.";
     $("scores").hidden = false;
     renderList();

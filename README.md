@@ -1,153 +1,110 @@
 # ExitReceipt
 
-## Did the agent actually finish?
+### Did the agent actually finish?
 
-A draft is not a send. A green pull request is not a merge. ExitReceipt is a
-reproducible experiment in reading the **requested outcome** and the **last
-observed state** together. It asks [GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide)
-for a `yes/no` completion decision and candidate receipt or blocker spans, then
-shows what changed after local LoRA fine-tuning.
+A tool call is an attempt, not a receipt. ExitReceipt is an open-weight experiment in judging an agent's requested outcome against the evidence it left behind. It uses [GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) for a `yes/no` decision and candidate `receipt` or `blocker` spans, then publishes what changed after local LoRA fine-tuning—including the misses.
 
-**[Explore the 40-case pilot](https://abdelstark.github.io/exitreceipt/)** ·
-**[Read the measured result](docs/RESULTS.md)** ·
-**[Adapter](https://hf.co/abdelstark/exitreceipt-gliner2.5-decide-lora)** ·
-**[Inspect the raw report](results/pilot.json)**
+**[Explore every prediction](https://abdelstark.github.io/exitreceipt/)** · **[Read the v2 result](docs/V2_RESULTS.md)** · **[Get the tagged adapter](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora/tree/v0.2.0)** · **[Inspect the experiment contract](docs/V2_EXPERIMENT.md)**
 
-![One held-out synthetic case: the base model calls a blocked deployment done; the fine-tuned model says not done and points to the failed rollout gate.](docs/assets/case-te025.svg)
-
-*One held-out synthetic case ([TE025](https://abdelstark.github.io/exitreceipt/?case=te025)). The [full explorer](https://abdelstark.github.io/exitreceipt/) also shows the cases where fine-tuning made the decision worse.*
+> **Scope:** The v2 benchmark predicts [WorkBench](https://github.com/olly-styles/WorkBench) sandbox `correct` verdicts from a task and its recorded actions. WorkBench can penalize unwanted side effects. The released action view omits tool returns and final state, so this is a partial-observation benchmark—not a live task verifier. The older 40-case authored pilot remains available in the [explorer](https://abdelstark.github.io/exitreceipt/?study=pilot) and [pilot analysis](docs/RESULTS.md).
 
 ## The measured result
 
-The pilot uses **132 authored synthetic English cases**: 72 train, 20 development,
-and 40 held-out test. One decisive phrase was annotated on 48 cases, including
-16 in test. The same pinned base checkpoint, text rendering, label set, and
-joint classification/span schema were used for base and tuned inference.
+V2 uses **590 paired WorkBench tasks** (one successful and one failed agent run per task), split by task template. The external test contains **158 runs across 79 tasks and 10 templates unseen during training**. The selected adapter was locked by development loss [before test inference](https://github.com/AbdelStark/exitreceipt/tree/v2-pretest-lock).
 
-| Held-out measure | Base | Fine-tuned |
-| --- | ---: | ---: |
-| Completion accuracy | 36/40 (90%) | 36/40 (90%) |
-| False “done” on incomplete tasks | 2/20 | 1/20 |
-| False “not done” on complete tasks | 2/20 | 3/20 |
-| Typed span with ≥50% gold overlap | 0/16 | 9/16 |
-| Exact evidence span and type | 0/16 | 3/16 |
+| Model on the same external test | Correct / 158 | False “done” / 79 failures | Missed “done” / 79 successes |
+| --- | ---: | ---: | ---: |
+| Pinned base GLiNER2.5-Decide | 87 (55.1%) | 58 | 13 |
+| Historical v1 pilot adapter | 79 (50.0%) | 79 | 0 |
+| **V2 adapter selected on development loss** | **96 (60.8%)** | **34** | **28** |
 
-Fine-tuning corrected two decisions and regressed on two; **total completion
-accuracy did not improve**. Evidence-span recall improved on these annotated
-cases, while exact boundaries remained weak. The overlap measure is permissive,
-and the tuned model also returned three spans with the wrong type or no gold
-overlap. Two additional seeds on the same split scored 36/40 and 37/40; their
-typed half-span hits were 10/16 and 12/16. This exploratory seed check does
-not create an independent benchmark. [Results and error analysis](docs/RESULTS.md)
-· [All three seed reports](docs/SEEDS.md) · [Experiment contract](docs/EXPERIMENT.md)
+The selected adapter fixed 30 base errors and introduced 21 new ones. It reduced false completion calls but became more likely to reject successful runs. Its accuracy gain is **+5.7 percentage points**, with a paired 95% interval of **−6.6 to +15.8 points when resampling the 10 held-out templates**. That interval crosses zero, so the preregistered positive-headline rule was **not met**. Two further fixed seeds scored 100/158 and 109/158; they were not selected by the development rule. The [full result](docs/V2_RESULTS.md) reports all three, the email-domain regression, side-effect slices, task-level intervals, and every changed case.
 
-These cases are written by the project author and share domains across splits.
-The result does **not** establish reliability on real agent traces, unseen
-workflows, or live tool receipts. ExitReceipt is a review aid, not a completion
-authority.
+![Development loss for the three fixed LoRA seeds. Checkpoint and published seed selection used development loss only.](docs/assets/v2-dev-loss.svg)
 
-## Explore without installing a model
+This is a real local fine-tune: the native `gliner2==2.0.0` trainer updated a rank-8 PEFT LoRA adapter with **3,833,864 trainable parameters**. The published tag contains the selected 14.7 MB adapter, the other two seed adapters as research artifacts, model card, transformed data, source manifest, training receipts, and per-case reports. It does not contain the 2 GB-class base weights.
 
-The [site](https://abdelstark.github.io/exitreceipt/) reads the checked-in
-[evaluation report](results/pilot.json). Filter changed predictions, base or
-tuned errors, and false completion calls; selecting a case updates its URL so
-you can link directly to it. All text in the demo is synthetic. The site runs
-entirely as static HTML, CSS, JavaScript, and JSON; it does not run model
-inference in the browser.
+## Inspect the cases
 
-To serve the same site from a clone:
+The [static explorer](https://abdelstark.github.io/exitreceipt/) shows base and tuned verdicts, source action logs, candidate spans, source agent and side-effect flag, filters for errors, and a link between the two runs of the same task. It reads checked-in JSON; **no model runs in the browser**. Try a [calendar search that did not delete the event](https://abdelstark.github.io/exitreceipt/?case=wb-calendar-001-no) and the [paired deletion run](https://abdelstark.github.io/exitreceipt/?case=wb-calendar-001-yes). Also inspect the [bar-chart success the adapter wrongly rejected](https://abdelstark.github.io/exitreceipt/?case=wb-analytics-002-yes).
+
+The pilot toggle preserves the original authored-case study. Existing case links such as [TE025](https://abdelstark.github.io/exitreceipt/?case=te025) still work.
+
+To serve the site from a clone:
 
 ```bash
 python3 -m http.server 8765
 # open http://localhost:8765/
 ```
 
-## Run the model locally
+## Reproduce the v2 study
 
-You need Python 3.11–3.13 and [uv](https://docs.astral.sh/uv/). The `model`
-extra installs PyTorch and GLiNER2; the pinned checkpoint is downloaded from
-Hugging Face on first inference (its model file is about 2 GB). The pilot was
-trained on Apple Silicon with MPS. The CLI also accepts CPU for training;
-CUDA training is not part of this project.
+Requires Python 3.11–3.13 and [uv](https://docs.astral.sh/uv/). The `model` extra installs GLiNER2 and PyTorch; first use downloads the pinned base checkpoint. The published run used Apple Silicon MPS. CPU is supported for training; CUDA training is not currently wired into this project.
 
 ```bash
 git clone https://github.com/AbdelStark/exitreceipt.git
 cd exitreceipt
 uv sync --locked --extra model --extra dev
-uv run --extra model exitreceipt check-data
+python3 scripts/build_workbench_v2.py --verify
+uv run exitreceipt check-data \
+  --data data/v2-cases.psv --evidence data/v2-evidence.psv
 
-uv run --extra model exitreceipt predict \
-  --goal "Merge the approved pull request" \
-  --trace "All checks are green, but the PR remains open"
+uv run exitreceipt train \
+  --data data/v2-cases.psv --evidence data/v2-evidence.psv \
+  --run-dir runs/v2-20260925 --device mps --epochs 3 --batch-size 4 \
+  --seed 20260925 --lora-dropout 0.1 --experiment-name exitreceipt-v2
 ```
 
-`predict` prints a `yes/no` label and candidate spans with offsets into the
-rendered input. An extracted phrase is **not** an independently verified
-receipt. The default package installation stays lightweight; heavyweight ML
-dependencies are in the optional `model` extra.
-
-## Fine-tune and compare
-
-The training path uses the upstream `gliner2==2.0.0` trainer with a rank-8
-PEFT LoRA adapter over the encoder, span representation, and classifier.
-Development loss selects the checkpoint; the held-out test split is excluded
-from selection. Model revision, data hashes, seed, settings, package versions,
-adapter hash, and every prediction are recorded.
-
-The [published adapter](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora)
-is the selected checkpoint from a fresh rerun of this command. Its 3,833,864
-trainable parameters and saved weight hash are recorded in the model card.
-The rerun produced the same test predictions and evidence spans as the
-original pilot, despite slightly different adapter bytes.
+Repeat `train` for seeds `20260926` and `20260927` in separate run directories. The repo includes the development-only [three-versus-six-epoch probe](results/v2-length-probe.json): the longer schedule had worse best dev loss for the one seed tested, so v2 returned to three epochs **before test inference**.
 
 ```bash
-uv run --extra model exitreceipt train \
-  --run-dir runs/repro --device mps --epochs 6 --batch-size 4
-
-uv run --extra model exitreceipt evaluate \
-  --run-dir runs/repro --split test --output results/repro.json
-
-uv run --extra model exitreceipt predict \
-  --goal "Merge the approved pull request" \
-  --trace "All checks are green, but the PR remains open" \
-  --adapter runs/repro/best
+uv run python scripts/select_v2_checkpoint.py --verify
+uv run exitreceipt evaluate \
+  --data data/v2-cases.psv --evidence data/v2-evidence.psv \
+  --run-dir runs/v2-20260925 --split test --output results/v2-20260925.json
+# Repeat evaluate for the other two seeds.
+uv run python scripts/summarize_v2.py
+uv run --extra dev pytest -q
 ```
 
-To try the published adapter without training, use
-`--adapter-repo abdelstark/exitreceipt-gliner2.5-decide-lora` with
-`--adapter-revision v0.1.1`.
+The selection verifier compares freshly trained checkpoint hashes and dev curves with the [committed pre-test lock](results/v2-selection.json); nondeterministic kernels may produce slightly different adapter bytes on another machine, even with fixed seeds. For a new experiment, choose a new run directory and create a new selection receipt rather than overwriting published outputs. The [experiment contract](docs/V2_EXPERIMENT.md) states the sampling rule, split grouping, metric definitions, decision rule, and limitations.
 
-Use `--device cpu` where MPS is unavailable. `train` refuses a nonempty run
-directory. Downloaded base weights and adapter checkpoints stay out of Git;
-the versioned corpus and the original pilot report are included. See the
-[experiment contract](docs/EXPERIMENT.md) before comparing a new run with the
-recorded pilot.
+## Try the published model
+
+```bash
+uv run exitreceipt predict \
+  --goal "Cancel my first meeting on December 13" \
+  --trace 'Recorded tool actions: calendar.search_events(time_min="2023-12-13"); calendar.delete_event(event_id="00000256")' \
+  --adapter-repo abdelstark/exitreceipt-gliner2.5-decide-lora \
+  --adapter-revision v0.2.0
+```
+
+The output is a label plus candidate text spans with offsets. A candidate span is **not** independently checked against a calendar, mail provider, repository, or database. Load the pinned base revision and PEFT adapter directly by following the [model card](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora/tree/v0.2.0). The historical adapter remains at tag [`v0.1.1`](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora/tree/v0.1.1).
+
+## Fine-tune for your own definition of done
+
+`data/v2-cases.psv` shows the six-field format: `id|split|domain|label|goal|trace`. Use task- or organization-grouped splits when examples share context; include both `yes` and `no` in train, dev, and test. The rendered model input is always:
+
+```text
+Goal: <requested outcome>
+Last observed state: <observed action or tool result>
+```
+
+`data/v2-evidence.psv` shows optional literal `receipt`/`blocker` span annotations. For classification-only training, pass a header-only `id|kind|evidence` file. The CLI validates duplicate IDs and texts, labels, splits, and annotation substrings. Keep private traces out of this public repository. A task-specific adapter needs its own independent evaluation; these WorkBench numbers do not transfer automatically.
 
 ## Repository map
 
-| Path | Purpose |
+| Path | What it contains |
 | --- | --- |
-| [`data/cases.psv`](data/cases.psv), [`data/evidence.psv`](data/evidence.psv) | Versioned cases, splits, and literal evidence annotations |
-| [`src/exitreceipt/`](src/exitreceipt/) | Validation, GLiNER2 training/inference, scoring, and CLI |
-| [`results/pilot.json`](results/pilot.json) | Per-case base/tuned predictions and provenance |
-| [`index.html`](index.html), [`app.js`](app.js) | Static case explorer published on GitHub Pages |
-| [`docs/EXPERIMENT.md`](docs/EXPERIMENT.md) | Data, model, checkpoint selection, metrics, and limitations |
-| [`docs/RESULTS.md`](docs/RESULTS.md) | Human-readable pilot analysis |
+| [`docs/V2_EXPERIMENT.md`](docs/V2_EXPERIMENT.md), [`docs/V2_RESULTS.md`](docs/V2_RESULTS.md) | Pre-test protocol, amendments, result, and error analysis |
+| [`data/`](data/) | Versioned derived cases, source-row manifest, original pilot, and WorkBench license |
+| [`src/exitreceipt/`](src/exitreceipt/) | Corpus validation, native GLiNER2 training, inference, and metrics |
+| [`results/v2-selection.json`](results/v2-selection.json), [`results/v2-robustness.json`](results/v2-robustness.json) | Development lock, three-seed statistics, and per-case report links |
+| [`index.html`](index.html), [`app.js`](app.js) | Static GitHub Pages case explorer |
+| [`model/v2/README.md`](model/v2/README.md) | Hugging Face v2 adapter card maintained with the release |
 
-## Contribute
+## Contribute and cite
 
-The most valuable next evidence is consented, independently annotated agent
-traces with grouped holdouts. Reproductions, counterexamples, data-validation
-fixes, and accessible explorer improvements are welcome. Please read
-[CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request, and report
-security issues through [SECURITY.md](SECURITY.md). For changes in behavior or
-published results, see [CHANGELOG.md](CHANGELOG.md).
+Reproductions, corrected annotations, independent task-family holdouts, and consented traces with final-state verification are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md); use [SECURITY.md](SECURITY.md) for private security reports. [CHANGELOG.md](CHANGELOG.md) tracks releases, and [CITATION.cff](CITATION.cff) provides citation metadata.
 
-## License and attribution
-
-ExitReceipt's original code, authored synthetic data, and site are
-[Apache-2.0 licensed](LICENSE). The base model and `gliner2` library are
-separate [Fastino projects](https://github.com/fastino-ai/GLiNER2), each with
-its own license and model card. No Fastino weights are redistributed here.
-Please cite the upstream GLiNER2 work when using its model; see
-[CITATION.cff](CITATION.cff) for this project's citation metadata.
+ExitReceipt's original code, authored cases, and site use [Apache-2.0](LICENSE). The derived WorkBench data retains its [MIT copyright and license](data/WORKBENCH_LICENSE). The base model and `gliner2` library are separate [Fastino projects](https://github.com/fastino-ai/GLiNER2) with their own license terms; no base weights are redistributed here. Please cite the upstream GLiNER2 and WorkBench work when using their model or benchmark.

@@ -1,0 +1,1149 @@
+{
+  "adapter_repo": "abdelstark/exitreceipt-gliner2.5-decide-lora",
+  "adapter_revision": "v0.1.1",
+  "adapter_sha256": "f602971510dd8501ed66f979b8194a53918cfb0c426302048a821ac9d2537752",
+  "base_revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
+  "data_sha256": "55f9d4c018ab8fafb2b64ba0f4d688ea781788af133378d429ccdf38e7ab48ad",
+  "rows": [
+    {
+      "base": "yes",
+      "id": "wb-analytics-002-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-002-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-008-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-008-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-071-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-071-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-072-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-072-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-073-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-073-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-074-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-analytics-074-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-075-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-075-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-076-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-analytics-076-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-077-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-077-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-078-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-078-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-079-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-analytics-079-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-000-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-000-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-001-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-001-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-002-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-002-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-003-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-003-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-004-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-004-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-005-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-005-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-006-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-006-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-007-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-007-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-008-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-008-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-009-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-009-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-040-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-040-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-041-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-041-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-042-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-042-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-043-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-043-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-044-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-044-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-045-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-045-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-046-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-046-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-calendar-047-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-047-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-048-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-048-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-049-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-calendar-049-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-customer_relationship_manager-000-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-customer_relationship_manager-000-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-customer_relationship_manager-002-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-customer_relationship_manager-002-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-customer_relationship_manager-007-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-customer_relationship_manager-007-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-customer_relationship_manager-008-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-customer_relationship_manager-008-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-email-000-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-000-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-001-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-001-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-002-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-002-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-email-003-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-003-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-004-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-004-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-005-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-005-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-006-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-006-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-007-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-007-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-email-008-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-008-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-009-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-email-009-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-000-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-000-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-001-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-001-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-002-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-multi_domain-002-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-003-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-multi_domain-003-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-004-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-multi_domain-004-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-multi_domain-005-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-multi_domain-005-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-006-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-006-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-007-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-007-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-008-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-multi_domain-008-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-009-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-009-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-070-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-070-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-071-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-071-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-072-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-072-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-073-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-073-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-074-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-074-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-075-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-075-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-076-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-076-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-077-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-077-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-078-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-078-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-079-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-079-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-150-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-150-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-151-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-151-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-152-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-152-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-153-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-153-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-154-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-154-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-155-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-155-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-156-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-156-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-157-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-157-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-158-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-158-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-159-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-multi_domain-159-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "yes"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-002-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-002-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-003-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-003-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-004-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-004-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "no",
+      "id": "wb-project_management-007-no",
+      "truth": "no",
+      "v1": "yes",
+      "v2": "no"
+    },
+    {
+      "base": "yes",
+      "id": "wb-project_management-007-yes",
+      "truth": "yes",
+      "v1": "yes",
+      "v2": "no"
+    }
+  ],
+  "schema_version": 1,
+  "score": {
+    "accuracy": 0.5,
+    "confusion": {
+      "no": {
+        "no": 0,
+        "yes": 79
+      },
+      "yes": {
+        "no": 0,
+        "yes": 79
+      }
+    },
+    "false_complete": 79,
+    "false_complete_rate": 1.0,
+    "false_incomplete": 0,
+    "macro_f1": 0.3333333333333333,
+    "n": 158,
+    "per_label": {
+      "no": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 79
+      },
+      "yes": {
+        "f1": 0.6666666666666666,
+        "precision": 0.5,
+        "recall": 1.0,
+        "support": 79
+      }
+    }
+  },
+  "study": "workbench-v2-historical-v1-adapter"
+}

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "exitreceipt"
-version = "0.1.0"
+version = "0.2.0"
 description = "A reproducible open-weight experiment in agent task completion decisions"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
@@ -43,6 +43,11 @@ packages = ["src/exitreceipt"]
 [tool.hatch.build.targets.wheel.force-include]
 "data/cases.psv" = "exitreceipt/data/cases.psv"
 "data/evidence.psv" = "exitreceipt/data/evidence.psv"
+"data/v2-cases.psv" = "exitreceipt/data/v2-cases.psv"
+"data/v2-evidence.psv" = "exitreceipt/data/v2-evidence.psv"
+"data/workbench-v2.psv" = "exitreceipt/data/workbench-v2.psv"
+"data/workbench-v2-manifest.json" = "exitreceipt/data/workbench-v2-manifest.json"
+"data/WORKBENCH_LICENSE" = "exitreceipt/data/WORKBENCH_LICENSE"
 
 [tool.ruff]
 line-length = 100

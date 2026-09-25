@@ -52,11 +52,26 @@ def release_files() -> dict[str, Path]:
         "data/WORKBENCH_LICENSE": ROOT / "data/WORKBENCH_LICENSE",
         "training/exitreceipt-v2-run.json": run_dir / "exitreceipt-run.json",
         "training/training_config-v2.json": run_dir / "training_config.json",
+        "training/uv.lock": ROOT / "model/v2/training-uv.lock",
         "LICENSE": ROOT / "LICENSE",
         "NOTICE": ROOT / "NOTICE",
     }
     for run_seed in SEEDS:
         files[f"evaluation/v2-{run_seed}.json"] = ROOT / "results" / f"v2-{run_seed}.json"
+        if run_seed != seed:
+            alternate = ROOT / "runs" / f"v2-{run_seed}"
+            files[f"seeds/{run_seed}/adapter_model.safetensors"] = (
+                alternate / "best/adapter_model.safetensors"
+            )
+            files[f"seeds/{run_seed}/adapter_config.json"] = (
+                ROOT / "model/v2" / f"seed-{run_seed}" / "adapter_config.json"
+            )
+            files[f"training/seed-{run_seed}/exitreceipt-run.json"] = (
+                alternate / "exitreceipt-run.json"
+            )
+            files[f"training/seed-{run_seed}/training_config.json"] = (
+                alternate / "training_config.json"
+            )
     for path in files.values():
         if not path.is_file():
             raise FileNotFoundError(path)
@@ -78,6 +93,8 @@ def release_files() -> dict[str, Path]:
         raise ValueError("development loss selection mismatch")
     if selected["training_code"] != run["code"]:
         raise ValueError("training provenance differs")
+    if digest(files["training/uv.lock"]) != run["code"]["uv_lock_sha256"]:
+        raise ValueError("training lockfile differs from recorded environment")
     for name, path in (
         ("data_sha256", ROOT / "data/v2-cases.psv"),
         ("evidence_sha256", ROOT / "data/v2-evidence.psv"),
@@ -89,6 +106,20 @@ def release_files() -> dict[str, Path]:
         or adapter_config["base_model_name_or_path"] != BASE_MODEL
     ):
         raise ValueError("base model mismatch")
+    for run_seed in SEEDS:
+        item = json.loads(files[f"evaluation/v2-{run_seed}.json"].read_text(encoding="utf-8"))
+        expected_hash = summary["runs"][SEEDS.index(run_seed)]["adapter_sha256"]
+        weight_path = ROOT / "runs" / f"v2-{run_seed}" / "best/adapter_model.safetensors"
+        if item["adapter_sha256"] != expected_hash or digest(weight_path) != expected_hash:
+            raise ValueError(f"seed {run_seed} report and weights differ")
+        if run_seed != seed:
+            config_path = files[f"seeds/{run_seed}/adapter_config.json"]
+            alternate_config = json.loads(config_path.read_text(encoding="utf-8"))
+            original = json.loads(
+                (ROOT / "runs" / f"v2-{run_seed}" / "best/adapter_config.json").read_text()
+            )
+            if original.pop("task_type", "missing") is not None or alternate_config != original:
+                raise ValueError(f"seed {run_seed} adapter config differs")
     card_text = card.read_text(encoding="utf-8")
     if digest(weights) not in card_text or BASE_REVISION not in card_text:
         raise ValueError("v2 model card lacks exact adapter/base hashes")
@@ -128,6 +159,13 @@ def main() -> None:
             repo_type="model",
             folder_path=stage,
             commit_message="Publish ExitReceipt v2 WorkBench action-outcome study",
+            delete_patterns=[
+                "evaluation/seed-20260926.json",
+                "evaluation/seed-20260927.json",
+                "evaluation/seed-robustness.json",
+                "training/exitreceipt-run.json",
+                "training/training_config.json",
+            ],
         )
         api.create_tag(REPO_ID, tag=TAG, revision=commit.oid, repo_type="model")
         for name, source in files.items():

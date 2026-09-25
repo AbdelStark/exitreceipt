@@ -22,6 +22,7 @@ jobs:
       - run: node --check app.js
       - run: uv build
       - run: uv venv "$RUNNER_TEMP/exitreceipt-wheel-smoke"
-      - run: uv pip install --python "$RUNNER_TEMP/exitreceipt-wheel-smoke/bin/python" dist/exitreceipt-0.1.0-py3-none-any.whl
+      - run: uv pip install --python "$RUNNER_TEMP/exitreceipt-wheel-smoke/bin/python" dist/exitreceipt-0.2.0-py3-none-any.whl
       - run: |
           "$RUNNER_TEMP/exitreceipt-wheel-smoke/bin/exitreceipt" check-data
+          "$RUNNER_TEMP/exitreceipt-wheel-smoke/bin/python" -c 'from importlib.resources import files; from exitreceipt.corpus import load_cases; assert len(load_cases(files("exitreceipt") / "data/v2-cases.psv")) == 1252'

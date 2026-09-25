@@ -1,15 +1,22 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 — 2026-09-25
 
-- Published the evaluated LoRA adapter with a full Hugging Face model card,
-  training metadata, tagged weights, and per-case evaluation report.
-- Added pinned Hub adapter inference and refreshed the pilot report from a
-  fresh rerun that reproduced every prior test prediction and span.
-- Published two further development-selected seed runs and their complete
-  held-out reports as a post-hoc sensitivity check on the same synthetic split.
-- Normalized the Hub adapter config by omitting PEFT's optional null task type;
-  the adapter weights and inference output are unchanged.
+- Added the pinned, MIT-attributed WorkBench action-outcome study: 590 paired
+  tasks, task-template-grouped splits, per-case source provenance, and a
+  pre-test seed-selection lock.
+- Fine-tuned three GLiNER2.5-Decide LoRA seeds on 910 training cases, evaluated
+  all three on 158 external held-out cases, and published their complete
+  reports, paired intervals, and failure analysis. The development-selected
+  adapter improved from 87/158 to 96/158 correct but missed more successes;
+  its template-cluster interval includes zero.
+- Recorded the development-only three-versus-six-epoch probe and retained the
+  three-epoch schedule before test inference.
+- Published the v2 selected adapter and two alternate seed adapters with
+  model cards, transformed data, training receipts, and tagged weights.
+- Updated the static explorer with a v2/pilot switch, paired-task navigation,
+  source-run metadata, and both false-done and missed-done counts.
+- Allowed classification-only fine-tuning with a header-only evidence file.
 
 ## 0.1.0 — 2026-09-25
 
@@ -20,5 +27,8 @@
   models; evidence-span hits improved under the stated loose overlap measure.
 - Added the static case explorer, case permalinks, CLI inference, and public
   reproduction and contribution documentation.
+- Published the evaluated pilot adapter with a full Hugging Face model card,
+  tagged weights, and training/evaluation receipts. Two additional seeds were
+  published as a post-hoc sensitivity check on the same authored split.
 
-No adapter or upstream model weights are distributed with the repository.
+No upstream base model weights are distributed with this repository.

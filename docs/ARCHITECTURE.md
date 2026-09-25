@@ -1,49 +1,79 @@
 # Architecture
 
-ExitReceipt has two independent surfaces: a local Python experiment and a
-static report explorer. The website never loads a model or accepts a trace.
+ExitReceipt has a local Python experiment and a static report explorer. The
+website reads checked-in JSON and never runs model inference or receives a
+trace from the visitor.
 
 ```mermaid
 flowchart LR
-  A[Goal + last observed state] --> B[Pinned GLiNER2.5-Decide]
-  D[Authored train cases + span annotations] --> T[Rank-8 LoRA training]
-  B --> T
-  T --> V[Select checkpoint on development loss]
-  B --> E[Held-out inference]
-  V --> E
-  E --> R[Per-case JSON report]
-  R --> S[Static explorer]
+  W[Pinned WorkBench export] --> P[Deterministic pair selection]
+  P --> G[Template-grouped train / dev / test]
+  A[Authored pilot train cases] --> T[GLiNER2.5-Decide LoRA training]
+  G --> T
+  B[Pinned base checkpoint] --> T
+  T --> D[Dev-loss checkpoint + seed lock]
+  B --> E[Identical test inference]
+  D --> E
+  E --> R[Per-case reports + paired intervals]
+  R --> S[Static case explorer]
 ```
 
-## Data and prediction path
+## Data and training
 
-`corpus.py` validates the two PSV files, split balance, unique IDs/text,
-literal evidence phrases, and their agreement with completion labels. A case
-is rendered as `Goal: ...\nLast observed state: ...` for both training and
-inference. `model.py` constructs the same `finished: [yes, no]` classification
-plus `receipt` and `blocker` entity schema for base and tuned calls. It rejects
-unknown labels and spans whose offsets do not reproduce the source text.
+[`scripts/build_workbench_v2.py`](../scripts/build_workbench_v2.py) fetches an
+exact WorkBench export revision, checks its SHA-256, selects one successful and
+one failed 1–6-action run per eligible task, and assigns entire task-template
+groups to splits. The source-row manifest records original model IDs, result
+files, templates, scorer labels, and side-effect flags. V2 training appends the
+72 original authored **train** cases and 24 span annotations; the older pilot
+holdout is kept separate.
 
-`cli.py` coordinates training and evaluation. The upstream GLiNER2 trainer
-chooses the best checkpoint by development loss. The adapter and metadata live
-under ignored `runs/`; evaluation checks the saved data and model revision
-before loading it. `metrics.py` scores the completion decision and
-`evidence.py` scores typed candidate spans. The checked-in JSON preserves
-every test case, prediction, candidate span, and relevant provenance.
+[`corpus.py`](../src/exitreceipt/corpus.py) validates the PSV fields, split
+balance, unique IDs and exact texts, and literal evidence phrases. It accepts
+a header-only evidence file for classification-only use cases. A case is
+rendered as `Goal: ...\nLast observed state: ...` for both training and
+inference. The WorkBench view makes the last line an ordered list of recorded
+tool actions. Those actions do not contain tool returns or final state.
 
-## Website path
+[`model.py`](../src/exitreceipt/model.py) loads the pinned
+`fastino/GLiNER2.5-Decide` revision and uses the upstream `gliner2==2.0.0`
+trainer for a rank-8 PEFT LoRA adapter. Base and tuned inference share the
+`finished: [yes, no]` classification plus candidate `receipt` and `blocker`
+span schema. Unknown labels and invalid span offsets fail closed.
+
+## Evaluation and publication
+
+The native trainer selects the lowest development-loss checkpoint within a
+seed. [`scripts/select_v2_checkpoint.py`](../scripts/select_v2_checkpoint.py)
+locks the seed with the lowest development loss and adapter hashes **before**
+any test inference. The
+[`v2-pretest-lock`](https://github.com/AbdelStark/exitreceipt/tree/v2-pretest-lock)
+tag preserves that decision and the exact training lockfile. The
+[`cli.py`](../src/exitreceipt/cli.py) evaluation path rejects data or base
+revision mismatches, runs both models on the same test examples, and writes
+all predictions, candidate spans, metrics, and source-row metadata.
+
+[`scripts/summarize_v2.py`](../scripts/summarize_v2.py) checks all three reports
+against the locked selection and identical base predictions. It computes
+paired accuracy intervals by resampling held-out templates and, separately,
+task pairs. [`scripts/publish_v2_model.py`](../scripts/publish_v2_model.py)
+verifies every adapter hash against the reports before uploading the selected
+and alternate seed weights, configs, training receipts, exact transformed
+data, and card to the tagged Hugging Face release. Local checkpoints stay
+under ignored `runs/`; the tagged adapters are public.
+
+## Website and boundaries
 
 `index.html`, `style.css`, and `app.js` are served from the repository root by
-GitHub Pages. The page fetches `results/pilot.json`, renders metrics from that
-file, and uses text nodes for case content. The query parameters `case` and
-`filter` make a view shareable. There is no backend or inference endpoint.
+GitHub Pages. The v2 explorer fetches `results/v2-selected.json`; the pilot
+toggle fetches `results/pilot.json`. It derives the scorecards from those
+reports, puts case content in text nodes, and uses `case`, `filter`, and
+`study` query parameters for shareable views. No backend or inference
+endpoint exists.
 
-## Boundaries
-
-- The corpus is synthetic and contains related workflow domains in every
-  split; it does not measure transfer to live organizations or tool stacks.
-- Candidate spans are model outputs, not independently authenticated receipts.
-- The adapter is a local research artifact. Its binary hash is in the report,
-  but the weights are not distributed; rerun training to obtain an adapter.
-- A later comparison with another model needs the same examples, labels, and
-  scoring contract. No such comparison is part of this pilot.
+WorkBench's `correct` label includes benchmark task correctness and can
+penalize unwanted side effects; it is broader than the pilot's literal
+requested-outcome label. The action-only input may lack enough information to
+recover the sandbox verdict. Extracted spans are model candidates, not
+independently authenticated receipts. The repository makes no claim about
+live task verification, calibrated deployment risk, or a Jev comparison.

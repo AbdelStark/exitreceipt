@@ -122,12 +122,20 @@ uv run --extra model exitreceipt evaluate \
 uv run python scripts/summarize_v2.py
 ```
 
-The original WorkBench
-source is fetched only for `--verify`; the derived rows and source-row
+In a checkout that already contains the published selection receipt, run
+`uv run python scripts/select_v2_checkpoint.py --verify` instead of creating
+it again.
+
+The original WorkBench source is fetched only for `--verify`; the derived rows and source-row
 manifest are committed. The base checkpoint download and local LoRA run
 require substantial disk, RAM, and compute. Metal/MPS can be nondeterministic
 despite fixed seeds. Model weights remain out of Git and a tagged adapter is
 published separately on Hugging Face after evaluation.
+The training runs used the lockfile at the
+[pre-test tag](https://github.com/AbdelStark/exitreceipt/tree/v2-pretest-lock)
+(SHA-256 `8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486`).
+The `0.2.0` release changes only this project's own version entry in `uv.lock`;
+the resolved ML dependencies are unchanged.
 
 ## Pre-test training-length amendments
 

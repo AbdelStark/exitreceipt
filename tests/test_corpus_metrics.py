@@ -57,3 +57,9 @@ def test_evidence_annotations_are_literal_and_scored():
         }
     }
     assert score_evidence([case], evidence, inspections)["exact_span_and_type_hits"] == 1
+
+
+def test_classification_only_corpus_accepts_header_only_evidence_file(tmp_path):
+    evidence_path = tmp_path / "evidence.psv"
+    evidence_path.write_text("id|kind|evidence\n", encoding="utf-8")
+    assert load_evidence(evidence_path, load_cases(DATA)) == {}

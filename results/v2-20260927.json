@@ -1,0 +1,3495 @@
+{
+  "adapter_selection": "lowest development loss; test split excluded",
+  "adapter_sha256": "090d67e014cd3120d4e15de556e8ebe0bc6e6ff4fbe4a0669010629f21112d09",
+  "base": {
+    "accuracy": 0.5506329113924051,
+    "confusion": {
+      "no": {
+        "no": 21,
+        "yes": 58
+      },
+      "yes": {
+        "no": 13,
+        "yes": 66
+      }
+    },
+    "false_complete": 58,
+    "false_complete_rate": 0.7341772151898734,
+    "false_incomplete": 13,
+    "macro_f1": 0.5109638606739614,
+    "n": 158,
+    "per_label": {
+      "no": {
+        "f1": 0.3716814159292035,
+        "precision": 0.6176470588235294,
+        "recall": 0.26582278481012656,
+        "support": 79
+      },
+      "yes": {
+        "f1": 0.6502463054187192,
+        "precision": 0.532258064516129,
+        "recall": 0.8354430379746836,
+        "support": 79
+      }
+    }
+  },
+  "by_domain": {
+    "workbench_analytics": {
+      "base": {
+        "accuracy": 0.4090909090909091,
+        "confusion": {
+          "no": {
+            "no": 0,
+            "yes": 11
+          },
+          "yes": {
+            "no": 2,
+            "yes": 9
+          }
+        },
+        "false_complete": 11,
+        "false_complete_rate": 1.0,
+        "false_incomplete": 2,
+        "macro_f1": 0.2903225806451613,
+        "n": 22,
+        "per_label": {
+          "no": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 11
+          },
+          "yes": {
+            "f1": 0.5806451612903226,
+            "precision": 0.45,
+            "recall": 0.8181818181818182,
+            "support": 11
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.6818181818181818,
+        "confusion": {
+          "no": {
+            "no": 9,
+            "yes": 2
+          },
+          "yes": {
+            "no": 5,
+            "yes": 6
+          }
+        },
+        "false_complete": 2,
+        "false_complete_rate": 0.18181818181818182,
+        "false_incomplete": 5,
+        "macro_f1": 0.6757894736842105,
+        "n": 22,
+        "per_label": {
+          "no": {
+            "f1": 0.7200000000000001,
+            "precision": 0.6428571428571429,
+            "recall": 0.8181818181818182,
+            "support": 11
+          },
+          "yes": {
+            "f1": 0.631578947368421,
+            "precision": 0.75,
+            "recall": 0.5454545454545454,
+            "support": 11
+          }
+        }
+      }
+    },
+    "workbench_calendar": {
+      "base": {
+        "accuracy": 0.675,
+        "confusion": {
+          "no": {
+            "no": 10,
+            "yes": 10
+          },
+          "yes": {
+            "no": 3,
+            "yes": 17
+          }
+        },
+        "false_complete": 10,
+        "false_complete_rate": 0.5,
+        "false_incomplete": 3,
+        "macro_f1": 0.6647324306898775,
+        "n": 40,
+        "per_label": {
+          "no": {
+            "f1": 0.6060606060606061,
+            "precision": 0.7692307692307693,
+            "recall": 0.5,
+            "support": 20
+          },
+          "yes": {
+            "f1": 0.723404255319149,
+            "precision": 0.6296296296296297,
+            "recall": 0.85,
+            "support": 20
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.725,
+        "confusion": {
+          "no": {
+            "no": 9,
+            "yes": 11
+          },
+          "yes": {
+            "no": 0,
+            "yes": 20
+          }
+        },
+        "false_complete": 11,
+        "false_complete_rate": 0.55,
+        "false_incomplete": 0,
+        "macro_f1": 0.7025016903313049,
+        "n": 40,
+        "per_label": {
+          "no": {
+            "f1": 0.6206896551724138,
+            "precision": 1.0,
+            "recall": 0.45,
+            "support": 20
+          },
+          "yes": {
+            "f1": 0.7843137254901961,
+            "precision": 0.6451612903225806,
+            "recall": 1.0,
+            "support": 20
+          }
+        }
+      }
+    },
+    "workbench_customer_relationship_manager": {
+      "base": {
+        "accuracy": 0.875,
+        "confusion": {
+          "no": {
+            "no": 3,
+            "yes": 1
+          },
+          "yes": {
+            "no": 0,
+            "yes": 4
+          }
+        },
+        "false_complete": 1,
+        "false_complete_rate": 0.25,
+        "false_incomplete": 0,
+        "macro_f1": 0.873015873015873,
+        "n": 8,
+        "per_label": {
+          "no": {
+            "f1": 0.8571428571428571,
+            "precision": 1.0,
+            "recall": 0.75,
+            "support": 4
+          },
+          "yes": {
+            "f1": 0.888888888888889,
+            "precision": 0.8,
+            "recall": 1.0,
+            "support": 4
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 4,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 4
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 8,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 4
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 4
+          }
+        }
+      }
+    },
+    "workbench_email": {
+      "base": {
+        "accuracy": 0.65,
+        "confusion": {
+          "no": {
+            "no": 3,
+            "yes": 7
+          },
+          "yes": {
+            "no": 0,
+            "yes": 10
+          }
+        },
+        "false_complete": 7,
+        "false_complete_rate": 0.7,
+        "false_incomplete": 0,
+        "macro_f1": 0.6011396011396011,
+        "n": 20,
+        "per_label": {
+          "no": {
+            "f1": 0.4615384615384615,
+            "precision": 1.0,
+            "recall": 0.3,
+            "support": 10
+          },
+          "yes": {
+            "f1": 0.7407407407407407,
+            "precision": 0.5882352941176471,
+            "recall": 1.0,
+            "support": 10
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.4,
+        "confusion": {
+          "no": {
+            "no": 4,
+            "yes": 6
+          },
+          "yes": {
+            "no": 6,
+            "yes": 4
+          }
+        },
+        "false_complete": 6,
+        "false_complete_rate": 0.6,
+        "false_incomplete": 6,
+        "macro_f1": 0.4000000000000001,
+        "n": 20,
+        "per_label": {
+          "no": {
+            "f1": 0.4000000000000001,
+            "precision": 0.4,
+            "recall": 0.4,
+            "support": 10
+          },
+          "yes": {
+            "f1": 0.4000000000000001,
+            "precision": 0.4,
+            "recall": 0.4,
+            "support": 10
+          }
+        }
+      }
+    },
+    "workbench_multi_domain": {
+      "base": {
+        "accuracy": 0.43333333333333335,
+        "confusion": {
+          "no": {
+            "no": 1,
+            "yes": 29
+          },
+          "yes": {
+            "no": 5,
+            "yes": 25
+          }
+        },
+        "false_complete": 29,
+        "false_complete_rate": 0.9666666666666667,
+        "false_incomplete": 5,
+        "macro_f1": 0.3253968253968254,
+        "n": 60,
+        "per_label": {
+          "no": {
+            "f1": 0.05555555555555555,
+            "precision": 0.16666666666666666,
+            "recall": 0.03333333333333333,
+            "support": 30
+          },
+          "yes": {
+            "f1": 0.5952380952380952,
+            "precision": 0.46296296296296297,
+            "recall": 0.8333333333333334,
+            "support": 30
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 0.6833333333333333,
+        "confusion": {
+          "no": {
+            "no": 22,
+            "yes": 8
+          },
+          "yes": {
+            "no": 11,
+            "yes": 19
+          }
+        },
+        "false_complete": 8,
+        "false_complete_rate": 0.26666666666666666,
+        "false_incomplete": 11,
+        "macro_f1": 0.6825396825396826,
+        "n": 60,
+        "per_label": {
+          "no": {
+            "f1": 0.6984126984126984,
+            "precision": 0.6666666666666666,
+            "recall": 0.7333333333333333,
+            "support": 30
+          },
+          "yes": {
+            "f1": 0.6666666666666667,
+            "precision": 0.7037037037037037,
+            "recall": 0.6333333333333333,
+            "support": 30
+          }
+        }
+      }
+    },
+    "workbench_project_management": {
+      "base": {
+        "accuracy": 0.625,
+        "confusion": {
+          "no": {
+            "no": 4,
+            "yes": 0
+          },
+          "yes": {
+            "no": 3,
+            "yes": 1
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 3,
+        "macro_f1": 0.5636363636363637,
+        "n": 8,
+        "per_label": {
+          "no": {
+            "f1": 0.7272727272727273,
+            "precision": 0.5714285714285714,
+            "recall": 1.0,
+            "support": 4
+          },
+          "yes": {
+            "f1": 0.4,
+            "precision": 1.0,
+            "recall": 0.25,
+            "support": 4
+          }
+        }
+      },
+      "tuned": {
+        "accuracy": 1.0,
+        "confusion": {
+          "no": {
+            "no": 4,
+            "yes": 0
+          },
+          "yes": {
+            "no": 0,
+            "yes": 4
+          }
+        },
+        "false_complete": 0,
+        "false_complete_rate": 0.0,
+        "false_incomplete": 0,
+        "macro_f1": 1.0,
+        "n": 8,
+        "per_label": {
+          "no": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 4
+          },
+          "yes": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 4
+          }
+        }
+      }
+    }
+  },
+  "claim_scope": "WorkBench sandbox-scored action logs; tool results and final state are absent",
+  "counts": {
+    "dev": {
+      "no": 92,
+      "yes": 92
+    },
+    "test": {
+      "no": 79,
+      "yes": 79
+    },
+    "train": {
+      "no": 455,
+      "yes": 455
+    }
+  },
+  "data_sha256": "55f9d4c018ab8fafb2b64ba0f4d688ea781788af133378d429ccdf38e7ab48ad",
+  "evaluation_code": {
+    "git_head": "0e41a5fe2dd3881c577aa4a76c3e2930c7ecee05",
+    "tracked_changes": false,
+    "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+  },
+  "evidence": {
+    "base": {
+      "annotated_n": 0,
+      "candidate_spans": 0,
+      "exact_span_and_type_hits": 0,
+      "half_gold_span_and_type_hits": 0,
+      "wrong_type_or_disjoint_spans": 0
+    },
+    "tuned": {
+      "annotated_n": 0,
+      "candidate_spans": 0,
+      "exact_span_and_type_hits": 0,
+      "half_gold_span_and_type_hits": 0,
+      "wrong_type_or_disjoint_spans": 0
+    }
+  },
+  "evidence_sha256": "3e30eb0e47f7cf59424f0de9435b4ec31585f7f9685fb6397492dd34ac5b24f3",
+  "generated_at_utc": "2026-09-25T09:57:38.899117+00:00",
+  "model": "fastino/GLiNER2.5-Decide",
+  "revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
+  "rows": [
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Create a bar chart of total visits since September 2",
+      "gold_evidence": null,
+      "id": "wb-analytics-002-no",
+      "trace": "Recorded tool actions: analytics.create_plot(time_min=\"2023-09-01\", time_max=\"2023-11-30\", value_to_plot=\"total_visits\", plot_type=\"bar\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+        "source_model": "mistral-medium-3-5",
+        "task_id": "analytics-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Create a bar chart of total visits since September 2",
+      "gold_evidence": null,
+      "id": "wb-analytics-002-yes",
+      "trace": "Recorded tool actions: analytics.create_plot(time_min=\"2023-09-02\", time_max=\"2023-11-30\", value_to_plot=\"total_visits\", plot_type=\"bar\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+        "source_model": "gpt-5.5",
+        "task_id": "analytics-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Can you make a bar chart of total visits since September 9?",
+      "gold_evidence": null,
+      "id": "wb-analytics-008-no",
+      "trace": "Recorded tool actions: analytics.create_plot(time_min=\"2023-09-01\", time_max=\"2023-11-30\", value_to_plot=\"total_visits\", plot_type=\"bar\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+        "source_model": "mistral-small-2603",
+        "task_id": "analytics-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Can you make a bar chart of total visits since September 9?",
+      "gold_evidence": null,
+      "id": "wb-analytics-008-yes",
+      "trace": "Recorded tool actions: analytics.create_plot(time_min=\"2023-09-09\", time_max=\"2023-11-30\", value_to_plot=\"total_visits\", plot_type=\"bar\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+        "source_model": "claude-fable-5",
+        "task_id": "analytics-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is average session duration more than 5% higher than it was on Sunday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-071-no",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-26\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-26\", time_max=\"2023-11-30\", value_to_plot=\"session_duration_seconds\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "analytics-071",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is average session duration more than 5% higher than it was on Sunday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-071-yes",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-26\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-4o",
+        "task_id": "analytics-071",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Can you make a line chart of engaged users since Sunday if it is more than 5% lower than Sunday?",
+      "gold_evidence": null,
+      "id": "wb-analytics-072-no",
+      "trace": "Recorded tool actions: analytics.engaged_users_count(time_min=\"2023-11-26\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-26\", time_max=\"2023-11-30\", value_to_plot=\"user_engaged\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "mistral-small-2603",
+        "task_id": "analytics-072",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Can you make a line chart of engaged users since Sunday if it is more than 5% lower than Sunday?",
+      "gold_evidence": null,
+      "id": "wb-analytics-072-yes",
+      "trace": "Recorded tool actions: analytics.engaged_users_count(time_min=\"2023-11-26\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.5",
+        "task_id": "analytics-072",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is total visits more than 3% higher than it was on Wednesday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-073-no",
+      "trace": "Recorded tool actions: analytics.total_visits_count(time_min=\"2023-11-29\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-29\", time_max=\"2023-11-30\", value_to_plot=\"total_visits\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.2",
+        "task_id": "analytics-073",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is total visits more than 3% higher than it was on Wednesday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-073-yes",
+      "trace": "Recorded tool actions: analytics.total_visits_count(time_min=\"2023-11-29\", time_max=\"2023-11-30\"); analytics.total_visits_count(time_min=\"2023-11-30\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-4.1",
+        "task_id": "analytics-073",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is engaged users more than 2% lower than it was on Sunday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-074-no",
+      "trace": "Recorded tool actions: analytics.engaged_users_count(time_min=\"2023-11-26\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-26\", time_max=\"2023-11-30\", value_to_plot=\"user_engaged\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.2",
+        "task_id": "analytics-074",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is engaged users more than 2% lower than it was on Sunday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-074-yes",
+      "trace": "Recorded tool actions: analytics.engaged_users_count(time_min=\"2023-11-26\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "claude-fable-5",
+        "task_id": "analytics-074",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is total visits more than 2% lower than it was on Saturday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-075-no",
+      "trace": "Recorded tool actions: analytics.total_visits_count(time_min=\"2023-11-25\", time_max=\"2023-11-30\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-4.1",
+        "task_id": "analytics-075",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is total visits more than 2% lower than it was on Saturday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-075-yes",
+      "trace": "Recorded tool actions: analytics.total_visits_count(time_min=\"2023-11-25\", time_max=\"2023-11-29\"); analytics.create_plot(time_min=\"2023-11-25\", time_max=\"2023-11-29\", value_to_plot=\"total_visits\", plot_type=\"line\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "claude-fable-5",
+        "task_id": "analytics-075",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is engaged users more than 3% lower than it was on Sunday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-076-no",
+      "trace": "Recorded tool actions: analytics.engaged_users_count(time_min=\"2023-11-26\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-26\", time_max=\"2023-11-30\", value_to_plot=\"user_engaged\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.1",
+        "task_id": "analytics-076",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is engaged users more than 3% lower than it was on Sunday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-076-yes",
+      "trace": "Recorded tool actions: analytics.engaged_users_count(time_min=\"2023-11-26\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5",
+        "task_id": "analytics-076",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Can you make a line chart of average session duration since Wednesday if it is more than 3% higher than Wednesday?",
+      "gold_evidence": null,
+      "id": "wb-analytics-077-no",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-29\", time_max=\"2023-11-30\"); analytics.get_average_session_duration(time_min=\"2023-11-28\", time_max=\"2023-11-29\"); analytics.create_plot(time_min=\"2023-11-29\", time_max=\"2023-11-30\", value_to_plot=\"session_duration_seconds\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "analytics-077",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Can you make a line chart of average session duration since Wednesday if it is more than 3% higher than Wednesday?",
+      "gold_evidence": null,
+      "id": "wb-analytics-077-yes",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-29\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "claude-fable-5",
+        "task_id": "analytics-077",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "If average session duration is more than 10% lower than it was on Saturday, make a line plot of it since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-078-no",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-30\", time_max=\"2023-11-30\"); analytics.get_average_session_duration(time_min=\"2023-11-25\", time_max=\"2023-11-25\"); analytics.get_average_session_duration(time_min=\"2023-11-25\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-25\", time_max=\"2023-11-29\", value_to_plot=\"session_duration_seconds\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "glm-4.6",
+        "task_id": "analytics-078",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "If average session duration is more than 10% lower than it was on Saturday, make a line plot of it since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-078-yes",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-25\", time_max=\"2023-11-29\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "claude-fable-5",
+        "task_id": "analytics-078",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is average session duration more than 10% lower than it was on Wednesday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-079-no",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-29\", time_max=\"2023-11-29\"); analytics.get_average_session_duration(time_min=\"2023-11-30\", time_max=\"2023-11-30\"); analytics.total_visits_count(time_min=\"2023-11-30\", time_max=\"2023-11-30\"); analytics.create_plot(time_min=\"2023-11-29\", time_max=\"2023-11-30\", value_to_plot=\"session_duration_seconds\", plot_type=\"line\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "qwen-3.5-flash",
+        "task_id": "analytics-079",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_analytics",
+      "goal": "Is average session duration more than 10% lower than it was on Wednesday? If so, please plot it as a line chart since then",
+      "gold_evidence": null,
+      "id": "wb-analytics-079-yes",
+      "trace": "Recorded tool actions: analytics.get_average_session_duration(time_min=\"2023-11-29\", time_max=\"2023-11-30\"); analytics.get_average_session_duration(time_min=\"2023-11-30\", time_max=\"2023-11-30\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+        "source_model": "gpt-5.2",
+        "task_id": "analytics-079",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 13",
+      "gold_evidence": null,
+      "id": "wb-calendar-000-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-13\", time_max=\"2023-12-13\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 111,
+          "kind": "blocker",
+          "start": 98,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 13",
+      "gold_evidence": null,
+      "id": "wb-calendar-000-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-13 00:00:00\", time_max=\"2023-12-13 23:59:59\"); calendar.delete_event(event_id=\"00000256\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "deepseek-v4-pro",
+        "task_id": "calendar-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Cancel my first meeting on December 13",
+      "gold_evidence": null,
+      "id": "wb-calendar-001-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-13\", time_max=\"2023-12-13\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 111,
+          "kind": "blocker",
+          "start": 98,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-001",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Cancel my first meeting on December 13",
+      "gold_evidence": null,
+      "id": "wb-calendar-001-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-13 00:00:00\", time_max=\"2023-12-13 23:59:59\"); calendar.delete_event(event_id=\"00000256\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-5.1",
+        "task_id": "calendar-001",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you cancel my first meeting on December 1",
+      "gold_evidence": null,
+      "id": "wb-calendar-002-no",
+      "trace": "Recorded tool actions: email.search_emails(query=\"Meeting\", date_min=\"2023-12-01\", date_max=\"2023-12-01\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 115,
+          "kind": "blocker",
+          "start": 102,
+          "text": "search_emails"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you cancel my first meeting on December 1",
+      "gold_evidence": null,
+      "id": "wb-calendar-002-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.delete_event(event_id=\"00000165\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "mistral-small-2603",
+        "task_id": "calendar-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you cancel my first meeting on December 8",
+      "gold_evidence": null,
+      "id": "wb-calendar-003-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-08\", time_max=\"2023-12-08\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 118,
+          "kind": "blocker",
+          "start": 105,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you cancel my first meeting on December 8",
+      "gold_evidence": null,
+      "id": "wb-calendar-003-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-08 00:00:00\", time_max=\"2023-12-08 23:59:59\"); calendar.delete_event(event_id=\"00000236\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "mistral-small-2603",
+        "task_id": "calendar-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you cancel my first meeting on December 6",
+      "gold_evidence": null,
+      "id": "wb-calendar-004-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-06\", time_max=\"2023-12-06\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 118,
+          "kind": "blocker",
+          "start": 105,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-004",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you cancel my first meeting on December 6",
+      "gold_evidence": null,
+      "id": "wb-calendar-004-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-06 00:00:00\", time_max=\"2023-12-06 23:59:59\"); calendar.delete_event(event_id=\"00000045\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "calendar-004",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Cancel my first meeting on December 18",
+      "gold_evidence": null,
+      "id": "wb-calendar-005-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-18 00:00:00\", time_max=\"2023-12-18 23:59:59\"); calendar.delete_event(event_id=\"00000160\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-5",
+        "task_id": "calendar-005",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Cancel my first meeting on December 18",
+      "gold_evidence": null,
+      "id": "wb-calendar-005-yes",
+      "trace": "Recorded tool actions: calendar.search_events(time_max=\"2023-12-18 23:59:59\", time_min=\"2023-12-18 00:00:00\"); calendar.delete_event(event_id=\"00000047\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-4-turbo",
+        "task_id": "calendar-005",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 6",
+      "gold_evidence": null,
+      "id": "wb-calendar-006-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-06\", time_max=\"2023-12-06\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 110,
+          "kind": "blocker",
+          "start": 97,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-006",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 6",
+      "gold_evidence": null,
+      "id": "wb-calendar-006-yes",
+      "trace": "Recorded tool actions: calendar.search_events(time_min=\"2023-12-06 00:00:00\", time_max=\"2023-12-06 23:59:59\"); calendar.delete_event(event_id=\"00000045\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-5.5",
+        "task_id": "calendar-006",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 18",
+      "gold_evidence": null,
+      "id": "wb-calendar-007-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"meeting\", time_min=\"2023-12-18 00:00:00\", time_max=\"2023-12-18 23:59:59\"); calendar.delete_event(event_id=\"00000160\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "calendar-007",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 18",
+      "gold_evidence": null,
+      "id": "wb-calendar-007-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-18 00:00:00\", time_max=\"2023-12-18 23:59:59\"); calendar.delete_event(event_id=\"00000047\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "mistral-small-2603",
+        "task_id": "calendar-007",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 12",
+      "gold_evidence": null,
+      "id": "wb-calendar-008-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"meeting\", time_min=\"2023-12-12 00:00:00\", time_max=\"2023-12-12 23:59:59\"); calendar.delete_event(event_id=\"00000205\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "calendar-008",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Delete my first meeting on December 12",
+      "gold_evidence": null,
+      "id": "wb-calendar-008-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"\", time_min=\"2023-12-12 00:00:00\", time_max=\"2023-12-12 23:59:59\"); calendar.delete_event(event_id=\"00000055\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "o3",
+        "task_id": "calendar-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Cancel my first meeting on December 7",
+      "gold_evidence": null,
+      "id": "wb-calendar-009-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Meeting\", time_min=\"2023-12-07\", time_max=\"2023-12-07\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 110,
+          "kind": "blocker",
+          "start": 97,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-009",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Cancel my first meeting on December 7",
+      "gold_evidence": null,
+      "id": "wb-calendar-009-yes",
+      "trace": "Recorded tool actions: calendar.search_events(time_min=\"2023-12-07 00:00:00\", time_max=\"2023-12-07 23:59:59\"); calendar.delete_event(event_id=\"00000019\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Cancel my first meeting on {natural_language_date}",
+        "source_model": "qwen-3.5-flash",
+        "task_id": "calendar-009",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you rename the next process review meeting to Customer Insight Forum",
+      "gold_evidence": null,
+      "id": "wb-calendar-040-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"process review\"); calendar.update_event(event_id=\"00000275\", field=\"event_name\", new_value=\"Customer Insight Forum\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-4.1",
+        "task_id": "calendar-040",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you rename the next process review meeting to Customer Insight Forum",
+      "gold_evidence": null,
+      "id": "wb-calendar-040-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"process review\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000137\", field=\"event_name\", new_value=\"Customer Insight Forum\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5",
+        "task_id": "calendar-040",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next team evaluation meeting to Customer Insight Forum",
+      "gold_evidence": null,
+      "id": "wb-calendar-041-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"team evaluation\", time_min=\"2023-11-30 00:00:00\", time_max=\"2023-11-30 23:59:59\"); calendar.search_events(query=\"evaluation\", time_min=\"2023-11-30 00:00:00\", time_max=\"2023-11-30 23:59:59\"); calendar.search_events(query=\"team\", time_min=\"2023-11-30 00:00:00\", time_max=\"2023-11-30 23:59:59\"); calendar.update_event(event_id=\"00000027\", field=\"event_name\", new_value=\"Customer Insight Forum\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "calendar-041",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next team evaluation meeting to Customer Insight Forum",
+      "gold_evidence": null,
+      "id": "wb-calendar-041-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"team evaluation\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000047\", field=\"event_name\", new_value=\"Customer Insight Forum\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "claude-fable-5",
+        "task_id": "calendar-041",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you rename the next sync up meeting to daily stand-up",
+      "gold_evidence": null,
+      "id": "wb-calendar-042-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"next sync up\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 130,
+          "kind": "blocker",
+          "start": 117,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-4-turbo",
+        "task_id": "calendar-042",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you rename the next sync up meeting to daily stand-up",
+      "gold_evidence": null,
+      "id": "wb-calendar-042-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"sync up\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000016\", field=\"event_name\", new_value=\"daily stand-up\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "o3",
+        "task_id": "calendar-042",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next Project Initiation Meeting meeting to Product Launch Analysis",
+      "gold_evidence": null,
+      "id": "wb-calendar-043-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Project Initiation Meeting\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000060\", field=\"event_name\", new_value=\"Product Launch Analysis\"); calendar.update_event(event_id=\"00000242\", field=\"event_name\", new_value=\"Product Launch Analysis\"); calendar.update_event(event_id=\"00000160\", field=\"event_name\", new_value=\"Product Launch Analysis\"); calendar.update_event(event_id=\"00000020\", field=\"event_name\", new_value=\"Product Launch Analysis\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "o3",
+        "task_id": "calendar-043",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next Project Initiation Meeting meeting to Product Launch Analysis",
+      "gold_evidence": null,
+      "id": "wb-calendar-043-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Project Initiation Meeting\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000060\", field=\"event_name\", new_value=\"Product Launch Analysis\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 241,
+          "kind": "receipt",
+          "start": 220,
+          "text": "calendar.update_event"
+        }
+      ],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.4",
+        "task_id": "calendar-043",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Change the name of the next daily stand-up meeting to Data Security and Compliance Training",
+      "gold_evidence": null,
+      "id": "wb-calendar-044-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"daily stand-up\"); calendar.search_events(query=\"stand-up meeting\"); calendar.update_event(event_id=\"00000071\", field=\"event_name\", new_value=\"Data Security and Compliance Training\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "calendar-044",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Change the name of the next daily stand-up meeting to Data Security and Compliance Training",
+      "gold_evidence": null,
+      "id": "wb-calendar-044-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"daily stand-up\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000086\", field=\"event_name\", new_value=\"Data Security and Compliance Training\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "o3",
+        "task_id": "calendar-044",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next daily stand-up meeting to Diversity & Inclusion Workshop",
+      "gold_evidence": null,
+      "id": "wb-calendar-045-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"daily stand-up meeting\"); calendar.search_events(query=\"stand-up\"); calendar.update_event(event_id=\"00000071\", field=\"event_name\", new_value=\"Diversity & Inclusion Workshop\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "calendar-045",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next daily stand-up meeting to Diversity & Inclusion Workshop",
+      "gold_evidence": null,
+      "id": "wb-calendar-045-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"daily stand-up\"); calendar.update_event(event_id=\"00000086\", field=\"event_name\", new_value=\"Diversity & Inclusion Workshop\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "qwen-3.5-flash",
+        "task_id": "calendar-045",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Change the name of the next brainstorming session meeting to status briefing",
+      "gold_evidence": null,
+      "id": "wb-calendar-046-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"brainstorming session meeting\"); calendar.search_events(query=\"brainstorming\"); calendar.get_event_information_by_id(event_id=\"00000281\", field=\"event_name\"); calendar.update_event(event_id=\"00000281\", field=\"event_name\", new_value=\"status briefing\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "calendar-046",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Change the name of the next brainstorming session meeting to status briefing",
+      "gold_evidence": null,
+      "id": "wb-calendar-046-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"brainstorming\", time_min=\"2023-11-30 00:00:00\"); calendar.update_event(event_id=\"00000252\", field=\"event_name\", new_value=\"status briefing\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5",
+        "task_id": "calendar-046",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next Corporate Social Responsibility Initiative meeting to Risk Management Forum",
+      "gold_evidence": null,
+      "id": "wb-calendar-047-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Corporate Social Responsibility Initiative\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 164,
+          "kind": "blocker",
+          "start": 151,
+          "text": "search_events"
+        }
+      ],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "mistral-medium-3-5",
+        "task_id": "calendar-047",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Rename the next Corporate Social Responsibility Initiative meeting to Risk Management Forum",
+      "gold_evidence": null,
+      "id": "wb-calendar-047-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Corporate Social Responsibility Initiative meeting\"); calendar.search_events(query=\"Corporate Social Responsibility Initiative\"); calendar.update_event(event_id=\"00000165\", field=\"event_name\", new_value=\"Risk Management Forum\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "calendar-047",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you rename the next project checkpoint meeting to team orientation",
+      "gold_evidence": null,
+      "id": "wb-calendar-048-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(task_name=\"Project checkpoint meeting\"); project_management.create_task(task_name=\"Team orientation\", assigned_to_email=\"team@example.com\", list_name=\"In Progress\", due_date=\"2023-12-07\", board=\"Front end\"); company_directory.find_email_address(name=\"team\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-3.5",
+        "task_id": "calendar-048",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "can you rename the next project checkpoint meeting to team orientation",
+      "gold_evidence": null,
+      "id": "wb-calendar-048-yes",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"project checkpoint\", time_min=\"2023-11-30 09:00:00\", time_max=\"2023-11-30 18:00:00\"); calendar.search_events(query=\"project checkpoint\", time_min=\"2023-11-30 09:00:00\", time_max=\"2023-12-07 18:00:00\"); calendar.update_event(event_id=\"00000237\", field=\"event_name\", new_value=\"team orientation\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [
+        {
+          "end": 374,
+          "kind": "receipt",
+          "start": 353,
+          "text": "calendar.update_event"
+        }
+      ],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gpt-5.2",
+        "task_id": "calendar-048",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Change the name of the next Year-End Performance Assessment meeting to Machine Learning Chat",
+      "gold_evidence": null,
+      "id": "wb-calendar-049-no",
+      "trace": "Recorded tool actions: calendar.search_events(query=\"Year-End Performance Assessment\"); calendar.update_event(event_id=\"00000005\", field=\"event_name\", new_value=\"Machine Learning Chat\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "claude-haiku-4.5",
+        "task_id": "calendar-049",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_calendar",
+      "goal": "Change the name of the next Year-End Performance Assessment meeting to Machine Learning Chat",
+      "gold_evidence": null,
+      "id": "wb-calendar-049-yes",
+      "trace": "Recorded tool actions: calendar.search_events(time_min=\"2023-11-30 00:00:00\", query=\"Year-End Performance Assessment\"); calendar.update_event(field=\"event_name\", new_value=\"Machine Learning Chat\", event_id=\"00000091\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Rename the next {event_name} meeting to {new_event_name}",
+        "source_model": "gemini-3.1-pro",
+        "task_id": "calendar-049",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "Update the status of Cameron Anderson to qualified in the crm",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-000-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Cameron Anderson\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "gpt-4.1",
+        "task_id": "customer_relationship_manager-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "Update the status of Cameron Anderson to qualified in the crm",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-000-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Cameron Anderson\"); customer_relationship_manager.update_customer(new_value=\"Qualified\", field=\"status\", customer_id=\"00000048\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "gemini-3.5-flash",
+        "task_id": "customer_relationship_manager-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "Update the status of Jessie Thomas to won in the crm",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-002-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Jessie Thomas\"); customer_relationship_manager.search_customers(customer_name=\"Jessie Thomas\", status=\"Won\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "customer_relationship_manager-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "Update the status of Jessie Thomas to won in the crm",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-002-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jessie Thomas\"); customer_relationship_manager.update_customer(customer_id=\"00000149\", field=\"status\", new_value=\"Won\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "claude-haiku-4.5",
+        "task_id": "customer_relationship_manager-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "We've got a new customer that's moved to proposal status. Can you update Kerry Brown to proposal in the crm?",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-007-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Kerry Brown\"); customer_relationship_manager.search_customers(customer_name=\"Kerry Brown\", status=\"Lead\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "gpt-5.1",
+        "task_id": "customer_relationship_manager-007",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "We've got a new customer that's moved to proposal status. Can you update Kerry Brown to proposal in the crm?",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-007-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Kerry Brown\"); customer_relationship_manager.update_customer(customer_id=\"00000199\", field=\"status\", new_value=\"Proposal\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "claude-sonnet-4.6",
+        "task_id": "customer_relationship_manager-007",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "Update the status of Jordan Jones to won in the crm",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-008-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Jordan Jones\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "gpt-4-turbo",
+        "task_id": "customer_relationship_manager-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_customer_relationship_manager",
+      "goal": "Update the status of Jordan Jones to won in the crm",
+      "gold_evidence": null,
+      "id": "wb-customer_relationship_manager-008-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jordan Jones\"); customer_relationship_manager.update_customer(customer_id=\"00000027\", field=\"status\", new_value=\"Won\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+        "source_model": "claude-sonnet-4.6",
+        "task_id": "customer_relationship_manager-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from nadia",
+      "gold_evidence": null,
+      "id": "wb-email-000-no",
+      "trace": "Recorded tool actions: email.search_emails(query=\"from:nadia\", date_min=\"2023-11-30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from nadia",
+      "gold_evidence": null,
+      "id": "wb-email-000-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"nadia\", date_max=\"2023-11-30\", date_min=\"2023-11-30\"); email.search_emails(query=\"nadia\"); email.delete_email(email_id=\"00000479\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "mistral-medium-3-5",
+        "task_id": "email-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from sofia",
+      "gold_evidence": null,
+      "id": "wb-email-001-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"sofia\"); email.search_emails(query=\"\", date_min=\"\", date_max=\"\"); email.delete_email(email_id=\"00000436\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-001",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from sofia",
+      "gold_evidence": null,
+      "id": "wb-email-001-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"sofia\", date_min=\"2023-11-29\", date_max=\"2023-11-30\"); email.search_emails(query=\"sofia\"); email.delete_email(email_id=\"00000438\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "email-001",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from anaya",
+      "gold_evidence": null,
+      "id": "wb-email-002-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"anaya\"); email.search_emails(query=\"\", date_min=\"\", date_max=\"\"); email.delete_email(email_id=\"00000436\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-002",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from anaya",
+      "gold_evidence": null,
+      "id": "wb-email-002-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"anaya\", date_min=\"2023-11-01\", date_max=\"2023-11-30\"); email.delete_email(email_id=\"00000166\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "email-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "nadia just sent me an email that I need to delete. Can you get rid of of the most recent email they sent me?",
+      "gold_evidence": null,
+      "id": "wb-email-003-no",
+      "trace": "Recorded tool actions: email.search_emails(query=\"from:nadia@example.com\", date_min=\"2023-11-30\"); email.search_emails(query=\"to:nadia@example.com\", date_min=\"2023-11-30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "nadia just sent me an email that I need to delete. Can you get rid of of the most recent email they sent me?",
+      "gold_evidence": null,
+      "id": "wb-email-003-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"nadia\", date_min=\"2023-11-01\"); email.delete_email(email_id=\"00000479\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-4.1",
+        "task_id": "email-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from yuki",
+      "gold_evidence": null,
+      "id": "wb-email-004-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Yuki\"); email.search_emails(query=\"\", date_min=\"\", date_max=\"\"); email.delete_email(email_id=\"00000436\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-004",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from yuki",
+      "gold_evidence": null,
+      "id": "wb-email-004-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"yuki\"); email.delete_email(email_id=\"00000149\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gemini-3.1-pro",
+        "task_id": "email-004",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "I need to delete my last email from leila. Can you do that?",
+      "gold_evidence": null,
+      "id": "wb-email-005-no",
+      "trace": "Recorded tool actions: email.search_emails(query=\"from:leila\", date_max=\"2023-11-30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-005",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "I need to delete my last email from leila. Can you do that?",
+      "gold_evidence": null,
+      "id": "wb-email-005-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"leila\"); email.delete_email(email_id=\"00000052\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-4-turbo",
+        "task_id": "email-005",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from chenwei",
+      "gold_evidence": null,
+      "id": "wb-email-006-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"chenwei\"); email.search_emails(query=\"\", date_min=\"\", date_max=\"\"); email.delete_email(email_id=\"00000436\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-006",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from chenwei",
+      "gold_evidence": null,
+      "id": "wb-email-006-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"chenwei\"); email.delete_email(email_id=\"00000211\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-5.2",
+        "task_id": "email-006",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from kofi",
+      "gold_evidence": null,
+      "id": "wb-email-007-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"kofi\"); email.search_emails(query=\"\", date_min=\"\", date_max=\"\"); email.delete_email(email_id=\"00000436\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-007",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from kofi",
+      "gold_evidence": null,
+      "id": "wb-email-007-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"kofi\", date_max=\"2023-11-30\"); email.delete_email(email_id=\"00000259\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-5.4",
+        "task_id": "email-007",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "anaya just sent me an email that I need to delete. Can you get rid of of the most recent email they sent me?",
+      "gold_evidence": null,
+      "id": "wb-email-008-no",
+      "trace": "Recorded tool actions: email.search_emails(query=\"from:anaya\", date_min=\"2023-11-30\"); email.search_emails(query=\"to:anaya\", date_min=\"2023-11-30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [
+        {
+          "end": 178,
+          "kind": "blocker",
+          "start": 165,
+          "text": "search_emails"
+        }
+      ],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "anaya just sent me an email that I need to delete. Can you get rid of of the most recent email they sent me?",
+      "gold_evidence": null,
+      "id": "wb-email-008-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"anaya\"); email.delete_email(email_id=\"00000166\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-5.5",
+        "task_id": "email-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from jinsoo",
+      "gold_evidence": null,
+      "id": "wb-email-009-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"jinsoo\"); email.search_emails(query=\"\", date_min=\"\", date_max=\"\"); email.delete_email(email_id=\"00000436\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "gpt-3.5",
+        "task_id": "email-009",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_email",
+      "goal": "Delete my last email from jinsoo",
+      "gold_evidence": null,
+      "id": "wb-email-009-yes",
+      "trace": "Recorded tool actions: email.search_emails(query=\"jinsoo\"); email.delete_email(email_id=\"00000204\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Delete my last email from {name}",
+        "source_model": "claude-fable-5",
+        "task_id": "email-009",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Cameron Anderson in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Cameron Anderson' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-000-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Cameron Anderson\"); calendar.search_events(query=\"sofia.santos@atlas.com\", time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Update on Cameron Anderson\", participant_email=\"sofia.santos@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "glm-4.6",
+        "task_id": "multi_domain-000",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Cameron Anderson in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Cameron Anderson' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-000-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Cameron Anderson\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Cameron Anderson\", participant_email=\"sofia.santos@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "o3",
+        "task_id": "multi_domain-000",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Riley Brown in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Riley Brown' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-001-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Riley Brown\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Riley Brown\", participant_email=\"lena.schmidt@atlas.com\", event_start=\"2023-12-01 11:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "mistral-medium-3-5",
+        "task_id": "multi_domain-001",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Riley Brown in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Riley Brown' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-001-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Riley Brown\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Riley Brown\", participant_email=\"lena.schmidt@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "kimi-k2.6",
+        "task_id": "multi_domain-001",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Jessie Thomas in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Jessie Thomas' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-002-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Jessie Thomas\"); customer_relationship_manager.search_customers(customer_name=\"Jessie Thomas\"); calendar.search_events(query=\"Update on Jessie Thomas\", time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Jessie Thomas\", participant_email=\"raj.patel@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "multi_domain-002",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Jessie Thomas in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Jessie Thomas' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-002-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jessie Thomas\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "claude-fable-5",
+        "task_id": "multi_domain-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I haven't spoken to Quinn Thomas in a while. Can you check if it's been over 14 days? If so, book a 30-minute meeting with whoever is assigned to them called 'Update on Quinn Thomas' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-003-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Quinn Thomas\"); calendar.search_events(query=\"Update on Quinn Thomas\", time_min=\"2023-12-01\", time_max=\"2023-12-01\"); calendar.create_event(event_name=\"Update on Quinn Thomas\", participant_email=\"akira.sato@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-3.5",
+        "task_id": "multi_domain-003",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I haven't spoken to Quinn Thomas in a while. Can you check if it's been over 14 days? If so, book a 30-minute meeting with whoever is assigned to them called 'Update on Quinn Thomas' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-003-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Quinn Thomas\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.search_events(time_max=\"2023-12-01 13:30:00\", time_min=\"2023-12-01 13:00:00\"); calendar.create_event(participant_email=\"akira.sato@atlas.com\", event_name=\"Update on Quinn Thomas\", duration=\"30\", event_start=\"2023-12-01 13:00:00\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gemini-3.5-flash",
+        "task_id": "multi_domain-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Quinn Harris in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Quinn Harris' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-004-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Quinn Harris\"); calendar.search_events(query=\"Update on Quinn Harris\", time_min=\"2023-12-01\", time_max=\"2023-12-01\"); calendar.create_event(duration=\"30\", event_name=\"Update on Quinn Harris\", participant_email=\"tishtrya@example.com\", event_start=\"2023-12-01 09:00:00\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-3.5",
+        "task_id": "multi_domain-004",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Quinn Harris in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Quinn Harris' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-004-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Quinn Harris\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-5.4",
+        "task_id": "multi_domain-004",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I haven't spoken to Quinn Brown in a while. Can you check if it's been over 14 days? If so, book a 30-minute meeting with whoever is assigned to them called 'Update on Quinn Brown' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-005-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Quinn Brown\"); calendar.search_events(query=\"Quinn Brown\", time_min=\"2023-11-01 00:00:00\", time_max=\"2023-11-30 23:59:59\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Update on Quinn Brown\", participant_email=\"lena.schmidt@atlas.com\", event_start=\"2023-12-01 15:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-5.1",
+        "task_id": "multi_domain-005",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I haven't spoken to Quinn Brown in a while. Can you check if it's been over 14 days? If so, book a 30-minute meeting with whoever is assigned to them called 'Update on Quinn Brown' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-005-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Quinn Brown\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "o3",
+        "task_id": "multi_domain-005",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Jamie Anderson in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Jamie Anderson' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-006-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jamie Anderson\", last_contact_date_max=\"2023-11-16\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Update on Jamie Anderson\", participant_email=\"nadia.moreau@atlas.com\", event_start=\"2023-12-01 11:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-5.2",
+        "task_id": "multi_domain-006",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Jamie Anderson in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Jamie Anderson' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-006-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jamie Anderson\"); calendar.search_events(time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Update on Jamie Anderson\", participant_email=\"nadia.moreau@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "claude-sonnet-4.6",
+        "task_id": "multi_domain-006",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoken to Kerry Brown in the past 2 weeks, book a half hour meeting with whoeveris assigned to them called 'Update on Kerry Brown' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-007-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Kerry Brown\", last_contact_date_max=\"2023-11-16\"); calendar.search_events(query=\"Update on Kerry Brown\", time_min=\"2023-11-30 09:00:00\", time_max=\"2023-11-30 18:00:00\"); calendar.create_event(event_name=\"Update on Kerry Brown\", participant_email=\"lena.schmidt@atlas.com\", event_start=\"2023-11-30 09:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-4o",
+        "task_id": "multi_domain-007",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoken to Kerry Brown in the past 2 weeks, book a half hour meeting with whoeveris assigned to them called 'Update on Kerry Brown' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-007-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Kerry Brown\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Kerry Brown\", participant_email=\"lena.schmidt@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "kimi-k2.6",
+        "task_id": "multi_domain-007",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Jordan Jones in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Jordan Jones' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-008-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Jordan Jones\"); customer_relationship_manager.search_customers(customer_name=\"Jordan Jones\"); calendar.search_events(query=\"Update on Jordan Jones\", time_min=\"2023-12-01\", time_max=\"2023-12-01\"); calendar.create_event(event_name=\"Update on Jordan Jones\", participant_email=\"nadia.moreau@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gpt-3.5",
+        "task_id": "multi_domain-008",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If we haven't spoke to Jordan Jones in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on Jordan Jones' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-008-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jordan Jones\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "gemini-3.1-pro",
+        "task_id": "multi_domain-008",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I haven't spoken to Jamie Davis in a while. Can you check if it's been over 14 days? If so, book a 30-minute meeting with whoever is assigned to them called 'Update on Jamie Davis' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-009-no",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jamie Davis\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Jamie Davis\", participant_email=\"sofia.santos@atlas.com\", event_start=\"2023-12-01 15:00:00\", duration=\"30\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "claude-sonnet-4.6",
+        "task_id": "multi_domain-009",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I haven't spoken to Jamie Davis in a while. Can you check if it's been over 14 days? If so, book a 30-minute meeting with whoever is assigned to them called 'Update on Jamie Davis' at the first time I'm free tomorrow",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-009-yes",
+      "trace": "Recorded tool actions: customer_relationship_manager.search_customers(customer_name=\"Jamie Davis\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Update on Jamie Davis\", participant_email=\"sofia.santos@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+        "source_model": "deepseek-v4-pro",
+        "task_id": "multi_domain-009",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think jinsoo might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-070-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"jinsoo\", list_name=\"In Progress\"); project_management.search_tasks(assigned_to_email=\"jinsoo\", list_name=\"Backlog\"); company_directory.find_email_address(name=\"jinsoo\"); email.send_email(recipient=\"jinsoo.kim@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.1",
+        "task_id": "multi_domain-070",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think jinsoo might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-070-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"jinsoo\"); project_management.search_tasks(assigned_to_email=\"jinsoo.kim@atlas.com\"); email.send_email(recipient=\"jinsoo.kim@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-4o",
+        "task_id": "multi_domain-070",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think kofi might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-071-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"kofi@example.com\", list_name=\"In Progress\"); email.send_email(recipient=\"kofi@example.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-3.5",
+        "task_id": "multi_domain-071",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think kofi might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-071-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"kofi\"); project_management.search_tasks(assigned_to_email=\"kofi\"); email.send_email(recipient=\"kofi.mensah@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "deepseek-v4-pro",
+        "task_id": "multi_domain-071",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If chenwei has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-072-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"chenwei@example.com\"); email.send_email(recipient=\"chenwei@example.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-4o",
+        "task_id": "multi_domain-072",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If chenwei has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-072-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"chenwei\"); project_management.search_tasks(assigned_to_email=\"chenwei@example.com\"); project_management.search_tasks(assigned_to_email=\"chenwei.zhang@atlas.com\"); email.send_email(recipient=\"chenwei.zhang@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "claude-haiku-4.5",
+        "task_id": "multi_domain-072",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if carlos has any overdue tasks? If so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-073-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Carlos\"); project_management.search_tasks(assigned_to_email=\"carlos.rodriguez@atlas.com\"); email.send_email(recipient=\"carlos.rodriguez@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.4-mini",
+        "task_id": "multi_domain-073",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if carlos has any overdue tasks? If so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-073-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Carlos\"); project_management.search_tasks(assigned_to_email=\"carlos.rodriguez@atlas.com\"); email.send_email(recipient=\"carlos.rodriguez@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "kimi-k2.6",
+        "task_id": "multi_domain-073",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think aisha might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-074-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"aisha@example.com\", list_name=\"In Progress\", due_date=\"2023-11-29\"); email.send_email(recipient=\"aisha@example.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\"); email.send_email(recipient=\"aisha@example.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-3.5",
+        "task_id": "multi_domain-074",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think aisha might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-074-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"aisha\"); project_management.search_tasks(assigned_to_email=\"aisha.chen@atlas.com\"); email.send_email(recipient=\"aisha.chen@atlas.com\", body=\"Nice work keeping on top of your tasks this sprint!\", subject=\"Good work this sprint\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gemini-3.5-flash",
+        "task_id": "multi_domain-074",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If nia has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-075-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"nia@company.com\", list_name=\"In Progress\"); email.send_email(recipient=\"nia@company.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "mistral-small-2603",
+        "task_id": "multi_domain-075",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If nia has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-075-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"nia\"); project_management.search_tasks(assigned_to_email=\"nia.johnson@atlas.com\"); email.send_email(recipient=\"nia.johnson@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.2",
+        "task_id": "multi_domain-075",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think carlos might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-076-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"carlos@example.com\", list_name=\"In Progress\"); project_management.search_tasks(assigned_to_email=\"carlos@example.com\", list_name=\"In Review\"); project_management.search_tasks(assigned_to_email=\"carlos@example.com\", list_name=\"Backlog\"); email.send_email(recipient=\"carlos@example.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "multi_domain-076",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think carlos might have some overdue tasks. Can you check and if so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-076-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Carlos\"); project_management.search_tasks(assigned_to_email=\"carlos.rodriguez@atlas.com\"); email.send_email(recipient=\"carlos.rodriguez@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "o3",
+        "task_id": "multi_domain-076",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if jinsoo has any overdue tasks? If so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-077-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"jinsoo@example.com\"); email.send_email(recipient=\"jinsoo@example.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "mistral-small-2603",
+        "task_id": "multi_domain-077",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if jinsoo has any overdue tasks? If so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-077-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Jinsoo\"); project_management.search_tasks(assigned_to_email=\"jinsoo.kim@atlas.com\"); email.send_email(recipient=\"jinsoo.kim@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-4o",
+        "task_id": "multi_domain-077",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if anaya has any overdue tasks? If so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-078-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"anaya\"); project_management.search_tasks(assigned_to_email=\"anaya.patel@atlas.com\", due_date=\"2023-11-29\"); email.send_email(recipient=\"anaya.patel@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-4-turbo",
+        "task_id": "multi_domain-078",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if anaya has any overdue tasks? If so, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-078-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Anaya\"); project_management.search_tasks(assigned_to_email=\"anaya.patel@atlas.com\"); email.send_email(recipient=\"anaya.patel@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "qwen-3.5-flash",
+        "task_id": "multi_domain-078",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If olga has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-079-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"olga\", list_name=\"Overdue\"); project_management.search_tasks(assigned_to_email=\"olga\", due_date=\"2023-11-30\"); project_management.search_tasks(assigned_to_email=\"olga\", due_date=\"2023-11-29\"); company_directory.find_email_address(name=\"olga\"); email.send_email(recipient=\"olga.petrova@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\"); email.send_email(subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\", recipient=\"olga.petrova@atlas.com\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "mistral-medium-3-5",
+        "task_id": "multi_domain-079",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If olga has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-079-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"olga\"); project_management.search_tasks(assigned_to_email=\"olga.petrova@atlas.com\"); email.send_email(recipient=\"olga.petrova@atlas.com\", subject=\"Overdue tasks\", body=\"You have a few overdue tasks - can you update me on them?\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "deepseek-v4-pro",
+        "task_id": "multi_domain-079",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if carlos has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-150-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"carlos\", list_name=\"Backlog\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"carlos.rodriguez@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\"); email.send_email(recipient=\"carlos.rodriguez@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.1",
+        "task_id": "multi_domain-150",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if carlos has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-150-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Carlos\"); project_management.search_tasks(assigned_to_email=\"carlos@example.com\"); email.send_email(recipient=\"carlos.rodriguez@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.2",
+        "task_id": "multi_domain-150",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if leila has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-151-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"leila\"); project_management.search_tasks(assigned_to_email=\"leila.azizi@atlas.com\"); calendar.search_events(time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"leila.azizi@atlas.com\", event_start=\"2023-12-01 11:00:00\", duration=\"30\"); email.send_email(recipient=\"leila.azizi@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.4",
+        "task_id": "multi_domain-151",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if leila has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-151-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Leila\"); project_management.search_tasks(assigned_to_email=\"leila.azizi@atlas.com\"); calendar.search_events(time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"leila.azizi@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\"); email.send_email(recipient=\"leila.azizi@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "claude-sonnet-4.6",
+        "task_id": "multi_domain-151",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If olga has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-152-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"olga@company.com\", list_name=\"Backlog\"); project_management.search_tasks(assigned_to_email=\"olga@company.com\", list_name=\"In Progress\"); project_management.search_tasks(assigned_to_email=\"olga@company.com\", list_name=\"In Review\"); email.send_email(recipient=\"olga@company.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "mistral-small-2603",
+        "task_id": "multi_domain-152",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If olga has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-152-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Olga\"); project_management.search_tasks(assigned_to_email=\"olga.petrova@atlas.com\"); calendar.search_events(time_max=\"2023-12-01 18:00:00\", time_min=\"2023-12-01 09:00:00\"); calendar.create_event(event_start=\"2023-12-01 13:00:00\", participant_email=\"olga.petrova@atlas.com\", duration=\"30\", event_name=\"Catch up on overdue tasks\"); email.send_email(subject=\"Discuss overdue tasks\", recipient=\"olga.petrova@atlas.com\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "yes",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gemini-3.1-pro",
+        "task_id": "multi_domain-152",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if luis has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-153-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Luis\"); project_management.search_tasks(assigned_to_email=\"luis@example.com\"); project_management.search_tasks(assigned_to_email=\"luis.ortiz@atlas.com\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"luis.ortiz@atlas.com\", event_start=\"2023-12-01 11:00:00\", duration=\"30\"); email.send_email(recipient=\"luis.ortiz@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.2",
+        "task_id": "multi_domain-153",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if luis has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-153-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"luis\"); project_management.search_tasks(assigned_to_email=\"luis.ortiz@atlas.com\"); calendar.search_events(time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"luis.ortiz@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\"); email.send_email(recipient=\"luis.ortiz@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "deepseek-v4-pro",
+        "task_id": "multi_domain-153",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think dmitri might have some overdue tasks. Can you check and if so, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-154-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"dmitri@example.com\", list_name=\"In Progress\"); calendar.search_events(query=\"Catch up on overdue tasks\", time_min=\"2023-12-01\", time_max=\"2023-12-01\"); email.send_email(recipient=\"dmitri@example.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-3.5",
+        "task_id": "multi_domain-154",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think dmitri might have some overdue tasks. Can you check and if so, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-154-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Dmitri\"); project_management.search_tasks(assigned_to_email=\"dmitri.ivanov@atlas.com\"); email.send_email(recipient=\"dmitri.ivanov@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "claude-opus-4.8",
+        "task_id": "multi_domain-154",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if dmitri has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-155-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"dmitri\"); project_management.search_tasks(assigned_to_email=\"dmitri.ivanov@atlas.com\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"dmitri.ivanov@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\"); email.send_email(recipient=\"dmitri.ivanov@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-4.1",
+        "task_id": "multi_domain-155",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if dmitri has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-155-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Dmitri\"); project_management.search_tasks(assigned_to_email=\"dmitri.ivanov@atlas.com\"); email.send_email(recipient=\"dmitri.ivanov@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "glm-4.6",
+        "task_id": "multi_domain-155",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if yuki has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-156-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Yuki\"); project_management.search_tasks(assigned_to_email=\"yuki@example.com\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); project_management.search_tasks(assigned_to_email=\"yuki.tanaka@atlas.com\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"yuki.tanaka@atlas.com\", event_start=\"2023-12-01 11:30:00\", duration=\"30\"); email.send_email(recipient=\"yuki.tanaka@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.2",
+        "task_id": "multi_domain-156",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "can you check if yuki has any overdue tasks? If so, book a 30 minute meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise send them an email saying 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-156-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Yuki\"); project_management.search_tasks(assigned_to_email=\"yuki.tanaka@atlas.com\"); email.send_email(recipient=\"yuki.tanaka@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "kimi-k2.6",
+        "task_id": "multi_domain-156",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think kofi might have some overdue tasks. Can you check and if so, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-157-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Kofi\"); project_management.search_tasks(assigned_to_email=\"kofi@example.com\"); project_management.search_tasks(assigned_to_email=\"kofi.mensah@atlas.com\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"kofi.mensah@atlas.com\", event_start=\"2023-12-01 09:00:00\", duration=\"30\"); email.send_email(recipient=\"kofi.mensah@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "claude-haiku-4.5",
+        "task_id": "multi_domain-157",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "I think kofi might have some overdue tasks. Can you check and if so, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-157-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Kofi\"); project_management.search_tasks(assigned_to_email=\"kofi.mensah@atlas.com\", list_name=\"In Progress\"); project_management.search_tasks(assigned_to_email=\"kofi.mensah@atlas.com\", list_name=\"Backlog\"); calendar.search_events(time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"kofi.mensah@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\"); email.send_email(recipient=\"kofi.mensah@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "o3",
+        "task_id": "multi_domain-157",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If chenwei has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-158-no",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"chenwei\"); project_management.search_tasks(assigned_to_email=\"chenwei.zhang@atlas.com\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 09:00:00\", time_max=\"2023-12-01 18:00:00\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"chenwei.zhang@atlas.com\", event_start=\"2023-12-01 11:00:00\", duration=\"30\"); email.send_email(recipient=\"chenwei.zhang@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.4",
+        "task_id": "multi_domain-158",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If chenwei has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-158-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"chenwei\"); project_management.search_tasks(assigned_to_email=\"chenwei.zhang@atlas.com\"); calendar.search_events(time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"chenwei.zhang@atlas.com\", event_start=\"2023-12-01 13:00:00\", duration=\"30\"); email.send_email(recipient=\"chenwei.zhang@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "deepseek-v4-pro",
+        "task_id": "multi_domain-158",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If dmitri has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-159-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"dmitri\", list_name=\"In Progress\"); calendar.search_events(query=\"\", time_min=\"2023-12-01 00:00:00\", time_max=\"2023-12-01 23:59:59\"); calendar.create_event(event_name=\"Catch up on overdue tasks\", participant_email=\"dmitri.ivanov@atlas.com\", event_start=\"2023-12-01 09:30:00\", duration=\"30\"); email.send_email(recipient=\"dmitri.ivanov@atlas.com\", subject=\"Discuss overdue tasks\", body=\"I noticed you have a few overdue tasks - let's catch up tomorrow.\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.4-nano",
+        "task_id": "multi_domain-159",
+        "unwanted_side_effects": true
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_multi_domain",
+      "goal": "If dmitri has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+      "gold_evidence": null,
+      "id": "wb-multi_domain-159-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"dmitri\"); project_management.search_tasks(assigned_to_email=\"dmitri.ivanov@atlas.com\"); email.send_email(recipient=\"dmitri.ivanov@atlas.com\", subject=\"Good work this sprint\", body=\"Nice work keeping on top of your tasks this sprint!\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+        "source_model": "gpt-5.2",
+        "task_id": "multi_domain-159",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "Move all of yuki's tasks that are in progress to in review",
+      "gold_evidence": null,
+      "id": "wb-project_management-002-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"yuki@example.com\", list_name=\"In Progress\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "mistral-small-2603",
+        "task_id": "project_management-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "Move all of yuki's tasks that are in progress to in review",
+      "gold_evidence": null,
+      "id": "wb-project_management-002-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Yuki\"); project_management.search_tasks(assigned_to_email=\"yuki.tanaka@atlas.com\", list_name=\"In Progress\"); project_management.update_task(task_id=\"00000091\", field=\"list_name\", new_value=\"In Review\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "o3",
+        "task_id": "project_management-002",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "Move all of dmitri's tasks that are in progress to in review",
+      "gold_evidence": null,
+      "id": "wb-project_management-003-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"dmitri@example.com\", list_name=\"In Progress\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "gpt-4-turbo",
+        "task_id": "project_management-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "Move all of dmitri's tasks that are in progress to in review",
+      "gold_evidence": null,
+      "id": "wb-project_management-003-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Dmitri\"); project_management.search_tasks(assigned_to_email=\"dmitri.ivanov@atlas.com\", list_name=\"In Progress\"); project_management.update_task(task_id=\"00000009\", field=\"list_name\", new_value=\"In Review\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "o3",
+        "task_id": "project_management-003",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "Move all of luis's tasks that are in progress to in review",
+      "gold_evidence": null,
+      "id": "wb-project_management-004-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"luis@example.com\", list_name=\"In Progress\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "gpt-4o",
+        "task_id": "project_management-004",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "Move all of luis's tasks that are in progress to in review",
+      "gold_evidence": null,
+      "id": "wb-project_management-004-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Luis\"); project_management.search_tasks(assigned_to_email=\"luis.ortiz@atlas.com\", list_name=\"In Progress\"); project_management.update_task(task_id=\"00000235\", field=\"list_name\", new_value=\"In Review\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "claude-opus-4.8",
+        "task_id": "project_management-004",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "no",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "can you move all of carlos's tasks that are in progress to in review?",
+      "gold_evidence": null,
+      "id": "wb-project_management-007-no",
+      "trace": "Recorded tool actions: project_management.search_tasks(assigned_to_email=\"carlos@example.com\", list_name=\"In Progress\")",
+      "truth": "no",
+      "tuned": "no",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "gpt-4-turbo",
+        "task_id": "project_management-007",
+        "unwanted_side_effects": false
+      }
+    },
+    {
+      "base": "yes",
+      "base_spans": [],
+      "domain": "workbench_project_management",
+      "goal": "can you move all of carlos's tasks that are in progress to in review?",
+      "gold_evidence": null,
+      "id": "wb-project_management-007-yes",
+      "trace": "Recorded tool actions: company_directory.find_email_address(name=\"Carlos\"); project_management.search_tasks(assigned_to_email=\"carlos.rodriguez@atlas.com\", list_name=\"In Progress\"); project_management.update_task(task_id=\"00000086\", field=\"list_name\", new_value=\"In Review\")",
+      "truth": "yes",
+      "tuned": "yes",
+      "tuned_spans": [],
+      "workbench": {
+        "base_template": "Move all of {name}'s tasks that are in progress to in review",
+        "source_model": "glm-4.6",
+        "task_id": "project_management-007",
+        "unwanted_side_effects": false
+      }
+    }
+  ],
+  "schema_version": 1,
+  "software": {
+    "gliner2": "2.0.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.12",
+    "torch": "2.14.0"
+  },
+  "split": "test",
+  "study": "workbench-v2-template-holdout",
+  "training": {
+    "batch_size": 4,
+    "device": "mps",
+    "encoder_lr": 2e-05,
+    "epochs": 3,
+    "experiment_name": "exitreceipt-v2",
+    "lora_alpha": 16.0,
+    "lora_dropout": 0.1,
+    "lora_r": 8,
+    "lora_targets": [
+      "encoder",
+      "span_rep",
+      "classifier"
+    ],
+    "seed": 20260927,
+    "task_lr": 0.0003
+  },
+  "training_best_dev_loss": 5.018003595911938,
+  "training_code": {
+    "git_head": "6e38e0dd3c6cb39f8af11c55e4495e917e7d33c7",
+    "tracked_changes": false,
+    "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+  },
+  "training_eval_history": [
+    {
+      "epoch": 0,
+      "eval_classification_loss": 5.379080575445424,
+      "eval_count_loss": 0.0,
+      "eval_loss": 5.379080575445424,
+      "eval_structure_loss": 0.0,
+      "step": 227
+    },
+    {
+      "epoch": 1,
+      "eval_classification_loss": 7.396354459226131,
+      "eval_count_loss": 0.0,
+      "eval_loss": 7.396354459226131,
+      "eval_structure_loss": 0.0,
+      "step": 454
+    },
+    {
+      "epoch": 2,
+      "eval_classification_loss": 5.018003595911938,
+      "eval_count_loss": 0.0,
+      "eval_loss": 5.018003595911938,
+      "eval_structure_loss": 0.0,
+      "step": 681
+    }
+  ],
+  "tuned": {
+    "accuracy": 0.689873417721519,
+    "confusion": {
+      "no": {
+        "no": 52,
+        "yes": 27
+      },
+      "yes": {
+        "no": 22,
+        "yes": 57
+      }
+    },
+    "false_complete": 27,
+    "false_complete_rate": 0.34177215189873417,
+    "false_incomplete": 22,
+    "macro_f1": 0.689562532579494,
+    "n": 158,
+    "per_label": {
+      "no": {
+        "f1": 0.6797385620915033,
+        "precision": 0.7027027027027027,
+        "recall": 0.6582278481012658,
+        "support": 79
+      },
+      "yes": {
+        "f1": 0.6993865030674846,
+        "precision": 0.6785714285714286,
+        "recall": 0.7215189873417721,
+        "support": 79
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -18,6 +19,11 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--verify", action="store_true", help="compare run outputs to committed lock"
+    )
+    args = parser.parse_args()
     data_hash = sha256(ROOT / "data/v2-cases.psv")
     evidence_hash = sha256(ROOT / "data/v2-evidence.psv")
     runs = []
@@ -66,9 +72,15 @@ def main() -> None:
         "runs": runs,
     }
     path = ROOT / "results/v2-selection.json"
+    content = json.dumps(selection, indent=2, sort_keys=True) + "\n"
+    if args.verify:
+        if path.read_text(encoding="utf-8") != content:
+            raise SystemExit(f"development selection differs from committed lock: {path}")
+        print(json.dumps({"verified_seed": winner["seed"]}))
+        return
     if path.exists():
         raise FileExistsError(f"refusing to overwrite locked seed selection: {path}")
-    path.write_text(json.dumps(selection, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(content, encoding="utf-8")
     print(json.dumps({"selected_seed": winner["seed"], "best_dev_loss": winner["best_dev_loss"]}))
 
 

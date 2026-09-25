@@ -4,7 +4,7 @@ type: software
 title: "ExitReceipt: Inspecting Agent Completion Decisions with GLiNER2.5-Decide"
 authors:
   - name: "AbdelStark"
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-09-25
 repository-code: "https://github.com/AbdelStark/exitreceipt"
 url: "https://abdelstark.github.io/exitreceipt/"

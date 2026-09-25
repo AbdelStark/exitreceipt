@@ -87,8 +87,6 @@ def load_evidence(path: Path, cases: list[Case]) -> dict[str, Evidence]:
             ):
                 raise ValueError(f"invalid evidence annotation: {item.id}")
             evidence[item.id] = item
-    if not evidence:
-        raise ValueError("evidence file is empty")
     return evidence
 
 

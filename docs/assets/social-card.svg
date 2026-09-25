@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ExitReceipt: Did the agent actually finish?</title>
+  <desc id="desc">GLiNER2.5-Decide fine-tuning study: base 87 of 158, development-selected adapter 96 of 158, with a confidence interval crossing zero.</desc>
+  <defs>
+    <radialGradient id="glow" cx="78%" cy="43%" r="58%"><stop stop-color="#263e2b"/><stop offset="1" stop-color="#0b100e"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="42" y="40" width="48" height="48" rx="8" fill="none" stroke="#adf078" stroke-width="2"/>
+  <text x="55" y="74" font-family="Arial, sans-serif" font-size="31" font-weight="bold" fill="#eaf7e5">E</text>
+  <text x="109" y="72" font-family="Arial, sans-serif" font-size="22" font-weight="bold" letter-spacing="3" fill="#edf2eb">EXITRECEIPT</text>
+  <text x="882" y="70" font-family="Menlo, monospace" font-size="13" letter-spacing="2" fill="#b4cdad">OPEN RESEARCH / GLiNER2.5</text>
+  <line x1="42" y1="109" x2="1158" y2="109" stroke="#35503b"/>
+  <text x="55" y="172" font-family="Menlo, monospace" font-size="15" letter-spacing="3" fill="#aee67e">THE QUESTION</text>
+  <text x="48" y="262" font-family="Arial, sans-serif" font-size="76" font-weight="bold" letter-spacing="-4" fill="#f1f6ed">Did the agent</text>
+  <text x="48" y="343" font-family="Arial, sans-serif" font-size="76" font-weight="bold" letter-spacing="-4" fill="#b8f287">actually finish?</text>
+  <text x="54" y="394" font-family="Arial, sans-serif" font-size="24" fill="#afbdaf">An open-weight study of task verdicts from agent action logs.</text>
+  <rect x="51" y="446" width="525" height="100" rx="8" fill="#17231a" stroke="#567258"/>
+  <text x="73" y="479" font-family="Menlo, monospace" font-size="13" letter-spacing="2" fill="#a6c49c">PINNED BASE → DEVELOPMENT-SELECTED LORA</text>
+  <text x="71" y="525" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#eaf2e5">87/158 <tspan fill="#a4e67b">→ 96/158</tspan></text>
+  <rect x="594" y="446" width="555" height="100" rx="8" fill="#17231a" stroke="#567258"/>
+  <text x="616" y="479" font-family="Menlo, monospace" font-size="13" letter-spacing="2" fill="#a6c49c">FALSE DONE / MISSED DONE</text>
+  <text x="615" y="525" font-family="Arial, sans-serif" font-size="35" font-weight="bold" fill="#eaf2e5">58→34 <tspan fill="#7f9f85">/</tspan> 13→28</text>
+  <line x1="42" y1="579" x2="1158" y2="579" stroke="#35503b"/>
+  <text x="52" y="607" font-family="Menlo, monospace" font-size="14" fill="#a6b9a7">10 held-out task templates · +5.7 pp · 95% template CI −6.6 to +15.8 pp</text>
+</svg>

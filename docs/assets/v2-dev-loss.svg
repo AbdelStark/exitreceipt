@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 510" role="img" aria-labelledby="chart-title chart-desc">
+<title id="chart-title">ExitReceipt v2 development loss across three epochs</title>
+<desc id="chart-desc">Three fixed LoRA seeds. The selected adapter is chosen by lowest development loss, not test accuracy.</desc>
+<rect width="920" height="510" fill="#f7f9f7"/>
+<text x="96" y="38" fill="#142b24" font-family="system-ui" font-size="23" font-weight="700">How long should the adapter train?</text>
+<text x="96" y="61" fill="#5b6d63" font-family="system-ui" font-size="13">Development loss · lower is better · test excluded from selection</text>
+<line x1="96" y1="390.0" x2="824" y2="390.0" stroke="#dce4df" stroke-width="1"/>
+<text x="80" y="394.0" text-anchor="end" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">3.5</text>
+<line x1="96" y1="313.0" x2="824" y2="313.0" stroke="#dce4df" stroke-width="1"/>
+<text x="80" y="317.0" text-anchor="end" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">4.6</text>
+<line x1="96" y1="236.0" x2="824" y2="236.0" stroke="#dce4df" stroke-width="1"/>
+<text x="80" y="240.0" text-anchor="end" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">5.6</text>
+<line x1="96" y1="159.0" x2="824" y2="159.0" stroke="#dce4df" stroke-width="1"/>
+<text x="80" y="163.0" text-anchor="end" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">6.7</text>
+<line x1="96" y1="82.0" x2="824" y2="82.0" stroke="#dce4df" stroke-width="1"/>
+<text x="80" y="86.0" text-anchor="end" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">7.7</text>
+<text x="96.0" y="415" text-anchor="middle" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">1</text>
+<text x="460.0" y="415" text-anchor="middle" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">2</text>
+<text x="824.0" y="415" text-anchor="middle" fill="#52645a" font-family="ui-monospace,monospace" font-size="12">3</text>
+<text x="460.0" y="440" text-anchor="middle" fill="#52645a" font-family="system-ui" font-size="13">Epoch</text>
+<polyline points="96.0,246.3 460.0,309.0 824.0,364.4" fill="none" stroke="#1769aa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="96.0" cy="246.3" r="4" fill="#1769aa" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="460.0" cy="309.0" r="4" fill="#1769aa" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="824.0" cy="364.4" r="7" fill="#1769aa" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="124" cy="473" r="6" fill="#1769aa"/>
+<text x="139" y="478" fill="#263e32" font-family="system-ui" font-size="13">Seed 20260925 · published</text>
+<polyline points="96.0,199.2 460.0,300.1 824.0,208.0" fill="none" stroke="#cb5b32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="96.0" cy="199.2" r="4" fill="#cb5b32" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="460.0" cy="300.1" r="7" fill="#cb5b32" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="824.0" cy="208.0" r="4" fill="#cb5b32" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="364" cy="473" r="6" fill="#cb5b32"/>
+<text x="379" y="478" fill="#263e32" font-family="system-ui" font-size="13">Seed 20260926</text>
+<polyline points="96.0,255.3 460.0,107.6 824.0,281.7" fill="none" stroke="#18836b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="96.0" cy="255.3" r="4" fill="#18836b" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="460.0" cy="107.6" r="4" fill="#18836b" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="824.0" cy="281.7" r="7" fill="#18836b" stroke="#f7f9f7" stroke-width="2"/>
+<circle cx="604" cy="473" r="6" fill="#18836b"/>
+<text x="619" y="478" fill="#263e32" font-family="system-ui" font-size="13">Seed 20260927</text>
+</svg>

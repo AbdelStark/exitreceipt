@@ -1,0 +1,1512 @@
+{
+  "base_revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
+  "data_sha256": "55f9d4c018ab8fafb2b64ba0f4d688ea781788af133378d429ccdf38e7ab48ad",
+  "headline_positive": false,
+  "headline_rule": "accuracy gain >=5pp, template-cluster CI lower >0, false-complete rate rise <=2pp",
+  "resamples": 10000,
+  "runs": [
+    {
+      "accuracy_delta": 0.05696202531645567,
+      "accuracy_delta_task_ci95": [
+        -0.006329113924050633,
+        0.12658227848101267
+      ],
+      "accuracy_delta_template_ci95": [
+        -0.06565656565656566,
+        0.15760869565217392
+      ],
+      "adapter_sha256": "d31c4000b3610cf2a7f6effcd1f7c93730508c48a79038658e440faeb82b0646",
+      "base": {
+        "accuracy": 0.5506329113924051,
+        "confusion": {
+          "no": {
+            "no": 21,
+            "yes": 58
+          },
+          "yes": {
+            "no": 13,
+            "yes": 66
+          }
+        },
+        "false_complete": 58,
+        "false_complete_rate": 0.7341772151898734,
+        "false_incomplete": 13,
+        "macro_f1": 0.5109638606739614,
+        "n": 158,
+        "per_label": {
+          "no": {
+            "f1": 0.3716814159292035,
+            "precision": 0.6176470588235294,
+            "recall": 0.26582278481012656,
+            "support": 79
+          },
+          "yes": {
+            "f1": 0.6502463054187192,
+            "precision": 0.532258064516129,
+            "recall": 0.8354430379746836,
+            "support": 79
+          }
+        }
+      },
+      "best_dev_loss": 3.8880459643576457,
+      "changed": [
+        {
+          "base": "yes",
+          "id": "wb-analytics-002-no",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-002-yes",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-008-no",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-008-yes",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-071-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-071-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-073-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-074-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-analytics-074-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-075-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-076-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-analytics-076-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-078-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-079-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-079-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-001-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-005-no",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "no",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-005-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-009-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-customer_relationship_manager-002-no",
+          "template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-003-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-004-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-005-no",
+          "template": "Delete my last email from {name}",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-005-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-006-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-007-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-008-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-009-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-000-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-000-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-001-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-001-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-003-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-004-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-006-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-006-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-007-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-007-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-009-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-009-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-071-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-072-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-074-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-075-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-076-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-077-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-150-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-150-yes",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-154-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-159-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-project_management-007-yes",
+          "template": "Move all of {name}'s tasks that are in progress to in review",
+          "truth": "yes",
+          "tuned": "no"
+        }
+      ],
+      "dev_loss_by_epoch": [
+        {
+          "epoch": 1,
+          "loss": 5.501209207203077
+        },
+        {
+          "epoch": 2,
+          "loss": 4.644893477792325
+        },
+        {
+          "epoch": 3,
+          "loss": 3.8880459643576457
+        }
+      ],
+      "failure_strata": {
+        "with_side_effects": {
+          "base_false_complete": 44,
+          "n": 46,
+          "tuned_false_complete": 29
+        },
+        "without_side_effects": {
+          "base_false_complete": 14,
+          "n": 33,
+          "tuned_false_complete": 5
+        }
+      },
+      "seed": 20260925,
+      "tuned": {
+        "accuracy": 0.6075949367088608,
+        "confusion": {
+          "no": {
+            "no": 45,
+            "yes": 34
+          },
+          "yes": {
+            "no": 28,
+            "yes": 51
+          }
+        },
+        "false_complete": 34,
+        "false_complete_rate": 0.43037974683544306,
+        "false_incomplete": 28,
+        "macro_f1": 0.607028241335045,
+        "n": 158,
+        "per_label": {
+          "no": {
+            "f1": 0.5921052631578947,
+            "precision": 0.6164383561643836,
+            "recall": 0.569620253164557,
+            "support": 79
+          },
+          "yes": {
+            "f1": 0.6219512195121951,
+            "precision": 0.6,
+            "recall": 0.6455696202531646,
+            "support": 79
+          }
+        }
+      }
+    },
+    {
+      "accuracy_delta": 0.08227848101265822,
+      "accuracy_delta_task_ci95": [
+        0.0189873417721519,
+        0.14556962025316456
+      ],
+      "accuracy_delta_template_ci95": [
+        -0.040229885057471264,
+        0.18823529411764706
+      ],
+      "adapter_sha256": "6188ceab3834d0f058220c8eeb84abc5bdbb17af10507ac63ee98d34be4f5981",
+      "base": {
+        "accuracy": 0.5506329113924051,
+        "confusion": {
+          "no": {
+            "no": 21,
+            "yes": 58
+          },
+          "yes": {
+            "no": 13,
+            "yes": 66
+          }
+        },
+        "false_complete": 58,
+        "false_complete_rate": 0.7341772151898734,
+        "false_incomplete": 13,
+        "macro_f1": 0.5109638606739614,
+        "n": 158,
+        "per_label": {
+          "no": {
+            "f1": 0.3716814159292035,
+            "precision": 0.6176470588235294,
+            "recall": 0.26582278481012656,
+            "support": 79
+          },
+          "yes": {
+            "f1": 0.6502463054187192,
+            "precision": 0.532258064516129,
+            "recall": 0.8354430379746836,
+            "support": 79
+          }
+        }
+      },
+      "best_dev_loss": 4.766133672841217,
+      "changed": [
+        {
+          "base": "yes",
+          "id": "wb-analytics-002-no",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-002-yes",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-008-no",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-008-yes",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-071-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-071-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-072-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-072-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-073-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-073-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-074-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-075-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-075-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-076-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-077-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-077-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-078-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-078-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-079-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-079-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-001-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-005-no",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "no",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-005-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-009-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-customer_relationship_manager-002-no",
+          "template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-003-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-004-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-005-no",
+          "template": "Delete my last email from {name}",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-005-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-006-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-008-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-009-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-000-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-000-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-001-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-001-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-002-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-003-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-004-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-006-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-006-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-007-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-007-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-008-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-009-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-009-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-071-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-072-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-074-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-075-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-076-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-077-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-079-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-150-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-152-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-154-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-157-yes",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-159-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-project_management-007-yes",
+          "template": "Move all of {name}'s tasks that are in progress to in review",
+          "truth": "yes",
+          "tuned": "no"
+        }
+      ],
+      "dev_loss_by_epoch": [
+        {
+          "epoch": 1,
+          "loss": 6.145066784775776
+        },
+        {
+          "epoch": 2,
+          "loss": 4.766133672841217
+        },
+        {
+          "epoch": 3,
+          "loss": 6.025163240406824
+        }
+      ],
+      "failure_strata": {
+        "with_side_effects": {
+          "base_false_complete": 44,
+          "n": 46,
+          "tuned_false_complete": 25
+        },
+        "without_side_effects": {
+          "base_false_complete": 14,
+          "n": 33,
+          "tuned_false_complete": 1
+        }
+      },
+      "seed": 20260926,
+      "tuned": {
+        "accuracy": 0.6329113924050633,
+        "confusion": {
+          "no": {
+            "no": 53,
+            "yes": 26
+          },
+          "yes": {
+            "no": 32,
+            "yes": 47
+          }
+        },
+        "false_complete": 26,
+        "false_complete_rate": 0.3291139240506329,
+        "false_incomplete": 32,
+        "macro_f1": 0.6323812580231065,
+        "n": 158,
+        "per_label": {
+          "no": {
+            "f1": 0.6463414634146342,
+            "precision": 0.6235294117647059,
+            "recall": 0.6708860759493671,
+            "support": 79
+          },
+          "yes": {
+            "f1": 0.618421052631579,
+            "precision": 0.6438356164383562,
+            "recall": 0.5949367088607594,
+            "support": 79
+          }
+        }
+      }
+    },
+    {
+      "accuracy_delta": 0.1392405063291139,
+      "accuracy_delta_task_ci95": [
+        0.06962025316455696,
+        0.2088607594936709
+      ],
+      "accuracy_delta_template_ci95": [
+        0.006329113924050633,
+        0.25675675675675674
+      ],
+      "adapter_sha256": "090d67e014cd3120d4e15de556e8ebe0bc6e6ff4fbe4a0669010629f21112d09",
+      "base": {
+        "accuracy": 0.5506329113924051,
+        "confusion": {
+          "no": {
+            "no": 21,
+            "yes": 58
+          },
+          "yes": {
+            "no": 13,
+            "yes": 66
+          }
+        },
+        "false_complete": 58,
+        "false_complete_rate": 0.7341772151898734,
+        "false_incomplete": 13,
+        "macro_f1": 0.5109638606739614,
+        "n": 158,
+        "per_label": {
+          "no": {
+            "f1": 0.3716814159292035,
+            "precision": 0.6176470588235294,
+            "recall": 0.26582278481012656,
+            "support": 79
+          },
+          "yes": {
+            "f1": 0.6502463054187192,
+            "precision": 0.532258064516129,
+            "recall": 0.8354430379746836,
+            "support": 79
+          }
+        }
+      },
+      "best_dev_loss": 5.018003595911938,
+      "changed": [
+        {
+          "base": "yes",
+          "id": "wb-analytics-002-no",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-002-yes",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-008-no",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-008-yes",
+          "template": "Can you make a {plot_type} chart of {natural_language_metric} since {natural_language_date}?",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-071-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-071-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-073-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-074-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-analytics-074-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-075-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-076-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-analytics-076-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-077-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-078-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-078-yes",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-analytics-079-no",
+          "template": "If {natural_language_metric} is more than {natural_language_growth_threshold} {higher_or_lower} than it was on {day_of_week}, make a line plot of it since then",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-001-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-005-no",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "no",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-005-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-calendar-009-yes",
+          "template": "Cancel my first meeting on {natural_language_date}",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "yes",
+          "id": "wb-customer_relationship_manager-002-no",
+          "template": "Update the status of {current_customer_name} to {new_status_natural_language} in the crm",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-003-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-004-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-005-no",
+          "template": "Delete my last email from {name}",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-005-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-006-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-008-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-email-009-yes",
+          "template": "Delete my last email from {name}",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-000-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-000-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-001-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-001-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-002-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-003-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-004-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-006-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-006-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-007-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-007-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-008-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-009-no",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-009-yes",
+          "template": "If we haven't spoke to {current_customer_name} in the past fortnight book a 30-minute meeting with whoever is assigned to them called 'Update on {current_customer_name}' at the first time I'm free tomorrow",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-071-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-072-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-074-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-075-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-076-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-077-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-079-no",
+          "template": "If {name} has any overdue tasks, send them an email titled 'Overdue tasks' saying 'You have a few overdue tasks - can you update me on them?'. Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-150-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-152-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-152-yes",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "yes",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-154-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-158-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "yes",
+          "id": "wb-multi_domain-159-no",
+          "template": "If {name} has any overdue tasks, book a half hour meeting with them called 'Catch up on overdue tasks' at the earliest time I'm free tomorrow and send them an email titled 'Discuss overdue tasks' saying 'I noticed you have a few overdue tasks - let's catch up tomorrow.' Otherwise email them with 'Nice work keeping on top of your tasks this sprint!' titled 'Good work this sprint'",
+          "truth": "no",
+          "tuned": "no"
+        },
+        {
+          "base": "no",
+          "id": "wb-project_management-002-yes",
+          "template": "Move all of {name}'s tasks that are in progress to in review",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-project_management-003-yes",
+          "template": "Move all of {name}'s tasks that are in progress to in review",
+          "truth": "yes",
+          "tuned": "yes"
+        },
+        {
+          "base": "no",
+          "id": "wb-project_management-004-yes",
+          "template": "Move all of {name}'s tasks that are in progress to in review",
+          "truth": "yes",
+          "tuned": "yes"
+        }
+      ],
+      "dev_loss_by_epoch": [
+        {
+          "epoch": 1,
+          "loss": 5.379080575445424
+        },
+        {
+          "epoch": 2,
+          "loss": 7.396354459226131
+        },
+        {
+          "epoch": 3,
+          "loss": 5.018003595911938
+        }
+      ],
+      "failure_strata": {
+        "with_side_effects": {
+          "base_false_complete": 44,
+          "n": 46,
+          "tuned_false_complete": 24
+        },
+        "without_side_effects": {
+          "base_false_complete": 14,
+          "n": 33,
+          "tuned_false_complete": 3
+        }
+      },
+      "seed": 20260927,
+      "tuned": {
+        "accuracy": 0.689873417721519,
+        "confusion": {
+          "no": {
+            "no": 52,
+            "yes": 27
+          },
+          "yes": {
+            "no": 22,
+            "yes": 57
+          }
+        },
+        "false_complete": 27,
+        "false_complete_rate": 0.34177215189873417,
+        "false_incomplete": 22,
+        "macro_f1": 0.689562532579494,
+        "n": 158,
+        "per_label": {
+          "no": {
+            "f1": 0.6797385620915033,
+            "precision": 0.7027027027027027,
+            "recall": 0.6582278481012658,
+            "support": 79
+          },
+          "yes": {
+            "f1": 0.6993865030674846,
+            "precision": 0.6785714285714286,
+            "recall": 0.7215189873417721,
+            "support": 79
+          }
+        }
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selected_seed": 20260925,
+  "selection_rule": "lowest development loss among fixed seeds",
+  "source_revision": "49c7dfd00c03d384ec59ea57374f50b766aa5613",
+  "source_sha256": "6035fb112bbb4fb48cd56d643898cac43c42c2d11bc6d2bb0e595d8d31ea2216",
+  "study": "workbench-v2-template-holdout",
+  "test_examples": 158,
+  "test_tasks": 79,
+  "test_templates": 10
+}
