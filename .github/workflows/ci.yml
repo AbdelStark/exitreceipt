@@ -16,8 +16,9 @@ jobs:
       - run: uv sync --locked --extra dev
       - run: uv run --extra dev pytest -q
       - run: uv run --extra dev ruff check .
-      - run: uv run --extra dev ruff format --check src tests
+      - run: uv run --extra dev ruff format --check src tests scripts
       - run: uv run exitreceipt check-data
+      - run: uv run exitreceipt check-data --data data/v2-cases.psv --evidence data/v2-evidence.psv
       - run: node --check app.js
       - run: uv build
       - run: uv venv "$RUNNER_TEMP/exitreceipt-wheel-smoke"
