@@ -11,15 +11,15 @@ COLORS = ("#1769aa", "#cb5b32", "#18836b")
 
 def render(summary: dict) -> str:
     runs = summary["runs"]
-    if len(runs) != 3 or any(len(run["dev_loss_by_epoch"]) != 6 for run in runs):
-        raise ValueError("expected three six-epoch development curves")
+    if len(runs) != 3 or any(len(run["dev_loss_by_epoch"]) != 3 for run in runs):
+        raise ValueError("expected three three-epoch development curves")
     all_losses = [point["loss"] for run in runs for point in run["dev_loss_by_epoch"]]
     low = max(0, min(all_losses) - 0.35)
     high = max(all_losses) + 0.35
     left, right, top, bottom = 96, 824, 82, 390
 
     def x(epoch: int) -> float:
-        return left + (epoch - 1) * (right - left) / 5
+        return left + (epoch - 1) * (right - left) / 2
 
     def y(loss: float) -> float:
         return bottom - (loss - low) * (bottom - top) / (high - low)
@@ -29,7 +29,7 @@ def render(summary: dict) -> str:
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 510" role="img" '
             'aria-labelledby="chart-title chart-desc">'
         ),
-        '<title id="chart-title">ExitReceipt v2 development loss across six epochs</title>',
+        '<title id="chart-title">ExitReceipt v2 development loss across three epochs</title>',
         (
             '<desc id="chart-desc">Three fixed LoRA seeds. The selected adapter is chosen by '
             "lowest development loss, not test accuracy.</desc>"
@@ -55,7 +55,7 @@ def render(summary: dict) -> str:
             f'<text x="{left - 16}" y="{yy + 4:.1f}" text-anchor="end" fill="#52645a" '
             f'font-family="ui-monospace,monospace" font-size="12">{value:.1f}</text>'
         )
-    for epoch in range(1, 7):
+    for epoch in range(1, 4):
         xx = x(epoch)
         parts.append(
             f'<text x="{xx:.1f}" y="{bottom + 25}" text-anchor="middle" fill="#52645a" '

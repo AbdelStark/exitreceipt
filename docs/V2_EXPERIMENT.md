@@ -57,7 +57,7 @@ to choose hyperparameters or checkpoint.
 
 Both models use the same pinned base revision and joint `finished` plus
 `receipt`/`blocker` schema. V2 uses the original rank-8 LoRA targets and
-learning rate, with dropout 0.1, batch size 4, and at most six epochs. The
+learning rate, with dropout 0.1, batch size 4, and at most three epochs. The
 trainer selects the lowest **development loss** checkpoint per seed. Train
 three seeds: `20260925`, `20260926`, `20260927`. The publishable adapter is
 selected by lowest development loss across those three runs. The immutable
@@ -99,7 +99,7 @@ uv run --extra model exitreceipt check-data \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv
 uv run --extra model exitreceipt train \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv \
-  --run-dir runs/v2-20260925 --device mps --epochs 6 --batch-size 4 \
+  --run-dir runs/v2-20260925 --device mps --epochs 3 --batch-size 4 \
   --seed 20260925 --lora-dropout 0.1 --experiment-name exitreceipt-v2
 ```
 
@@ -107,13 +107,13 @@ Repeat `train` for the other two fixed seeds. Lock and commit the development
 choice before opening the test split:
 
 ```bash
-python3 scripts/select_v2_checkpoint.py
+uv run python scripts/select_v2_checkpoint.py
 # Commit results/v2-selection.json before test inference.
 uv run --extra model exitreceipt evaluate \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv \
   --run-dir runs/v2-20260925 --split test --output results/v2-20260925.json
 # Repeat evaluate for the other two seeds, then:
-python3 scripts/summarize_v2.py
+uv run python scripts/summarize_v2.py
 ```
 
 The original WorkBench
@@ -123,14 +123,23 @@ require substantial disk, RAM, and compute. Metal/MPS can be nondeterministic
 despite fixed seeds. Model weights remain out of Git and a tagged adapter is
 published separately on Hugging Face after evaluation.
 
-## Pre-test amendment: training ceiling
+## Pre-test training-length amendments
 
-The first committed contract used a three-epoch ceiling. Before running any
-v2 test inference, a three-epoch **development-only** probe for seed
-`20260925` had loss 5.5012, 4.6449, and 3.8880 at epochs 1–3. Seed
-`20260926` fell from 6.1451 to 4.7661 over its first two epochs. Unlike the
-72-case pilot, these curves had not turned upward. We therefore extended the
-ceiling to six epochs and will rerun all three fixed seeds from the pinned base
-checkpoint under the same six-epoch schedule. The probes are not candidates
-for publication, and the test split remains unopened. All other selection,
-split, and headline rules above remain fixed.
+The first committed contract used a three-epoch ceiling. Before any v2 test
+inference, seed `20260925` had development loss 5.5012, 4.6449, and 3.8880 at
+epochs 1–3. Seed `20260926` fell from 6.1451 to 4.7661 over its first two
+epochs. We amended the ceiling to six and reran seed `20260925` from the pinned
+base. This changes the linear learning-rate schedule as well as the maximum
+number of steps.
+
+The completed six-epoch run had development losses 4.6492, 4.1832, 4.7161,
+4.5335, 5.9071, and 6.3810. Its best checkpoint was worse than the original
+three-epoch run for the same seed (4.1832 versus 3.8880), and the late epochs
+clearly overfit this development set. We therefore reverted the final recipe
+to the original three-epoch schedule, retained the two completed three-epoch
+runs, and will train the remaining fixed seed under the same schedule. The
+six-epoch run is a development-only training-length probe, excluded from
+adapter selection. **No v2 test inference occurred during either amendment.**
+All split, seed-selection, and headline rules remain fixed. This one-seed
+comparison does not establish that longer training would hurt for every seed
+or a different learning-rate schedule.

@@ -30,15 +30,15 @@ def main() -> None:
             or metadata["evidence_sha256"] != evidence_hash
             or metadata["revision"] != MODEL_REVISION
             or config["seed"] != seed
-            or config["epochs"] != 6
+            or config["epochs"] != 3
             or config["batch_size"] != 4
             or config["lora_dropout"] != 0.1
             or metadata["code"]["tracked_changes"]
         ):
             raise ValueError(f"run {seed} differs from the preregistered setup")
         history = metadata["training_summary"]["eval_metrics_history"]
-        if len(history) != 6:
-            raise ValueError(f"expected six development checkpoints for {seed}")
+        if len(history) != 3:
+            raise ValueError(f"expected three development checkpoints for {seed}")
         best = min(history, key=lambda item: item["eval_loss"])
         if best["eval_loss"] != metadata["training_summary"]["best_metric"]:
             raise ValueError(f"selected checkpoint for {seed} differs from dev history")

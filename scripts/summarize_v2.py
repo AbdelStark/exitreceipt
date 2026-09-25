@@ -29,7 +29,7 @@ def summarize(reports: list[dict], manifest: dict, selection: dict) -> dict:
         training = report["training"]
         if (
             training["seed"] != expected_seed
-            or training["epochs"] != 6
+            or training["epochs"] != 3
             or training["batch_size"] != 4
             or training["lora_dropout"] != 0.1
         ):

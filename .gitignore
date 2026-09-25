@@ -18,5 +18,6 @@ results/*.json
 !results/v2-selection.json
 !results/v2-robustness.json
 !results/v2-v1-comparator.json
+!results/v2-length-probe.json
 *.log
 .DS_Store

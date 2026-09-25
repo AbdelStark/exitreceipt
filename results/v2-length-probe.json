@@ -1,0 +1,73 @@
+{
+  "base_revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
+  "data_sha256": "55f9d4c018ab8fafb2b64ba0f4d688ea781788af133378d429ccdf38e7ab48ad",
+  "runs": [
+    {
+      "adapter_sha256": "d31c4000b3610cf2a7f6effcd1f7c93730508c48a79038658e440faeb82b0646",
+      "best_dev_loss": 3.8880459643576457,
+      "best_epoch": 3,
+      "dev_loss_by_epoch": [
+        {
+          "epoch": 1,
+          "loss": 5.501209207203077
+        },
+        {
+          "epoch": 2,
+          "loss": 4.644893477792325
+        },
+        {
+          "epoch": 3,
+          "loss": 3.8880459643576457
+        }
+      ],
+      "epochs": 3,
+      "name": "v2-20260925",
+      "training_code": {
+        "git_head": "2ff01855c0447b5d91b34516d1bd73132b35423d",
+        "tracked_changes": false,
+        "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+      }
+    },
+    {
+      "adapter_sha256": "d37c730e179dff0371641b299a3267f2b30c10994df85d3d37dbc06b57a4387b",
+      "best_dev_loss": 4.1832269967898075,
+      "best_epoch": 2,
+      "dev_loss_by_epoch": [
+        {
+          "epoch": 1,
+          "loss": 4.649182951968649
+        },
+        {
+          "epoch": 2,
+          "loss": 4.1832269967898075
+        },
+        {
+          "epoch": 3,
+          "loss": 4.716147408780197
+        },
+        {
+          "epoch": 4,
+          "loss": 4.533543696950959
+        },
+        {
+          "epoch": 5,
+          "loss": 5.907081826144586
+        },
+        {
+          "epoch": 6,
+          "loss": 6.380957149556312
+        }
+      ],
+      "epochs": 6,
+      "name": "v2-longprobe-20260925",
+      "training_code": {
+        "git_head": "ecb3a9bcbd660a34a5a705c417f7b15a072771e5",
+        "tracked_changes": false,
+        "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": "development-only, single-seed training-length probe; no test results",
+  "selected_schedule_epochs": 3
+}
