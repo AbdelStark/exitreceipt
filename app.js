@@ -1,7 +1,9 @@
 const $ = (id) => document.getElementById(id);
 let report;
 let currentId;
+let study = "v2";
 const FILTERS = new Set(["all", "changed", "base-error", "tuned-error", "false-complete"]);
+const STUDIES = { v2: "./results/v2-selected.json", pilot: "./results/pilot.json" };
 
 function formatPct(value) { return `${(value * 100).toFixed(1)}%`; }
 function verdict(value) { return value === "yes" ? "DONE" : "NOT DONE"; }
@@ -35,7 +37,9 @@ function renderDetail(row) {
     card.append(small, answer); verdicts.append(card);
   }
   const note = document.createElement("p"); note.className = "detail-note";
-  note.textContent = "Ground truth follows the requested goal and stated tool outcome. Extracted spans are model candidates; they are not independently verified receipts.";
+  note.textContent = study === "v2"
+    ? "The label is WorkBench's sandbox verdict. The released action log omits tool results and final state, so some outcomes cannot be determined from this view alone. Spans are unverified model candidates."
+    : "Ground truth follows the requested goal and stated tool outcome. Extracted spans are model candidates; they are not independently verified receipts.";
   const evidencePanel = document.createElement("section"); evidencePanel.className = "evidence-panel";
   const evidenceTitle = document.createElement("h4"); evidenceTitle.className = "evidence-title"; evidenceTitle.textContent = "CANDIDATE EVIDENCE SPANS";
   const columns = document.createElement("div"); columns.className = "evidence-columns";
@@ -92,6 +96,8 @@ function renderList() {
   }
   renderDetail(rows.find((row) => row.id === currentId));
   const url = new URL(window.location.href);
+  if (study !== "v2") url.searchParams.set("study", study);
+  else url.searchParams.delete("study");
   if (currentId) url.searchParams.set("case", currentId);
   else url.searchParams.delete("case");
   if ($("filter").value !== "all") url.searchParams.set("filter", $("filter").value);
@@ -101,14 +107,37 @@ function renderList() {
 
 async function main() {
   try {
-    const response = await fetch("./results/pilot.json", { cache: "no-store" });
+    const params = new URLSearchParams(window.location.search);
+    study = params.get("study") === "pilot" ? "pilot" : "v2";
+    $("study").value = study;
+    await loadStudy(params.get("case"), params.get("filter"));
+    $("study").addEventListener("change", async () => {
+      study = $("study").value;
+      $("filter").value = "all";
+      await loadStudy(null, null);
+    });
+    $("filter").addEventListener("change", renderList);
+  } catch (error) {
+    showError(error);
+  }
+}
+
+function showError(error) {
+  $("error").hidden = false;
+  $("error").textContent = error instanceof Error ? error.message : String(error);
+  $("case-detail").textContent = "Open the repository for the recorded evaluation report.";
+}
+
+async function loadStudy(caseId, filter) {
+  try {
+    const response = await fetch(STUDIES[study], { cache: "no-store" });
     if (!response.ok) throw new Error(`Report unavailable (HTTP ${response.status}). Run the evaluation command first.`);
     report = await response.json();
     if (report.schema_version !== 1 || report.split !== "test" || !Array.isArray(report.rows) || !report.rows.length || !report.base || !report.tuned) throw new Error("Report schema is incomplete or is not the final test run.");
-    const params = new URLSearchParams(window.location.search);
-    if (FILTERS.has(params.get("filter"))) $("filter").value = params.get("filter");
-    currentId = params.get("case");
-    $("sample-count").textContent = `${report.rows.length} HELD-OUT CASES / SYNTHETIC`;
+    $("error").hidden = true;
+    if (FILTERS.has(filter)) $("filter").value = filter;
+    currentId = caseId;
+    $("sample-count").textContent = `${report.rows.length} HELD-OUT CASES / ${study === "v2" ? "WORKBENCH" : "AUTHORED PILOT"}`;
     $("base-accuracy").textContent = formatPct(report.base.accuracy);
     $("tuned-accuracy").textContent = formatPct(report.tuned.accuracy);
     $("base-false").textContent = `${report.base.false_complete} FALSE COMPLETION ${report.base.false_complete === 1 ? "CALL" : "CALLS"}`;
@@ -116,18 +145,19 @@ async function main() {
     const delta = (report.tuned.accuracy - report.base.accuracy) * 100;
     $("delta").textContent = `${delta > 0 ? "+" : ""}${delta.toFixed(1)}`;
     $("changed-count").textContent = `${report.rows.filter((row) => row.base !== row.tuned).length} CHANGED DECISIONS`;
-    if (report.evidence?.base && report.evidence?.tuned) {
+    $("evidence-score").hidden = true;
+    if (report.evidence?.base?.annotated_n && report.evidence?.tuned?.annotated_n) {
       const b = report.evidence.base; const t = report.evidence.tuned;
       $("evidence-score").textContent = `ANNOTATED EVIDENCE SPANS · ≥50% GOLD OVERLAP: ${b.half_gold_span_and_type_hits}/${b.annotated_n} BASE → ${t.half_gold_span_and_type_hits}/${t.annotated_n} TUNED`;
       $("evidence-score").hidden = false;
     }
+    $("caveat").textContent = study === "v2"
+      ? "Sandbox-scored WorkBench action logs, held out by task template. Tool results and final state are absent from the released action view. This measures outcome prediction from partial evidence, not verification of a live agent."
+      : "Authored synthetic English cases. The tuned model corrected two decisions and regressed on two others. A verdict is a review signal; the underlying receipt remains the source of truth.";
     $("scores").hidden = false;
-    $("filter").addEventListener("change", renderList);
     renderList();
   } catch (error) {
-    $("error").hidden = false;
-    $("error").textContent = error instanceof Error ? error.message : String(error);
-    $("case-detail").textContent = "Run the experiment to generate results/pilot.json, then refresh this page.";
+    showError(error);
   }
 }
 main();

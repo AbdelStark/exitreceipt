@@ -39,6 +39,9 @@ h1 em,h2 em { color: #b6ef82; font-style: normal; }
 .section-index { display: block; color: #a2e675; margin-bottom: 14px; }
 h2 { font-size: clamp(30px,3.4vw,52px); letter-spacing: -.055em; font-weight: 640; line-height: 1.08; }
 .section-aside { color: #829588; padding-bottom: 6px; white-space: nowrap; }
+.study-switch { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.study-switch label { color: #829588; font: 11px ui-monospace, monospace; letter-spacing: .13em; }
+.study-switch select { flex: none; }
 .score-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
 .score-card { min-height: 225px; border: 1px solid #354239; background: #141c17; padding: 25px; }
 .score-card.featured { background: #1a2b1e; border-color: #83be64; }
@@ -96,4 +99,5 @@ footer a { color: #b5dba5; text-decoration: none; }
 footer a:hover,footer a:focus-visible { text-decoration: underline; }
 @media (max-width: 900px) { .shell { padding: 0 24px; } .hero { grid-template-columns: 1fr; }.hero-copy { padding-bottom: 0; }.hero-art { min-height: 300px; }.orbit-one { width: 185px; height: 185px; }.orbit-two { width: 270px; height: 270px; }.orbit-three { width: 350px; height: 350px; }.art-center { height: 96px; width: 96px; }.score-grid { grid-template-columns: 1fr; }.score-card { min-height: 190px; }.explorer { grid-template-columns: 1fr; }.case-rail { border-right: 0; border-bottom: 1px solid #354239; }.case-list { max-height: 270px; }.how-section { grid-template-columns: 1fr; gap: 28px; } }
 @media (max-width: 560px) { .shell { padding: 0 16px; }.topbar { min-height: 70px; }.top-meta { display: none; }.hero-copy { padding-top: 55px; }.eyebrow span + span { display: none; }.intro { font-size: 15px; }.section-heading { align-items: start; flex-direction: column; }.case-detail { padding: 24px 18px; }.verdicts { gap: 5px; }.verdict { padding: 11px 8px; }.verdict-value { font-size: 15px; } }
+@media (max-width: 560px) { .study-switch { margin-left: 0; } }
 @media (max-width: 560px) { .evidence-columns { grid-template-columns: 1fr; } }

@@ -101,6 +101,9 @@ def summarize(reports: list[dict], manifest: dict) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "results" / "v2-robustness.json")
+    parser.add_argument(
+        "--selected-output", type=Path, default=ROOT / "results" / "v2-selected.json"
+    )
     args = parser.parse_args()
     reports = [
         json.loads((ROOT / "results" / f"v2-{seed}.json").read_text(encoding="utf-8"))
@@ -111,6 +114,10 @@ def main() -> None:
     )
     result = summarize(reports, manifest)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    selected = reports[SEEDS.index(result["selected_seed"])]
+    args.selected_output.write_text(
+        json.dumps(selected, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     print(
         json.dumps({key: result[key] for key in ("selected_seed", "headline_positive")}, indent=2)
     )
