@@ -43,6 +43,7 @@ def release_files() -> dict[str, Path]:
         "evaluation/v2-robustness.json": summary_path,
         "evaluation/v2-selection.json": ROOT / "results/v2-selection.json",
         "evaluation/v2-length-probe.json": ROOT / "results/v2-length-probe.json",
+        "evaluation/v2-v1-comparator.json": ROOT / "results/v2-v1-comparator.json",
         "evaluation/pilot.json": ROOT / "results/pilot.json",
         "data/workbench-v2-manifest.json": ROOT / "data/workbench-v2-manifest.json",
         "data/workbench-v2.psv": ROOT / "data/workbench-v2.psv",
