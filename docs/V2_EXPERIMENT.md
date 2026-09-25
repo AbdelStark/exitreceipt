@@ -134,8 +134,8 @@ number of steps.
 
 The completed six-epoch run had development losses 4.6492, 4.1832, 4.7161,
 4.5335, 5.9071, and 6.3810. Its best checkpoint was worse than the original
-three-epoch run for the same seed (4.1832 versus 3.8880), and the late epochs
-clearly overfit this development set. We therefore reverted the final recipe
+three-epoch run for the same seed (4.1832 versus 3.8880), and development loss
+rose sharply in the late epochs. We therefore reverted the final recipe
 to the original three-epoch schedule, retained the two completed three-epoch
 runs, and will train the remaining fixed seed under the same schedule. The
 six-epoch run is a development-only training-length probe, excluded from
