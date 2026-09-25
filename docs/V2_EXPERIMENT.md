@@ -13,6 +13,12 @@ compact list of recorded actions. The label is WorkBench's sandbox-scored
 state, so some labels may be impossible to infer from the supplied input. This
 is a **partial-observation outcome-prediction study**, not a verified completion
 service or a claim about arbitrary agent trajectories.
+WorkBench also tracks unwanted side effects, and its `correct` verdict may
+reject a run that performed the requested action but changed something else.
+The v2 label therefore means **benchmark task correctness**, a broader rule
+than the pilot's literal requested-outcome completion label. The existing
+`finished: yes/no` schema is reused for model compatibility; its v2 scores
+must be read under this benchmark definition.
 
 ## Source and selection
 
