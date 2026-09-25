@@ -11,5 +11,11 @@ results/*.json
 !results/seed-20260926.json
 !results/seed-20260927.json
 !results/seed-robustness.json
+!results/v2-20260925.json
+!results/v2-20260926.json
+!results/v2-20260927.json
+!results/v2-selected.json
+!results/v2-robustness.json
+!results/v2-v1-comparator.json
 *.log
 .DS_Store
