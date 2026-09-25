@@ -1,0 +1,123 @@
+const $ = (id) => document.getElementById(id);
+let report;
+let currentId;
+
+function formatPct(value) { return `${(value * 100).toFixed(1)}%`; }
+function verdict(value) { return value === "yes" ? "DONE" : "NOT DONE"; }
+
+function renderDetail(row) {
+  const panel = $("case-detail");
+  panel.replaceChildren();
+  if (!row) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "No cases match this filter.";
+    panel.append(empty);
+    return;
+  }
+  const top = document.createElement("div"); top.className = "detail-top";
+  const id = document.createElement("span"); id.textContent = row.id.toUpperCase();
+  const domain = document.createElement("span"); domain.className = "detail-domain"; domain.textContent = row.domain;
+  top.append(id, domain);
+  const label = document.createElement("p"); label.className = "detail-title"; label.textContent = "THE REQUESTED OUTCOME";
+  const goal = document.createElement("h3"); goal.className = "detail-goal"; goal.textContent = row.goal;
+  const trace = document.createElement("div"); trace.className = "trace";
+  const traceLabel = document.createElement("span"); traceLabel.className = "trace-label"; traceLabel.textContent = "LAST OBSERVED STATE";
+  const traceText = document.createElement("span"); traceText.textContent = row.trace;
+  trace.append(traceLabel, traceText);
+  const verdicts = document.createElement("div"); verdicts.className = "verdicts";
+  for (const [name, value] of [["GROUND TRUTH", row.truth], ["BASE", row.base], ["TUNED", row.tuned]]) {
+    const card = document.createElement("div");
+    card.className = `verdict ${name === "GROUND TRUTH" ? "truth" : value !== row.truth ? "wrong" : ""}`;
+    const small = document.createElement("div"); small.className = "verdict-label"; small.textContent = name;
+    const answer = document.createElement("div"); answer.className = "verdict-value"; answer.textContent = verdict(value);
+    card.append(small, answer); verdicts.append(card);
+  }
+  const note = document.createElement("p"); note.className = "detail-note";
+  note.textContent = "Ground truth follows the requested goal and stated tool outcome. Extracted spans are model candidates; they are not independently verified receipts.";
+  const evidencePanel = document.createElement("section"); evidencePanel.className = "evidence-panel";
+  const evidenceTitle = document.createElement("h4"); evidenceTitle.className = "evidence-title"; evidenceTitle.textContent = "CANDIDATE EVIDENCE SPANS";
+  const columns = document.createElement("div"); columns.className = "evidence-columns";
+  for (const [name, spans] of [["BASE", row.base_spans || []], ["TUNED", row.tuned_spans || []]]) {
+    const column = document.createElement("div"); column.className = "evidence-column";
+    const columnLabel = document.createElement("span"); columnLabel.className = "evidence-column-label"; columnLabel.textContent = name;
+    column.append(columnLabel);
+    if (!spans.length) {
+      const empty = document.createElement("span"); empty.className = "evidence-item"; empty.textContent = "No span returned"; column.append(empty);
+    }
+    for (const span of spans) {
+      const item = document.createElement("span"); item.className = "evidence-item";
+      const kind = document.createElement("span"); kind.className = "evidence-kind"; kind.textContent = span.kind;
+      item.append(kind, document.createTextNode(span.text)); column.append(item);
+    }
+    columns.append(column);
+  }
+  evidencePanel.append(evidenceTitle, columns);
+  if (row.gold_evidence) {
+    const gold = document.createElement("p"); gold.className = "gold-evidence";
+    const goldLabel = document.createElement("span"); goldLabel.className = "gold-label"; goldLabel.textContent = "ANNOTATED DECISIVE PHRASE";
+    gold.append(goldLabel, document.createTextNode(row.gold_evidence.evidence)); evidencePanel.append(gold);
+  }
+  panel.append(top, label, goal, trace, verdicts, evidencePanel, note);
+}
+
+function filteredRows() {
+  const filter = $("filter").value;
+  return report.rows.filter((row) => {
+    if (filter === "changed") return row.base !== row.tuned;
+    if (filter === "base-error") return row.base !== row.truth;
+    if (filter === "tuned-error") return row.tuned !== row.truth;
+    if (filter === "false-complete") return row.truth === "no" && (row.base === "yes" || row.tuned === "yes");
+    return true;
+  });
+}
+
+function renderList() {
+  const rows = filteredRows();
+  $("case-count").textContent = `${rows.length} / ${report.rows.length} CASES`;
+  if (!rows.some((row) => row.id === currentId)) currentId = rows[0]?.id;
+  const list = $("case-list"); list.replaceChildren();
+  for (const row of rows) {
+    const button = document.createElement("button"); button.className = `case-item ${row.id === currentId ? "active" : ""}`;
+    button.type = "button"; button.setAttribute("role", "option"); button.setAttribute("aria-selected", String(row.id === currentId));
+    const top = document.createElement("div"); top.className = "case-item-top";
+    const id = document.createElement("span"); id.className = "case-id"; id.textContent = row.id.toUpperCase();
+    const tag = document.createElement("span"); tag.className = "case-tag";
+    tag.textContent = row.base !== row.tuned ? "CHANGED" : row.base !== row.truth ? "BASE ERROR" : "AGREED";
+    const title = document.createElement("div"); title.className = "case-item-title"; title.textContent = row.goal;
+    top.append(id, tag); button.append(top, title);
+    button.addEventListener("click", () => { currentId = row.id; renderList(); });
+    list.append(button);
+  }
+  renderDetail(rows.find((row) => row.id === currentId));
+}
+
+async function main() {
+  try {
+    const response = await fetch("../results/pilot.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`Report unavailable (HTTP ${response.status}). Run the evaluation command first.`);
+    report = await response.json();
+    if (report.schema_version !== 1 || report.split !== "test" || !Array.isArray(report.rows) || !report.rows.length || !report.base || !report.tuned) throw new Error("Report schema is incomplete or is not the final test run.");
+    $("sample-count").textContent = `${report.rows.length} HELD-OUT CASES / SYNTHETIC`;
+    $("base-accuracy").textContent = formatPct(report.base.accuracy);
+    $("tuned-accuracy").textContent = formatPct(report.tuned.accuracy);
+    $("base-false").textContent = `${report.base.false_complete} FALSE COMPLETION CALLS`;
+    $("tuned-false").textContent = `${report.tuned.false_complete} FALSE COMPLETION CALLS`;
+    const delta = (report.tuned.accuracy - report.base.accuracy) * 100;
+    $("delta").textContent = `${delta > 0 ? "+" : ""}${delta.toFixed(1)}`;
+    $("changed-count").textContent = `${report.rows.filter((row) => row.base !== row.tuned).length} CHANGED DECISIONS`;
+    if (report.evidence?.base && report.evidence?.tuned) {
+      const b = report.evidence.base; const t = report.evidence.tuned;
+      $("evidence-score").textContent = `ANNOTATED EVIDENCE SPANS · ≥50% GOLD OVERLAP: ${b.half_gold_span_and_type_hits}/${b.annotated_n} BASE → ${t.half_gold_span_and_type_hits}/${t.annotated_n} TUNED`;
+      $("evidence-score").hidden = false;
+    }
+    $("scores").hidden = false;
+    $("filter").addEventListener("change", renderList);
+    renderList();
+  } catch (error) {
+    $("error").hidden = false;
+    $("error").textContent = error instanceof Error ? error.message : String(error);
+    $("case-detail").textContent = "Run the experiment to generate results/pilot.json, then refresh this page.";
+  }
+}
+main();

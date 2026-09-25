@@ -1,0 +1,133 @@
+id|split|domain|label|goal|trace
+tr001|train|mail|no|Email the invoice to the client.|The invoice PDF was attached to a draft. Send is still pending.
+tr002|train|mail|yes|Email the invoice to the client.|The mail provider returned message id m-713 and placed it in Sent.
+tr003|train|mail|no|Send the weekly digest to the team.|The agent wrote the digest and opened the compose window. No recipients were selected.
+tr004|train|mail|yes|Send the weekly digest to the team.|The outbound mail call succeeded for all team addresses and returned delivery ids.
+tr005|train|mail|no|Reply to the customer with the tracking number.|The reply was saved as a draft after the address validator rejected the recipient.
+tr006|train|mail|yes|Reply to the customer with the tracking number.|The reply API accepted the message and returned a sent timestamp.
+tr007|train|mail|no|Share the meeting notes by email.|The notes were summarized in the chat, but the mail tool was never called.
+tr008|train|mail|yes|Share the meeting notes by email.|A Sent folder entry contains the notes and the intended recipient list.
+tr009|train|git|no|Merge the approved pull request.|Checks passed and the PR is marked mergeable, but it remains open.
+tr010|train|git|yes|Merge the approved pull request.|The merge endpoint returned a merge commit and the PR state is merged.
+tr011|train|git|no|Push the fix to the remote branch.|The commit exists locally; git push failed with a permission error.
+tr012|train|git|yes|Push the fix to the remote branch.|The remote branch now points at the new commit SHA after a successful push.
+tr013|train|git|no|Open a pull request for the fix.|The branch was pushed and a PR body prepared, but no pull request exists.
+tr014|train|git|yes|Open a pull request for the fix.|The hosting service returned pull request number 418 and its URL.
+tr015|train|git|no|Tag the release and publish it.|A version tag was created locally. The release page has not been published.
+tr016|train|git|yes|Tag the release and publish it.|The tag is on origin and the release API returned a published release id.
+tr017|train|deploy|no|Deploy the app to production.|The image built successfully and a staging rollout passed. Production was untouched.
+tr018|train|deploy|yes|Deploy the app to production.|The production rollout completed and the live health probe returned the new revision.
+tr019|train|deploy|no|Turn on the feature flag for customers.|A flag change was submitted, but the configuration service reports pending approval.
+tr020|train|deploy|yes|Turn on the feature flag for customers.|The flag service shows enabled in the production environment for the customer cohort.
+tr021|train|deploy|no|Run the migration on the live database.|The migration passed dry run on a copy; the live migration job has not started.
+tr022|train|deploy|yes|Run the migration on the live database.|The live migration job succeeded and recorded the new schema version.
+tr023|train|deploy|no|Restore service after the outage.|A patch was committed, but the production health endpoint still fails.
+tr024|train|deploy|yes|Restore service after the outage.|The rollback completed and production probes have stayed healthy for ten minutes.
+tr025|train|commerce|no|Book the requested train ticket.|The itinerary is held in the cart. Payment authorization timed out.
+tr026|train|commerce|yes|Book the requested train ticket.|The rail service issued a ticket number and a confirmed itinerary.
+tr027|train|commerce|no|Buy the replacement keyboard.|The correct item is selected. Checkout requires a shipping address.
+tr028|train|commerce|yes|Buy the replacement keyboard.|Checkout returned a paid order id and a receipt for the selected item.
+tr029|train|commerce|no|Cancel the hotel reservation.|The cancellation form is filled but the final confirmation button was not pressed.
+tr030|train|commerce|yes|Cancel the hotel reservation.|The hotel API returned canceled status and a cancellation reference.
+tr031|train|commerce|no|Refund the duplicate charge.|The refund request is queued for review; the payment service still reports no refund.
+tr032|train|commerce|yes|Refund the duplicate charge.|The payment provider returned a successful refund id for the original charge.
+tr033|train|files|no|Save the final report to the shared drive.|A local markdown file was written, but the drive upload failed.
+tr034|train|files|yes|Save the final report to the shared drive.|The drive lists the final report at the requested path with the new checksum.
+tr035|train|files|no|Update the spreadsheet with the new totals.|The totals were calculated in chat. The spreadsheet cells have not changed.
+tr036|train|files|yes|Update the spreadsheet with the new totals.|The sheet update returned success and a readback shows the new cell values.
+tr037|train|files|no|Create a PDF and attach it to the ticket.|The PDF was generated, but the ticket attachment API returned 403.
+tr038|train|files|yes|Create a PDF and attach it to the ticket.|The PDF exists and the ticket now lists it as an attachment.
+tr039|train|files|no|Archive the old documents.|The archive folder was created. All original documents remain in place.
+tr040|train|files|yes|Archive the old documents.|The documents appear in the archive folder and are absent from the active folder.
+tr041|train|boundary|yes|Prepare a draft announcement for review.|A draft announcement was saved in the review folder. It was not posted, as requested.
+tr042|train|boundary|no|Publish the announcement publicly.|A draft announcement was saved in the review folder. Nothing is visible publicly.
+tr043|train|boundary|yes|Run the test suite and report the result.|The test command finished with exit code zero and the summary was posted in chat.
+tr044|train|boundary|no|Make all tests pass.|A test run produced eight failures; the agent reported that it was done anyway.
+tr045|train|boundary|yes|Create a private repository for the prototype.|The repository API returned a new repo with private visibility.
+tr046|train|boundary|no|Create a private repository for the prototype.|The repo exists but its visibility is public, contrary to the requested setting.
+tr047|train|boundary|yes|Write a proposal without sending it.|The proposal was saved locally and there is no outbound message, as requested.
+tr048|train|boundary|no|Send the proposal to the founder.|The proposal was saved locally; no email or DM was sent.
+dv001|dev|mail|no|Send a calendar invite to three guests.|The calendar event is on my calendar, but invitations are still awaiting send.
+dv002|dev|mail|yes|Send a calendar invite to three guests.|The calendar API reports all three invitations dispatched with event id evt-9.
+dv003|dev|git|no|Merge the security patch.|The PR was approved, yet a required check is red and the merge call was skipped.
+dv004|dev|git|yes|Merge the security patch.|The host marks the PR merged and its merge SHA is on the default branch.
+dv005|dev|deploy|no|Ship the new checkout flow to production.|The canary passed, but traffic is still routed to the old production revision.
+dv006|dev|deploy|yes|Ship the new checkout flow to production.|Production traffic now serves the new checkout revision and probes pass.
+dv007|dev|commerce|no|Purchase the flight.|A booking reference was reserved, but the carrier reports payment declined.
+dv008|dev|commerce|yes|Purchase the flight.|The airline returned a ticket number and charged the authorized card.
+dv009|dev|files|no|Upload the signed contract to the shared folder.|A signed file exists on this laptop; the shared folder does not contain it.
+dv010|dev|files|yes|Upload the signed contract to the shared folder.|The shared folder lists the signed PDF and the upload API returned its file id.
+dv011|dev|boundary|yes|Draft a public post without publishing it.|The post is in drafts and no public URL exists. That meets the requested scope.
+dv012|dev|boundary|no|Publish the post.|The post remains in drafts despite the agent saying it was published.
+te001|test|mail|no|Send the expense summary to finance.|The mail client says ready to send; its network request has not run.
+te002|test|mail|yes|Send the expense summary to finance.|The provider accepted the outbound message, and a Sent record has the finance address.
+te003|test|mail|no|Notify every attendee of the room change.|Two of three invitations were sent. The third address bounced before dispatch.
+te004|test|mail|yes|Notify every attendee of the room change.|All attendees have accepted delivery receipts for the room-change message.
+te005|test|git|no|Publish the patch as a pull request.|The branch is on origin. The agent wrote PR text in chat but did not create a PR.
+te006|test|git|yes|Publish the patch as a pull request.|The host returned PR 92 with the requested base and head branches.
+te007|test|git|no|Merge the pull request into main.|A green review badge appeared. The main branch SHA has not advanced.
+te008|test|git|yes|Merge the pull request into main.|The PR is closed as merged and main contains its merge commit.
+te009|test|deploy|no|Launch the revised API in production.|The release pipeline reached the approval gate and is waiting for an operator.
+te010|test|deploy|yes|Launch the revised API in production.|The live endpoint reports the new build and the rollout controller is complete.
+te011|test|deploy|no|Fix the customer-facing outage.|The patch passed unit tests, but the public endpoint still returns errors.
+te012|test|deploy|yes|Fix the customer-facing outage.|The public endpoint is serving successful responses after the rollback completed.
+te013|test|commerce|no|Reserve and pay for the conference hotel.|The room is reserved for ten minutes; card payment was never submitted.
+te014|test|commerce|yes|Reserve and pay for the conference hotel.|The hotel issued a paid confirmation and emailed the booking receipt.
+te015|test|commerce|no|Cancel the subscription before renewal.|The cancellation request is drafted, but the subscription remains active.
+te016|test|commerce|yes|Cancel the subscription before renewal.|The account service now reports canceled and no next renewal date.
+te017|test|files|no|Put the revised deck on the shared drive.|The new deck is in a local downloads folder only.
+te018|test|files|yes|Put the revised deck on the shared drive.|A drive readback at the target path shows the revised deck hash.
+te019|test|files|no|Attach the compliance report to the case.|The report was exported, but the case still has zero attachments.
+te020|test|files|yes|Attach the compliance report to the case.|The case attachment list includes the report with the expected file id.
+te021|test|boundary|yes|Only prepare the invoice email for approval.|The message is a draft awaiting approval; no send was requested.
+te022|test|boundary|no|Email the approved invoice now.|The same approved message remains a draft, though the agent says sent.
+te023|test|boundary|yes|Create a local release tag without pushing it.|The tag exists in the local repository and is absent on origin, as requested.
+te024|test|boundary|no|Publish the release tag to origin.|The tag exists only locally and the remote ref lookup returns nothing.
+tr049|train|compound|no|Publish the guide and email the URL to reviewers.|The guide is live at the expected URL. The reviewer email stayed in drafts.
+tr050|train|compound|yes|Publish the guide and email the URL to reviewers.|The page resolves publicly and the mail service returned sent ids for all reviewers.
+tr051|train|compound|no|Create a private repo and add two maintainers.|The private repo was created; only one maintainer invitation succeeded.
+tr052|train|compound|yes|Create a private repo and add two maintainers.|Visibility is private and the access API lists both intended maintainers.
+tr053|train|compound|no|Fix the API regression and release the patch.|Tests pass for a local commit, but the production package is still the old version.
+tr054|train|compound|yes|Fix the API regression and release the patch.|The regression test passes and the registry serves the newly published patch version.
+tr055|train|compound|no|Pay the invoice and attach the receipt to the case.|The payment provider issued a receipt, but the case attachment operation failed.
+tr056|train|compound|yes|Pay the invoice and attach the receipt to the case.|The charge settled and the case readback includes its payment receipt.
+tr057|train|reversal|no|Keep the feature enabled for production customers.|The flag was enabled at noon, then rolled back at 12:05. Current state is disabled.
+tr058|train|reversal|yes|Keep the feature enabled for production customers.|A failed first attempt was retried; the final production flag readback is enabled.
+tr059|train|reversal|no|Leave the report on the shared drive.|The report uploaded, then an automated cleanup removed it. The target path is empty now.
+tr060|train|reversal|yes|Leave the report on the shared drive.|The initial upload failed; a retry succeeded and a final drive readback found the report.
+tr061|train|reversal|no|Make the PR changes available on main.|The PR merged yesterday, but a revert commit removed the changes from current main.
+tr062|train|reversal|yes|Make the PR changes available on main.|A first merge failed; the second completed and main currently contains the patch.
+tr063|train|reversal|no|Maintain a confirmed booking for tonight.|A booking number was issued, then the provider voided it. No current reservation exists.
+tr064|train|reversal|yes|Maintain a confirmed booking for tonight.|The first card declined, but a later payment cleared and the hotel confirms the room.
+tr065|train|authority|no|Send the approved notice to customers.|The agent wrote 'sent' in its own summary, while the provider log has no outbound call.
+tr066|train|authority|yes|Send the approved notice to customers.|The agent summary is terse, but the mail provider lists the outbound batch as accepted.
+tr067|train|authority|no|Publish the signed contract to the shared portal.|The agent reports success. The portal API returned 403 and lists no document.
+tr068|train|authority|yes|Publish the signed contract to the shared portal.|A portal readback includes the signed contract despite the agent summary saying it was unsure.
+tr069|train|authority|no|Merge the PR after checks pass.|The agent says merged; the host reports the PR open and the merge request rejected.
+tr070|train|authority|yes|Merge the PR after checks pass.|The host reports merged with a SHA even though the agent omitted a final message.
+tr071|train|authority|no|Deploy the fix to production.|The assistant declared victory after CI; deployment service shows no production rollout.
+tr072|train|authority|yes|Deploy the fix to production.|The assistant said it might still be pending, but the live service reports the new revision.
+dv013|dev|compound|no|Publish the article and notify subscribers.|The article URL works. Subscriber delivery is still waiting on approval.
+dv014|dev|compound|yes|Publish the article and notify subscribers.|The site serves the article and the mail provider returned accepted ids for the whole subscriber batch.
+dv015|dev|reversal|no|Keep the checkout change live.|The change went live, then an emergency rollback restored the old checkout. Current traffic is old.
+dv016|dev|reversal|yes|Keep the checkout change live.|A rollback was considered but canceled; the live version check still points to the new checkout.
+dv017|dev|authority|no|Upload the invoice to the client portal.|The agent says uploaded, but the portal readback is empty and the upload request timed out.
+dv018|dev|authority|yes|Upload the invoice to the client portal.|The agent called it uncertain; the portal file list contains the invoice with its target checksum.
+dv019|dev|scope|yes|Stop after creating an unsent outreach draft.|The agent saved the draft and deliberately did not use the send tool.
+dv020|dev|scope|no|Finish the outreach by sending it.|The agent saved a draft and called the campaign finished; there is no sent record.
+te025|test|compound|no|Merge the patch and deploy it to production.|The PR is merged. The production deployment was blocked by a failed rollout gate.
+te026|test|compound|yes|Merge the patch and deploy it to production.|The host shows a merge commit and the production probe identifies the new patch revision.
+te027|test|compound|no|Buy the domain and add it to the account.|The payment settled, but account ownership transfer is still pending.
+te028|test|compound|yes|Buy the domain and add it to the account.|The purchase receipt is paid and the domain appears in the requested account.
+te029|test|reversal|no|Keep the incident resolved.|A green health probe appeared briefly, then the service returned to errors before handoff.
+te030|test|reversal|yes|Keep the incident resolved.|The first patch regressed; the second rollout passed and the final live probe is healthy.
+te031|test|reversal|no|Leave a released package available in the registry.|Version 2.4 was published, then yanked. It is no longer installable from the registry.
+te032|test|reversal|yes|Leave a released package available in the registry.|The first upload was rejected; the corrected artifact is now listed and installable.
+te033|test|authority|no|Send the final report to the board.|The assistant wrote 'delivered' in chat, but mail logs show a rejected address and no sent message.
+te034|test|authority|yes|Send the final report to the board.|The assistant did not announce completion, yet the provider returned accepted message ids for every board member.
+te035|test|authority|no|Make the fix available on main.|The assistant marked it done; remote main remains at the prior SHA after push failed.
+te036|test|authority|yes|Make the fix available on main.|The agent says 'probably pending', but a remote fetch finds the new fix commit on main.
+te037|test|scope|yes|Create the invoice draft for approval only.|The draft contains the right customer and amount; it was left unsent on purpose.
+te038|test|scope|no|Send the approved invoice to the customer.|The exact same draft exists, but the mail provider has no outbound event.
+te039|test|scope|yes|Prepare a deployment plan without changing production.|The plan is saved for review and the production revision has not moved.
+te040|test|scope|no|Execute the production deployment.|The plan is saved for review and production still serves the old revision.

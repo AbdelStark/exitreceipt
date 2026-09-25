@@ -1,0 +1,49 @@
+id|kind|evidence
+tr049|blocker|stayed in drafts
+tr050|receipt|sent ids for all reviewers
+tr051|blocker|only one maintainer invitation succeeded
+tr052|receipt|lists both intended maintainers
+tr053|blocker|still the old version
+tr054|receipt|newly published patch version
+tr055|blocker|attachment operation failed
+tr056|receipt|readback includes its payment receipt
+tr057|blocker|Current state is disabled
+tr058|receipt|flag readback is enabled
+tr059|blocker|target path is empty now
+tr060|receipt|readback found the report
+tr061|blocker|revert commit removed the changes
+tr062|receipt|main currently contains the patch
+tr063|blocker|No current reservation exists
+tr064|receipt|hotel confirms the room
+tr065|blocker|no outbound call
+tr066|receipt|outbound batch as accepted
+tr067|blocker|returned 403 and lists no document
+tr068|receipt|readback includes the signed contract
+tr069|blocker|merge request rejected
+tr070|receipt|reports merged with a SHA
+tr071|blocker|no production rollout
+tr072|receipt|reports the new revision
+dv013|blocker|still waiting on approval
+dv014|receipt|accepted ids for the whole subscriber batch
+dv015|blocker|Current traffic is old
+dv016|receipt|still points to the new checkout
+dv017|blocker|upload request timed out
+dv018|receipt|invoice with its target checksum
+dv019|receipt|saved the draft
+dv020|blocker|no sent record
+te025|blocker|blocked by a failed rollout gate
+te026|receipt|new patch revision
+te027|blocker|still pending
+te028|receipt|domain appears in the requested account
+te029|blocker|returned to errors before handoff
+te030|receipt|final live probe is healthy
+te031|blocker|no longer installable from the registry
+te032|receipt|now listed and installable
+te033|blocker|rejected address and no sent message
+te034|receipt|accepted message ids for every board member
+te035|blocker|prior SHA after push failed
+te036|receipt|new fix commit on main
+te037|receipt|draft contains the right customer and amount
+te038|blocker|no outbound event
+te039|receipt|plan is saved for review
+te040|blocker|still serves the old revision

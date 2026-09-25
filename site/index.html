@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doneproof · Did the agent actually finish?</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">D<span class="brand-dot">.</span></span><span>DONEPROOF</span></div>
+        <div class="top-meta"><span class="status-dot"></span> LOCAL EXPERIMENT <span class="top-separator">/</span> GLiNER2.5-DECIDE</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span>01 / THE QUESTION</span><span>OPEN-WEIGHT DECISION LAB</span></div>
+            <h1>Did the agent<br /><em>actually finish?</em></h1>
+            <p class="intro">A draft is not a send. A green PR is not a merge. Compare an open-weight decision model before and after fine-tuning on the small but consequential gap between <strong>said</strong> and <strong>done</strong>.</p>
+            <div class="hero-chips"><span>BASE VS TUNED</span><span>HELD-OUT CASES</span><span>INSPECT EVERY ERROR</span></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+            <div class="art-center"><span class="art-tick">✓</span><span>DONE?</span></div>
+            <span class="art-label art-label-one">DRAFT SAVED</span><span class="art-label art-label-two">SENT RECEIPT</span><span class="art-label art-label-three">PROD LIVE</span>
+          </div>
+        </section>
+
+        <section class="score-section" aria-labelledby="results-title">
+          <div class="section-heading"><div><span class="section-index">02 / THE EVIDENCE</span><h2 id="results-title">The held-out result</h2></div><span class="section-aside" id="sample-count">LOADING REPORT</span></div>
+          <div id="error" class="error" role="alert" hidden></div>
+          <div class="score-grid" id="scores" hidden>
+            <article class="score-card"><div class="score-label">BASE MODEL <span>01</span></div><div class="score-value" id="base-accuracy">—</div><div class="score-caption">exact-match accuracy</div><div class="score-rule"></div><div class="score-foot" id="base-false">— false completion calls</div></article>
+            <article class="score-card featured"><div class="score-label">AFTER FINE-TUNING <span>02</span></div><div class="score-value" id="tuned-accuracy">—</div><div class="score-caption">exact-match accuracy</div><div class="score-rule"></div><div class="score-foot" id="tuned-false">— false completion calls</div></article>
+            <article class="score-card difference"><div class="score-label">MEASURED CHANGE <span>Δ</span></div><div class="score-value" id="delta">—</div><div class="score-caption">percentage points</div><div class="score-rule"></div><div class="score-foot" id="changed-count">— changed decisions</div></article>
+          </div>
+          <p class="evidence-score" id="evidence-score" hidden></p>
+          <p class="caveat">Authored synthetic English cases. A model verdict is a review signal; the underlying receipt remains the source of truth. This pilot does not establish real-world agent reliability.</p>
+        </section>
+
+        <section class="case-section" aria-labelledby="cases-title">
+          <div class="section-heading"><div><span class="section-index">03 / THE RECEIPTS</span><h2 id="cases-title">Inspect every decision</h2></div><span class="section-aside" id="case-count">— CASES</span></div>
+          <div class="explorer">
+            <div class="case-rail">
+              <div class="filters"><label for="filter">SHOW</label><select id="filter"><option value="all">All cases</option><option value="changed">Changed by fine-tuning</option><option value="base-error">Base errors</option><option value="tuned-error">Tuned errors</option><option value="false-complete">Any false complete</option></select></div>
+              <div id="case-list" class="case-list" role="listbox" aria-label="Evaluation cases"></div>
+            </div>
+            <article class="case-detail" id="case-detail" aria-live="polite"><p class="loading">Loading the recorded run…</p></article>
+          </div>
+        </section>
+
+        <section class="how-section"><div><span class="section-index">04 / REPRODUCE IT</span><h2>One model.<br /><em>Your definition of done.</em></h2></div><div class="how-copy"><p>The 340M-class GLiNER2.5-Decide checkpoint runs locally. A rank-8 LoRA adapter trains on versioned examples; the best checkpoint is selected on development loss and compared with the base on untouched test rows.</p><code>uv run --extra model doneproof train --run-dir runs/pilot --device mps</code><p class="small">Model, data hash, versions, settings, and per-case predictions are recorded in the report. See the repository experiment contract for exact limitations.</p></div></section>
+      </main>
+
+      <footer><span>DONEPROOF / PRIVATE MVP</span><span>DECISIONS NEED RECEIPTS.</span></footer>
+    </div>
+  </body>
+</html>
