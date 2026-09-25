@@ -70,6 +70,7 @@ select { flex: 1; min-width: 0; color: #e5eee3; border: 1px solid #3d5542; backg
 .case-detail { padding: 32px 37px; min-width: 0; }
 .detail-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; color: #9aec74; font: 11px ui-monospace, monospace; letter-spacing: .1em; }
 .detail-domain { color: #829b83; text-transform: uppercase; }
+.source-meta { margin-top: 12px; color: #8da48f; font: 10px ui-monospace, monospace; line-height: 1.6; letter-spacing: .06em; overflow-wrap: anywhere; }
 .detail-title { margin-top: 30px; color: #9cae9e; font: 11px ui-monospace, monospace; letter-spacing: .12em; }
 .detail-goal { margin-top: 8px; font-size: 26px; font-weight: 550; line-height: 1.32; letter-spacing: -.03em; overflow-wrap: anywhere; }
 .trace { margin-top: 24px; border-left: 3px solid #64885b; background: #111b15; padding: 19px 21px; color: #c3d0c2; line-height: 1.65; font-size: 15px; overflow-wrap: anywhere; }

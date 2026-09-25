@@ -22,6 +22,10 @@ function renderDetail(row) {
   const id = document.createElement("span"); id.textContent = row.id.toUpperCase();
   const domain = document.createElement("span"); domain.className = "detail-domain"; domain.textContent = row.domain;
   top.append(id, domain);
+  const source = document.createElement("p"); source.className = "source-meta";
+  if (row.workbench) {
+    source.textContent = `WORKBENCH TASK ${row.workbench.task_id} · SOURCE AGENT ${row.workbench.source_model} · UNWANTED SIDE EFFECT ${row.workbench.unwanted_side_effects ? "YES" : "NO"}`;
+  }
   const label = document.createElement("p"); label.className = "detail-title"; label.textContent = "THE REQUESTED OUTCOME";
   const goal = document.createElement("h3"); goal.className = "detail-goal"; goal.textContent = row.goal;
   const trace = document.createElement("div"); trace.className = "trace";
@@ -63,7 +67,9 @@ function renderDetail(row) {
     const goldLabel = document.createElement("span"); goldLabel.className = "gold-label"; goldLabel.textContent = "ANNOTATED DECISIVE PHRASE";
     gold.append(goldLabel, document.createTextNode(row.gold_evidence.evidence)); evidencePanel.append(gold);
   }
-  panel.append(top, label, goal, trace, verdicts, evidencePanel, note);
+  panel.append(top);
+  if (row.workbench) panel.append(source);
+  panel.append(label, goal, trace, verdicts, evidencePanel, note);
   if (study === "v2") {
     const counterpartId = row.id.endsWith("-yes") ? row.id.slice(0, -4) + "-no" : row.id.slice(0, -3) + "-yes";
     if (report.rows.some((candidate) => candidate.id === counterpartId)) {

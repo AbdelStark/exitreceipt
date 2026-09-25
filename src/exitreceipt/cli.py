@@ -157,6 +157,15 @@ def main(argv: list[str] | None = None) -> int:
         tuned_inspections = inspect_cases(load_model(adapter), selected)
         base = {id: item["label"] for id, item in base_inspections.items()}
         tuned = {id: item["label"] for id, item in tuned_inspections.items()}
+        v2 = metadata["config"].get("experiment_name") == "exitreceipt-v2"
+        workbench_source = {}
+        if v2:
+            manifest = json.loads(
+                (args.data.parent / "workbench-v2-manifest.json").read_text(encoding="utf-8")
+            )
+            workbench_source = {item["id"]: item for item in manifest["source_rows"]}
+            if any(case.id not in workbench_source for case in selected):
+                raise ValueError("v2 evaluation case missing from source-row manifest")
         rows = [
             {
                 "id": case.id,
@@ -169,13 +178,22 @@ def main(argv: list[str] | None = None) -> int:
                 "gold_evidence": evidence[case.id].__dict__ if case.id in evidence else None,
                 "base_spans": base_inspections[case.id]["spans"],
                 "tuned_spans": tuned_inspections[case.id]["spans"],
+                "workbench": (
+                    {
+                        "task_id": workbench_source[case.id]["task_id"],
+                        "base_template": workbench_source[case.id]["base_template"],
+                        "source_model": workbench_source[case.id]["model"],
+                        "unwanted_side_effects": workbench_source[case.id]["unwanted_side_effects"],
+                    }
+                    if v2
+                    else None
+                ),
             }
             for case in selected
         ]
         import gliner2
         import torch
 
-        v2 = metadata["config"].get("experiment_name") == "exitreceipt-v2"
         report = {
             "schema_version": 1,
             "generated_at_utc": datetime.now(UTC).isoformat(),

@@ -21,6 +21,14 @@ def summarize(reports: list[dict], manifest: dict, selection: dict) -> dict:
         raise ValueError("report contains unknown or duplicate external case")
     if len(ids) != 158:
         raise ValueError(f"expected 158 test cases, got {len(ids)}")
+    for row in reference["rows"]:
+        upstream = source[row["id"]]
+        if (
+            row["workbench"]["task_id"] != upstream["task_id"]
+            or row["workbench"]["base_template"] != upstream["base_template"]
+            or row["workbench"]["unwanted_side_effects"] != upstream["unwanted_side_effects"]
+        ):
+            raise ValueError("report source metadata differs from pinned WorkBench manifest")
     for expected_seed, report in zip(SEEDS, reports, strict=True):
         if report["split"] != "test" or [row["id"] for row in report["rows"]] != ids:
             raise ValueError("report splits or case order differ")
