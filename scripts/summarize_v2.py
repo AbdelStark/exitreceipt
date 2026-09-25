@@ -4,27 +4,13 @@ from __future__ import annotations
 
 import argparse
 import json
-import random
 from collections import defaultdict
 from pathlib import Path
 
+from exitreceipt.statistics import RESAMPLES, paired_accuracy_interval
+
 ROOT = Path(__file__).resolve().parents[1]
 SEEDS = (20260925, 20260926, 20260927)
-RESAMPLES = 10_000
-
-
-def _interval(rows: list[dict], groups: dict[str, list[str]], *, seed: int) -> list[float]:
-    by_id = {row["id"]: row for row in rows}
-    group_keys = sorted(groups)
-    rng = random.Random(seed)
-    values = []
-    for _ in range(RESAMPLES):
-        ids = [case_id for _ in group_keys for case_id in groups[rng.choice(group_keys)]]
-        base = sum(by_id[case_id]["base"] == by_id[case_id]["truth"] for case_id in ids)
-        tuned = sum(by_id[case_id]["tuned"] == by_id[case_id]["truth"] for case_id in ids)
-        values.append((tuned - base) / len(ids))
-    values.sort()
-    return [values[int(0.025 * RESAMPLES)], values[int(0.975 * RESAMPLES) - 1]]
 
 
 def summarize(reports: list[dict], manifest: dict) -> dict:
@@ -76,8 +62,12 @@ def summarize(reports: list[dict], manifest: dict) -> dict:
                 "base": report["base"],
                 "tuned": report["tuned"],
                 "accuracy_delta": report["tuned"]["accuracy"] - report["base"]["accuracy"],
-                "accuracy_delta_template_ci95": _interval(rows, template_groups, seed=seed + 1),
-                "accuracy_delta_task_ci95": _interval(rows, task_groups, seed=seed + 2),
+                "accuracy_delta_template_ci95": paired_accuracy_interval(
+                    rows, template_groups, seed=seed + 1
+                ),
+                "accuracy_delta_task_ci95": paired_accuracy_interval(
+                    rows, task_groups, seed=seed + 2
+                ),
                 "changed": changed,
             }
         )
