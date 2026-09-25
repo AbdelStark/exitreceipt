@@ -40,3 +40,12 @@ ignored cache/`runs` paths.
 limits and reproduction details. The synthetic pilot cannot establish real
 agent reliability or authorize an action. A later Jev comparison will need a
 separate shared-label evaluation design.
+
+## Measured pilot
+
+On 40 held-out authored cases, base and tuned completion accuracy were both
+**36/40**. False “done” calls fell from 2 to 1, but the adapter introduced
+other errors. On 16 annotated complex cases, candidate evidence spans covering
+at least half the marked phrase rose from **0/16 to 9/16**; only 3/16 matched
+the exact phrase and type. Read the [full result](docs/RESULTS.md) and inspect
+the per-case [report](results/pilot.json) before drawing conclusions.

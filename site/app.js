@@ -83,7 +83,7 @@ function renderList() {
     const top = document.createElement("div"); top.className = "case-item-top";
     const id = document.createElement("span"); id.className = "case-id"; id.textContent = row.id.toUpperCase();
     const tag = document.createElement("span"); tag.className = "case-tag";
-    tag.textContent = row.base !== row.tuned ? "CHANGED" : row.base !== row.truth ? "BASE ERROR" : "AGREED";
+    tag.textContent = row.base !== row.tuned ? "CHANGED" : row.base !== row.truth ? "BOTH WRONG" : "AGREED";
     const title = document.createElement("div"); title.className = "case-item-title"; title.textContent = row.goal;
     top.append(id, tag); button.append(top, title);
     button.addEventListener("click", () => { currentId = row.id; renderList(); });
@@ -101,8 +101,8 @@ async function main() {
     $("sample-count").textContent = `${report.rows.length} HELD-OUT CASES / SYNTHETIC`;
     $("base-accuracy").textContent = formatPct(report.base.accuracy);
     $("tuned-accuracy").textContent = formatPct(report.tuned.accuracy);
-    $("base-false").textContent = `${report.base.false_complete} FALSE COMPLETION CALLS`;
-    $("tuned-false").textContent = `${report.tuned.false_complete} FALSE COMPLETION CALLS`;
+    $("base-false").textContent = `${report.base.false_complete} FALSE COMPLETION ${report.base.false_complete === 1 ? "CALL" : "CALLS"}`;
+    $("tuned-false").textContent = `${report.tuned.false_complete} FALSE COMPLETION ${report.tuned.false_complete === 1 ? "CALL" : "CALLS"}`;
     const delta = (report.tuned.accuracy - report.base.accuracy) * 100;
     $("delta").textContent = `${delta > 0 ? "+" : ""}${delta.toFixed(1)}`;
     $("changed-count").textContent = `${report.rows.filter((row) => row.base !== row.tuned).length} CHANGED DECISIONS`;
