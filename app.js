@@ -38,7 +38,7 @@ function renderDetail(row) {
   }
   const note = document.createElement("p"); note.className = "detail-note";
   note.textContent = study === "v2"
-    ? "The label is WorkBench's sandbox verdict. The released action log omits tool results and final state, so some outcomes cannot be determined from this view alone. Spans are unverified model candidates."
+    ? "The label is WorkBench's sandbox correctness verdict, which can include unwanted side effects. The released action log omits tool results and final state, so some outcomes cannot be determined from this view alone. Spans are unverified model candidates."
     : "Ground truth follows the requested goal and stated tool outcome. Extracted spans are model candidates; they are not independently verified receipts.";
   const evidencePanel = document.createElement("section"); evidencePanel.className = "evidence-panel";
   const evidenceTitle = document.createElement("h4"); evidenceTitle.className = "evidence-title"; evidenceTitle.textContent = "CANDIDATE EVIDENCE SPANS";
@@ -168,7 +168,7 @@ async function loadStudy(caseId, filter) {
       $("evidence-score").hidden = false;
     }
     $("caveat").textContent = study === "v2"
-      ? "Sandbox-scored WorkBench action logs, held out by task template. Tool results and final state are absent from the released action view. This measures outcome prediction from partial evidence, not verification of a live agent."
+      ? "Sandbox-scored WorkBench action logs, held out by task template. The verdict includes task correctness and can penalize side effects. Tool results and final state are absent from this view. This is prediction from partial evidence, not verification of a live agent."
       : "Authored synthetic English cases. The tuned model corrected two decisions and regressed on two others. A verdict is a review signal; the underlying receipt remains the source of truth.";
     $("scores").hidden = false;
     renderList();
