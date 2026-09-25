@@ -1,7 +1,9 @@
+from pathlib import Path
+
 import pytest
 
 from exitreceipt.corpus import Case
-from exitreceipt.model import inspect_cases
+from exitreceipt.model import _adapter_source, inspect_cases
 
 
 class FakeModel:
@@ -40,3 +42,18 @@ def test_joint_schema_rejects_hallucinated_span_text():
     span = {"text": "m-2", "start": case.text.index("m-1"), "end": len(case.text)}
     with pytest.raises(ValueError, match="does not match source"):
         inspect_cases(FakeModel(span), [case])
+
+
+def test_adapter_source_requires_explicit_local_files_or_hub_id(tmp_path: Path):
+    with pytest.raises(FileNotFoundError, match="missing PEFT adapter"):
+        _adapter_source(tmp_path, None)
+    (tmp_path / "adapter_config.json").write_text("{}", encoding="utf-8")
+    assert _adapter_source(tmp_path, None) == (str(tmp_path), {})
+    with pytest.raises(ValueError, match="only valid for a Hub"):
+        _adapter_source(tmp_path, "v0.1.0")
+    assert _adapter_source("abdelstark/exitreceipt-gliner2.5-decide-lora", "v0.1.0") == (
+        "abdelstark/exitreceipt-gliner2.5-decide-lora",
+        {"revision": "v0.1.0"},
+    )
+    with pytest.raises(ValueError, match="namespace/repository"):
+        _adapter_source("typo", None)

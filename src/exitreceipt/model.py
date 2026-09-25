@@ -13,16 +13,29 @@ TASK = {"finished": list(LABELS)}
 ENTITY_TYPES = ("receipt", "blocker")
 
 
-def load_model(adapter: Path | None = None):
-    from gliner2 import AutoExtractor
-
-    model = AutoExtractor.from_pretrained(MODEL_ID, revision=MODEL_REVISION)
-    if adapter:
-        from peft import PeftModel
-
+def _adapter_source(adapter: Path | str, revision: str | None) -> tuple[str, dict[str, str]]:
+    if isinstance(adapter, Path):
+        if revision is not None:
+            raise ValueError("adapter revision is only valid for a Hub repository")
         if not (adapter / "adapter_config.json").exists():
             raise FileNotFoundError(f"missing PEFT adapter in {adapter}")
-        model = PeftModel.from_pretrained(model, str(adapter))
+        return str(adapter), {}
+    if adapter.count("/") != 1 or adapter.startswith(("/", ".")):
+        raise ValueError("Hub adapter must be a namespace/repository ID")
+    return adapter, {"revision": revision} if revision else {}
+
+
+def load_model(adapter: Path | str | None = None, *, adapter_revision: str | None = None):
+    from gliner2 import AutoExtractor
+
+    if adapter is None and adapter_revision is not None:
+        raise ValueError("adapter revision requires a Hub adapter")
+    source = _adapter_source(adapter, adapter_revision) if adapter is not None else None
+    model = AutoExtractor.from_pretrained(MODEL_ID, revision=MODEL_REVISION)
+    if source is not None:
+        from peft import PeftModel
+
+        model = PeftModel.from_pretrained(model, source[0], **source[1])
     return model.eval()
 
 

@@ -75,14 +75,21 @@ def _parser() -> argparse.ArgumentParser:
     predict = sub.add_parser("predict", help="Classify one goal and observed state locally")
     predict.add_argument("--goal", required=True)
     predict.add_argument("--trace", required=True)
-    predict.add_argument("--adapter", type=Path)
+    adapter_group = predict.add_mutually_exclusive_group()
+    adapter_group.add_argument("--adapter", type=Path, help="Local PEFT adapter directory")
+    adapter_group.add_argument("--adapter-repo", help="Hugging Face namespace/repository ID")
+    predict.add_argument("--adapter-revision", help="Pinned Hub adapter commit or tag")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     if args.command == "predict":
-        model = load_model(args.adapter)
+        if args.adapter_revision and not args.adapter_repo:
+            raise ValueError("--adapter-revision requires --adapter-repo")
+        model = load_model(
+            args.adapter_repo or args.adapter, adapter_revision=args.adapter_revision
+        )
         case = Case("input", "test", "custom", "no", args.goal, args.trace)
         print(json.dumps(inspect_cases(model, [case])["input"], sort_keys=True))
         return 0

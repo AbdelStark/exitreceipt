@@ -1,6 +1,6 @@
 {
   "adapter_selection": "lowest development loss; test split excluded",
-  "adapter_sha256": "9dd912b3b2d40c16a180f40ce6a0ec2a4f394cbbcf78393c21f831394b363172",
+  "adapter_sha256": "f602971510dd8501ed66f979b8194a53918cfb0c426302048a821ac9d2537752",
   "base": {
     "accuracy": 0.9,
     "confusion": {
@@ -712,9 +712,9 @@
   },
   "data_sha256": "c1772ef3b6989b70faa31acdbef506cb3193d943210f344639a0d1075223f565",
   "evaluation_code": {
-    "git_head": "ae105bcd09ed275dbe7164ef40504d552b2821cf",
+    "git_head": "04a8ec7e1174aa70d6243d1d157ffc525e316fb0",
     "tracked_changes": false,
-    "uv_lock_sha256": "f6e1c53d058b7e4f79499dfe7ab5f4bfa1632e384103f76f4f04e6721ea76dfe"
+    "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
   },
   "evidence": {
     "base": {
@@ -733,7 +733,7 @@
     }
   },
   "evidence_sha256": "f1bc2d98dbd7ad97010b2fa5cc66c4ff73f28c13ae3159f7bc09b768f6ebe32d",
-  "generated_at_utc": "2026-09-25T06:59:07.270739+00:00",
+  "generated_at_utc": "2026-09-25T07:47:26.872219+00:00",
   "model": "fastino/GLiNER2.5-Decide",
   "revision": "7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6",
   "rows": [
@@ -1501,11 +1501,11 @@
     "seed": 20260925,
     "task_lr": 0.0003
   },
-  "training_best_dev_loss": 5.5169108096510175,
+  "training_best_dev_loss": 5.516915483772754,
   "training_code": {
-    "git_head": "ae105bcd09ed275dbe7164ef40504d552b2821cf",
+    "git_head": "04a8ec7e1174aa70d6243d1d157ffc525e316fb0",
     "tracked_changes": false,
-    "uv_lock_sha256": "f6e1c53d058b7e4f79499dfe7ab5f4bfa1632e384103f76f4f04e6721ea76dfe"
+    "uv_lock_sha256": "8d885dc3bf270e055d8ba5f6cdea4994f8024fedbfe3cb0f524267f96a799486"
   },
   "tuned": {
     "accuracy": 0.9,

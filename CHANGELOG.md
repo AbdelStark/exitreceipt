@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Published the evaluated LoRA adapter with a full Hugging Face model card,
+  training metadata, tagged weights, and per-case evaluation report.
+- Added pinned Hub adapter inference and refreshed the pilot report from a
+  fresh rerun that reproduced every prior test prediction and span.
+
 ## 0.1.0 — 2026-09-25
 
 - Added a pinned GLiNER2.5-Decide base model and native rank-8 LoRA training

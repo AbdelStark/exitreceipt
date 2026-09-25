@@ -10,6 +10,7 @@ shows what changed after local LoRA fine-tuning.
 
 **[Explore the 40-case pilot](https://abdelstark.github.io/exitreceipt/)** ·
 **[Read the measured result](docs/RESULTS.md)** ·
+**[Adapter](https://hf.co/abdelstark/exitreceipt-gliner2.5-decide-lora)** ·
 **[Inspect the raw report](results/pilot.json)**
 
 ![One held-out synthetic case: the base model calls a blocked deployment done; the fine-tuned model says not done and points to the failed rollout gate.](docs/assets/case-te025.svg)
@@ -90,6 +91,12 @@ Development loss selects the checkpoint; the held-out test split is excluded
 from selection. Model revision, data hashes, seed, settings, package versions,
 adapter hash, and every prediction are recorded.
 
+The [published adapter](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora)
+is the selected checkpoint from a fresh rerun of this command. Its 3,833,864
+trainable parameters and saved weight hash are recorded in the model card.
+The rerun produced the same test predictions and evidence spans as the
+original pilot, despite slightly different adapter bytes.
+
 ```bash
 uv run --extra model exitreceipt train \
   --run-dir runs/repro --device mps --epochs 6 --batch-size 4
@@ -102,6 +109,10 @@ uv run --extra model exitreceipt predict \
   --trace "All checks are green, but the PR remains open" \
   --adapter runs/repro/best
 ```
+
+To try the published adapter without training, use
+`--adapter-repo abdelstark/exitreceipt-gliner2.5-decide-lora` with
+`--adapter-revision v0.1.0`.
 
 Use `--device cpu` where MPS is unavailable. `train` refuses a nonempty run
 directory. Downloaded base weights and adapter checkpoints stay out of Git;

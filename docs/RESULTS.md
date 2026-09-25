@@ -5,11 +5,13 @@ the held-out test split. The machine-readable [report](../results/pilot.json)
 contains model/data hashes, versions, settings, split counts, every prediction,
 and candidate spans.
 
-The report records source commit
-[`ae105bc`](https://github.com/AbdelStark/exitreceipt/commit/ae105bcd09ed275dbe7164ef40504d552b2821cf),
-made before the project was renamed to ExitReceipt. That commit and its
-lockfile remain in the repository history. Later naming and publication
-changes did not alter the scored pilot.
+The current report records source commit
+[`04a8ec7`](https://github.com/AbdelStark/exitreceipt/commit/04a8ec7e1174aa70d6243d1d157ffc525e316fb0)
+and adapter SHA-256
+`f602971510dd8501ed66f979b8194a53918cfb0c426302048a821ac9d2537752`.
+It is a fresh local rerun of the original pilot: the selected adapter bytes
+changed slightly, while every base and tuned test prediction and candidate
+span matched the earlier report. The original report remains in Git history.
 
 | Measure | Base | Fine-tuned |
 | --- | ---: | ---: |
@@ -38,3 +40,8 @@ data. The small adapter learned to point to some domain-specific receipt or
 blocker phrases, but it also introduced one new false “done” call. The
 [explorer](https://abdelstark.github.io/exitreceipt/) exposes these errors so
 the model is not mistaken for a completion authority.
+
+The evaluated [LoRA adapter](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora)
+is published separately from the base weights, with a model card and the same
+per-case report. It is a reusable research artifact, not a verified task
+completion service.

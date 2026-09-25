@@ -8,5 +8,8 @@ models/
 runs/
 results/*.json
 !results/pilot.json
+!results/seed-20260926.json
+!results/seed-20260927.json
+!results/seed-robustness.json
 *.log
 .DS_Store
