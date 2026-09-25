@@ -162,8 +162,8 @@ async function loadStudy(caseId, filter) {
     $("sample-count").textContent = `${report.rows.length} HELD-OUT CASES / ${study === "v2" ? "WORKBENCH" : "AUTHORED PILOT"}`;
     $("base-accuracy").textContent = formatPct(report.base.accuracy);
     $("tuned-accuracy").textContent = formatPct(report.tuned.accuracy);
-    $("base-false").textContent = `${report.base.false_complete} FALSE COMPLETION ${report.base.false_complete === 1 ? "CALL" : "CALLS"}`;
-    $("tuned-false").textContent = `${report.tuned.false_complete} FALSE COMPLETION ${report.tuned.false_complete === 1 ? "CALL" : "CALLS"}`;
+    $("base-false").textContent = `${report.base.false_complete}/${report.base.per_label.no.support} FALSE DONE · ${report.base.false_incomplete}/${report.base.per_label.yes.support} MISSED DONE`;
+    $("tuned-false").textContent = `${report.tuned.false_complete}/${report.tuned.per_label.no.support} FALSE DONE · ${report.tuned.false_incomplete}/${report.tuned.per_label.yes.support} MISSED DONE`;
     const delta = (report.tuned.accuracy - report.base.accuracy) * 100;
     $("delta").textContent = `${delta > 0 ? "+" : ""}${delta.toFixed(1)}`;
     $("changed-count").textContent = `${report.rows.filter((row) => row.base !== row.tuned).length} CHANGED DECISIONS`;
