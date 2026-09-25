@@ -68,6 +68,10 @@ Primary endpoint: paired test accuracy difference (tuned minus base) on the
 failures, true-complete recall on the 79 successes, macro-F1, per-domain
 accuracy, and changed examples. Report numerator and denominator, each seed,
 and a paired bootstrap confidence interval clustered by `base_template`.
+The published v1 adapter at tag `v0.1.1` will also be run on the same external
+test as a historical comparator. It is not used for v2 checkpoint or seed
+selection, and differences between v1 and v2 cannot isolate data volume from
+the other training changes.
 This interval describes variation over the 10 held-out template groups;
 it is not a guarantee on future agents or workflows. Also report the task-pair
 cluster interval for comparison. No accuracy claim will be made from span
