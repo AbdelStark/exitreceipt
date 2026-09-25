@@ -1,6 +1,18 @@
+<div align="center">
+
 # ExitReceipt
 
-### Did the agent actually finish?
+**Did the agent actually finish?**
+
+[![Live demo](https://img.shields.io/badge/LIVE_DEMO-EXPLORE_CASES-6C5CE7?style=for-the-badge&logo=githubpages&logoColor=white)](https://abdelstark.github.io/exitreceipt/)
+[![Hugging Face model](https://img.shields.io/badge/HUGGING_FACE-MODEL-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000)](https://huggingface.co/abdelstark/exitreceipt-gliner2.5-decide-lora/tree/v0.2.0)
+[![GitHub release](https://img.shields.io/github/v/release/AbdelStark/exitreceipt?style=for-the-badge&logo=github&label=RELEASE&color=5B5BD6)](https://github.com/AbdelStark/exitreceipt/releases/tag/v0.2.0)
+
+[![CI](https://img.shields.io/github/actions/workflow/status/AbdelStark/exitreceipt/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/AbdelStark/exitreceipt/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/PYTHON-3.11_%7C_3.12_%7C_3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](pyproject.toml)
+[![License](https://img.shields.io/github/license/AbdelStark/exitreceipt?style=for-the-badge&color=2EA44F)](LICENSE)
+
+</div>
 
 A tool call is an attempt, not a receipt. ExitReceipt is an open-weight experiment in judging an agent's requested outcome against the evidence it left behind. It uses [GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) for a `yes/no` decision and candidate `receipt` or `blocker` spans, then publishes what changed after local LoRA fine-tuning—including the misses.
 
