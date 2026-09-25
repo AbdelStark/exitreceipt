@@ -123,9 +123,10 @@ function renderList() {
 async function main() {
   try {
     const params = new URLSearchParams(window.location.search);
-    study = params.get("study") === "pilot" ? "pilot" : "v2";
+    const requestedCase = params.get("case");
+    study = params.get("study") === "pilot" || (!params.has("study") && /^te\d+$/.test(requestedCase || "")) ? "pilot" : "v2";
     $("study").value = study;
-    await loadStudy(params.get("case"), params.get("filter"));
+    await loadStudy(requestedCase, params.get("filter"));
     $("study").addEventListener("change", async () => {
       study = $("study").value;
       $("filter").value = "all";
