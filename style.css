@@ -81,6 +81,8 @@ select { flex: 1; min-width: 0; color: #e5eee3; border: 1px solid #3d5542; backg
 .verdict-value { margin-top: 9px; font-size: 19px; font-weight: 650; }
 .wrong .verdict-value { color: #efa483; }
 .detail-note { margin-top: 25px; color: #879d89; font-size: 12px; line-height: 1.6; }
+.pair-link { margin-top: 18px; padding: 10px 13px; border: 1px solid #608e57; background: #18291b; color: #b8ef96; cursor: pointer; font: 11px ui-monospace, monospace; letter-spacing: .08em; }
+.pair-link:hover,.pair-link:focus-visible { background: #24402a; outline: 1px solid #b8ef96; }
 .evidence-panel { margin-top: 26px; border-top: 1px solid #39503d; padding-top: 22px; }
 .evidence-title { color: #adeda0; font: 11px ui-monospace, monospace; letter-spacing: .1em; }
 .evidence-columns { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 15px; }

@@ -64,6 +64,21 @@ function renderDetail(row) {
     gold.append(goldLabel, document.createTextNode(row.gold_evidence.evidence)); evidencePanel.append(gold);
   }
   panel.append(top, label, goal, trace, verdicts, evidencePanel, note);
+  if (study === "v2") {
+    const counterpartId = row.id.endsWith("-yes") ? row.id.slice(0, -4) + "-no" : row.id.slice(0, -3) + "-yes";
+    if (report.rows.some((candidate) => candidate.id === counterpartId)) {
+      const counterpart = document.createElement("button");
+      counterpart.className = "pair-link";
+      counterpart.type = "button";
+      counterpart.textContent = "VIEW THE OTHER RUN OF THIS TASK ↗";
+      counterpart.addEventListener("click", () => {
+        $("filter").value = "all";
+        currentId = counterpartId;
+        renderList();
+      });
+      panel.append(counterpart);
+    }
+  }
 }
 
 function filteredRows() {
