@@ -60,8 +60,10 @@ Both models use the same pinned base revision and joint `finished` plus
 learning rate, with dropout 0.1, batch size 4, and at most six epochs. The
 trainer selects the lowest **development loss** checkpoint per seed. Train
 three seeds: `20260925`, `20260926`, `20260927`. The publishable adapter is
-selected by lowest development loss across those three runs, before comparing
-test predictions. The other two runs show seed sensitivity.
+selected by lowest development loss across those three runs. The immutable
+[`results/v2-selection.json`](../results/v2-selection.json) records that choice
+and all checkpoint hashes before any test inference. The other two runs show
+seed sensitivity.
 
 Primary endpoint: paired test accuracy difference (tuned minus base) on the
 158 external examples. Secondary endpoints: false-complete rate on the 79
@@ -96,12 +98,22 @@ uv run --extra model exitreceipt train \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv \
   --run-dir runs/v2-20260925 --device mps --epochs 6 --batch-size 4 \
   --seed 20260925 --lora-dropout 0.1 --experiment-name exitreceipt-v2
+```
+
+Repeat `train` for the other two fixed seeds. Lock and commit the development
+choice before opening the test split:
+
+```bash
+python3 scripts/select_v2_checkpoint.py
+# Commit results/v2-selection.json before test inference.
 uv run --extra model exitreceipt evaluate \
   --data data/v2-cases.psv --evidence data/v2-evidence.psv \
   --run-dir runs/v2-20260925 --split test --output results/v2-20260925.json
+# Repeat evaluate for the other two seeds, then:
+python3 scripts/summarize_v2.py
 ```
 
-Repeat the last two commands with the other seeds. The original WorkBench
+The original WorkBench
 source is fetched only for `--verify`; the derived rows and source-row
 manifest are committed. The base checkpoint download and local LoRA run
 require substantial disk, RAM, and compute. Metal/MPS can be nondeterministic

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SEEDS = (20260925, 20260926, 20260927)
 
 
-def summarize(reports: list[dict], manifest: dict) -> dict:
+def summarize(reports: list[dict], manifest: dict, selection: dict) -> dict:
     source = {row["id"]: row for row in manifest["source_rows"]}
     reference = reports[0]
     ids = [row["id"] for row in reference["rows"]]
@@ -88,6 +88,19 @@ def summarize(reports: list[dict], manifest: dict) -> dict:
             }
         )
     winner = min(runs, key=lambda run: (run["best_dev_loss"], run["seed"]))
+    if (
+        winner["seed"] != selection["selected_seed"]
+        or winner["adapter_sha256"] != selection["selected_adapter_sha256"]
+        or selection["data_sha256"] != reference["data_sha256"]
+    ):
+        raise ValueError("test summary differs from locked development selection")
+    for run, locked in zip(runs, selection["runs"], strict=True):
+        if (
+            run["seed"] != locked["seed"]
+            or run["adapter_sha256"] != locked["adapter_sha256"]
+            or run["dev_loss_by_epoch"] != locked["dev_loss_by_epoch"]
+        ):
+            raise ValueError("test run differs from locked development checkpoint")
     delta = winner["accuracy_delta"]
     false_done_delta = (
         winner["tuned"]["false_complete_rate"] - winner["base"]["false_complete_rate"]
@@ -128,7 +141,8 @@ def main() -> None:
     manifest = json.loads(
         (ROOT / "data" / "workbench-v2-manifest.json").read_text(encoding="utf-8")
     )
-    result = summarize(reports, manifest)
+    selection = json.loads((ROOT / "results/v2-selection.json").read_text(encoding="utf-8"))
+    result = summarize(reports, manifest, selection)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     selected = reports[SEEDS.index(result["selected_seed"])]
     args.selected_output.write_text(

@@ -15,6 +15,7 @@ results/*.json
 !results/v2-20260926.json
 !results/v2-20260927.json
 !results/v2-selected.json
+!results/v2-selection.json
 !results/v2-robustness.json
 !results/v2-v1-comparator.json
 *.log
